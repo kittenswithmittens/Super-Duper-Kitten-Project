@@ -12,46 +12,56 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
-  <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: white;" VBox.vgrow="ALWAYS">
-      <children>
-            <Label layoutX="76.0" layoutY="27.0" text="SUPER DUPER KITTEN PROJECT">
-               <font>
-                  <Font name="Arial Black" size="28.0" />
-               </font>
-               <effect>
-                  <Bloom threshold="0.9" />
-               </effect>
-            </Label>
-            <ImageView fitHeight="176.0" fitWidth="228.0" layoutX="209.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Downloads/constructlogo.png" />
-               </image>
-            </ImageView>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="55.0" layoutX="243.0" layoutY="270.0" stroke="BLACK" strokeType="INSIDE" width="155.0" />
-            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="16.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Downloads/menubutton.png" />
-               </image>
-            </ImageView>
-            <MenuButton alignment="TOP_LEFT" layoutX="16.0" layoutY="15.0" mnemonicParsing="false" opacity="0.0">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
-              </items>
-            </MenuButton>
-            <Button layoutX="243.0" layoutY="268.0" mnemonicParsing="false" opacity="0.23" prefHeight="55.0" prefWidth="155.0" text="Get Started">
-               <font>
-                  <Font name="Arial Black" size="18.0" />
-               </font>
-            </Button>
-            <Label layoutX="263.0" layoutY="284.0" text="Get Started">
-               <font>
-                  <Font name="Arial Black" size="18.0" />
-               </font>
-            </Label>
-      </children>
-    </AnchorPane>
-  </children>
+<VBox prefHeight="400.0" prefWidth="640.0"
+	xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+	<children>
+		<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0"
+			prefWidth="-1.0" style="-fx-background-color: white;" VBox.vgrow="ALWAYS"
+
+			>
+			<children>
+				<Label layoutX="76.0" layoutY="27.0" text="SUPER DUPER KITTEN PROJECT">
+					<font>
+						<Font name="Arial Black" size="28.0" />
+					</font>
+					<effect>
+						<Bloom threshold="0.9" />
+					</effect>
+				</Label>
+				<ImageView fitHeight="176.0" fitWidth="228.0" layoutX="209.0"
+					layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@resources/constructlogo.png" />
+					</image>
+				</ImageView>
+				<Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE"
+					height="55.0" layoutX="243.0" layoutY="270.0" stroke="BLACK"
+					strokeType="INSIDE" width="155.0" />
+				<ImageView fitHeight="32.0" fitWidth="32.0" layoutX="16.0"
+					layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@../Downloads/menubutton.png" />
+					</image>
+				</ImageView>
+				<MenuButton alignment="TOP_LEFT" layoutX="16.0" layoutY="15.0"
+					mnemonicParsing="false" opacity="0.0">
+					<items>
+						<MenuItem mnemonicParsing="false" text="Action 1" />
+						<MenuItem mnemonicParsing="false" text="Action 2" />
+					</items>
+				</MenuButton>
+				<Button layoutX="243.0" layoutY="268.0" mnemonicParsing="false"
+					opacity="0.23" prefHeight="55.0" prefWidth="155.0" text="Get Started">
+					<font>
+						<Font name="Arial Black" size="18.0" />
+					</font>
+				</Button>
+				<Label layoutX="263.0" layoutY="284.0" text="Get Started">
+					<font>
+						<Font name="Arial Black" size="18.0" />
+					</font>
+				</Label>
+			</children>
+		</AnchorPane>
+	</children>
 </VBox>
