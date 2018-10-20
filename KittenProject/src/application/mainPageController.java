@@ -1,8 +1,8 @@
 package application;
 
 import javafx.scene.input.MouseEvent;
-
 import java.io.IOException;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 public class mainPageController {
 
-
+	@FXML
     public void moveOn(MouseEvent event) throws IOException {
     	Parent tableViewParent = FXMLLoader.load(getClass().getResource("kittenproject2.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
