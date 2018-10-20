@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;">
          <children>
@@ -25,17 +25,17 @@
             </Button>
             <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="56.0" layoutY="14.0">
                <image>
-                  <Image url="@../Downloads/barlogo.png" />
+                  <Image url="@resources/barlogo.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="115.0" fitWidth="107.0" layoutX="397.0" layoutY="56.0">
                <image>
-                  <Image url="@../Downloads/person%20logo.jpg" />
+                  <Image url="@resources/person%20logo.jpg" />
                </image>
             </ImageView>
             <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="14.0" layoutY="14.0">
                <image>
-                  <Image url="@../Downloads/menubutton.png" />
+                  <Image url="@resources/menubutton.png" />
                </image>
             </ImageView>
             <MenuButton alignment="TOP_LEFT" layoutX="14.0" layoutY="19.0" mnemonicParsing="false" opacity="0.0">
