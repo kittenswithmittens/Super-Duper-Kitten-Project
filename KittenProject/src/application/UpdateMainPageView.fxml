@@ -10,19 +10,21 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UpdateViewController">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;">
+     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: white;" VBox.vgrow="ALWAYS">
          <children>
             <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="14.0" layoutY="14.0">
                <image>
-                  <Image url="@../Downloads/menubutton.png" />
+                  <Image url="@resources/menubutton.png" />
                </image>
             </ImageView>
-            <MenuButton alignment="TOP_LEFT" layoutX="14.0" layoutY="19.0" mnemonicParsing="false" opacity="0.0">
+            <MenuButton fx:id="menuButton" alignment="TOP_LEFT" layoutX="14.0" layoutY="19.0" mnemonicParsing="false" opacity="0.0">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Action 1" />
-                  <MenuItem mnemonicParsing="false" text="Action 2" />
+                  <MenuItem mnemonicParsing="false" onAction="#UpdatePage" text="Update Info" />
+                  <MenuItem mnemonicParsing="false" onAction="#ProjectPage" text="Project List" />
+                  <MenuItem mnemonicParsing="false" onAction="#export" text="Export" />
+                  <MenuItem mnemonicParsing="false" onAction="#print" text="Print" />
                </items>
             </MenuButton>
             <Text layoutX="230.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Page" textAlignment="CENTER" underline="true" wrappingWidth="140.37890625">
@@ -30,47 +32,55 @@
                   <Font name="Arial Black" size="16.0" />
                </font>
             </Text>
-            <Button layoutX="27.0" layoutY="348.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="85.0" text="BACK" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="30.0">
+            
+            
+            
+            
+            <Button layoutX="27.0" layoutY="348.0" mnemonicParsing="false" onMouseClicked="#BackButton" prefHeight="32.0" prefWidth="85.0" text="BACK" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="30.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="487.0" layoutY="348.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="85.0" text="DONE" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="30.0">
+            <Button layoutX="487.0" layoutY="348.0" mnemonicParsing="false" onMouseClicked="#DoneButton" prefHeight="32.0" prefWidth="85.0" text="DONE" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="30.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
+            
+            
             <ImageView fitHeight="235.0" fitWidth="303.0" layoutX="267.0" layoutY="83.0" AnchorPane.rightAnchor="35.0">
                <image>
-                  <Image url="@../Downloads/constructlogo.png" />
+                  <Image url="@resources/constructlogo.png" />
                </image>
             </ImageView>
-            <Button layoutX="40.0" layoutY="75.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="209.0" text="Current Energy Usage/Costs">
+            
+            
+            <Button layoutX="40.0" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#EnergyCosts" prefHeight="32.0" prefWidth="209.0" text="Current Energy Usage/Costs">
                <font>
                   <Font name="Arial Black" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="40.0" layoutY="115.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="209.0" text="Light Bulbs">
+            <Button layoutX="40.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#LightBulbs" prefHeight="32.0" prefWidth="209.0" text="Light Bulbs">
                <font>
                   <Font name="Arial Black" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="40.0" layoutY="154.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="209.0" text="Heating/Cooling">
+            <Button layoutX="40.0" layoutY="154.0" mnemonicParsing="false" onMouseClicked="#HeatingCooling" prefHeight="32.0" prefWidth="209.0" text="Heating/Cooling">
                <font>
                   <Font name="Arial Black" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="40.0" layoutY="194.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="209.0" text="Water Heater">
+            <Button layoutX="40.0" layoutY="194.0" mnemonicParsing="false" onMouseClicked="#WaterHeater" prefHeight="32.0" prefWidth="209.0" text="Water Heater">
                <font>
                   <Font name="Arial Black" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="40.0" layoutY="232.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="209.0" text="Windows">
+            <Button layoutX="40.0" layoutY="232.0" mnemonicParsing="false" onMouseClicked="#Windows" prefHeight="32.0" prefWidth="209.0" text="Windows">
                <font>
                   <Font name="Arial Black" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="40.0" layoutY="270.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="209.0" text="Other">
+            <Button layoutX="40.0" layoutY="270.0" mnemonicParsing="false" onMouseClicked="#OtherUpdate" prefHeight="32.0" prefWidth="209.0" text="Other">
                <font>
                   <Font name="Arial Black" size="12.0" />
                </font>
