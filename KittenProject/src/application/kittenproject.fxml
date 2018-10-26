@@ -33,7 +33,7 @@
                   <Image url="@resources/menubutton.png" />
                </image>
             </ImageView>
-            <Button layoutX="243.0" layoutY="268.0" mnemonicParsing="false" onMouseClicked="#moveOn" prefHeight="55.0" prefWidth="155.0" style="-fx-border-color: Blue; -fx-border-radius: 30; -fx-background-color: white;" text="Get Started">
+            <Button layoutX="243.0" layoutY="268.0" mnemonicParsing="false" onMouseClicked="#moveOn" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="55.0" prefWidth="155.0" style="-fx-border-color: Blue; -fx-border-radius: 30; -fx-background-radius: 30; -fx-background-color: white;" text="Get Started">
                <font>
                   <Font name="Arial Black" size="18.0" />
                </font>

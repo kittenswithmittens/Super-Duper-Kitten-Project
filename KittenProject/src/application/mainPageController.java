@@ -13,9 +13,8 @@ public class mainPageController {
 
 	@FXML
     public void moveOn(MouseEvent event) throws IOException {
-    	Parent tableViewParent = FXMLLoader.load(getClass().getResource("kittenproject2.fxml"));
+    	Parent tableViewParent = FXMLLoader.load(getClass().getResource("ProjectListView.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
-
         //This line gets the Stage information
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         //sets new scene
@@ -23,5 +22,12 @@ public class mainPageController {
         window.show();
     }
 
-
+	@FXML
+    public void mouseEntered(MouseEvent event) throws IOException {
+		//do stuff
+	}
+	@FXML
+    public void mouseExited(MouseEvent event) throws IOException {
+		//do stuff
+	}
 }
