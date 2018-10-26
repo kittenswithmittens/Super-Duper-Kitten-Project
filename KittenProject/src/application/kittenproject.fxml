@@ -13,7 +13,7 @@
 
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="application.mainPageController">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS" style="-fx-background-color: white;">
       <children>
             <Label layoutX="76.0" layoutY="27.0" text="SUPER DUPER KITTEN PROJECT">
                <font>
@@ -45,11 +45,14 @@
                   </Label>
                </graphic>
             </Button>
-            <MenuButton alignment="TOP_LEFT" layoutX="16.0" layoutY="15.0" mnemonicParsing="false" opacity="0.0">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
-              </items>
+            <MenuButton fx:id="menuButton" alignment="TOP_LEFT" layoutX="14.0" layoutY="19.0" mnemonicParsing="false" opacity="0.0">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#UpdatePage" text="Update Info" />
+                  <MenuItem mnemonicParsing="false" onAction="#export" text="Export" />
+                  <MenuItem mnemonicParsing="false" onAction="#print" text="Print">
+
+                  </MenuItem>
+               </items>
             </MenuButton>
       </children>
     </AnchorPane>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.ToggleButtonGroup?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
@@ -12,24 +11,26 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LightBulbController">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;">
+      <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: white;" VBox.vgrow="ALWAYS">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="81.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Downloads/light%20bulb.jpg" />
+                  <Image url="@resources/lightbulb.jpg" />
                </image>
             </ImageView>
             <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="14.0" layoutY="14.0">
                <image>
-                  <Image url="@../Downloads/menubutton.png" />
+                  <Image url="@resources/menubutton.png" />
                </image>
             </ImageView>
-            <MenuButton alignment="TOP_LEFT" layoutX="14.0" layoutY="19.0" mnemonicParsing="false" opacity="0.0">
+            <MenuButton fx:id="menuButton" alignment="TOP_LEFT" layoutX="14.0" layoutY="19.0" mnemonicParsing="false" opacity="0.0">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Action 1" />
-                  <MenuItem mnemonicParsing="false" text="Action 2" />
+                  <MenuItem mnemonicParsing="false" onAction="#UpdatePage" text="Update Info" />
+                  <MenuItem mnemonicParsing="false" onAction="#ProjectPage" text="Project List" />
+                  <MenuItem mnemonicParsing="false" onAction="#export" text="Export" />
+                  <MenuItem mnemonicParsing="false" onAction="#print" text="Print" />
                </items>
             </MenuButton>
             <Text layoutX="186.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How many light bulbs do you have in your home?" wrappingWidth="228.37890625">
@@ -43,25 +44,23 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Text>
-            <ToggleButtonGroup layoutX="104.0" layoutY="296.0" selectionType="SINGLE">
-                <toggles>
-                    <ToggleButton prefHeight="32.0" prefWidth="146.0" style="-fx-background-color: white; -fx-border-color: BLACK;" text="LED">
+
+                    <ToggleButton layoutX="31.0" layoutY="294.0" prefHeight="32.0" prefWidth="120.0" style="-fx-background-color: white; -fx-border-color: BLACK;" text="LED" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="130.0">
                      <font>
                         <Font name="Arial Black" size="14.0" />
                      </font>
                     </ToggleButton>
-                    <ToggleButton style="-fx-background-color: white; -fx-border-color: BLACK;" text="HALOGEN">
+                    <ToggleButton layoutX="260.0" layoutY="288.0" prefHeight="32.0" prefWidth="120.0" style="-fx-background-color: white; -fx-border-color: BLACK;" text="HALOGEN" AnchorPane.bottomAnchor="80.0" AnchorPane.rightAnchor="260.0">
                      <font>
                         <Font name="Arial Black" size="14.0" />
                      </font>
                     </ToggleButton>
-                    <ToggleButton prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: white; -fx-border-color: BLACK;" text="FLOURESCENT">
+                    <ToggleButton layoutX="381.0" layoutY="295.0" prefHeight="32.0" prefWidth="120.0" style="-fx-background-color: white; -fx-border-color: BLACK;" text="FLOURESCENT" AnchorPane.bottomAnchor="80.0" AnchorPane.rightAnchor="130.0">
                      <font>
                         <Font name="Arial Black" size="14.0" />
                      </font>
                     </ToggleButton>
-                </toggles>
-            </ToggleButtonGroup>
+
          </children>
       </AnchorPane>
    </children>
