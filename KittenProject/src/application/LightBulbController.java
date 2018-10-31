@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuButton;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class LightBulbController extends Main{
@@ -46,5 +47,16 @@ public class LightBulbController extends Main{
     	//prints stuff
     }
 
+    @FXML
+    void about(ActionEvent event) throws IOException {
+    	Stage stage = new Stage();
+    	stage.setTitle("About");
+	 	stage.getIcons().add(new Image("application/resources/constructlogo.png"));
+        Parent root = (Parent) FXMLLoader.load(getClass().getResource("aboutPage.fxml")); //maybe the issue
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
     // MENU BUTTON END
 }

@@ -31,6 +31,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#ProjectPage" text="Project List" />
                   <MenuItem mnemonicParsing="false" onAction="#export" text="Export" />
                   <MenuItem mnemonicParsing="false" onAction="#print" text="Print" />
+                  <MenuItem mnemonicParsing="false" onAction="#about" text="About.." />
                </items>
             </MenuButton>
             <Text layoutX="186.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How many light bulbs do you have in your home?" wrappingWidth="228.37890625">

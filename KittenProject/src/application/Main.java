@@ -13,6 +13,8 @@ import javafx.scene.input.MouseEvent;
 
 
 public class Main extends Application {
+		public double version = 0.1;
+
 	 @Override
 	    public void start(Stage stage) throws Exception {
 		 	stage.setTitle("Kitten-Construction");
@@ -34,6 +36,11 @@ public class Main extends Application {
 	        window.show();
 
 	 	}
+
+	 	public String getVersion() {
+	 		return Double.toString(version);
+	 	}
+
 
 	    /**
 	     * @param args the command line arguments

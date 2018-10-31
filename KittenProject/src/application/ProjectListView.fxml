@@ -27,9 +27,10 @@
                   <MenuItem mnemonicParsing="false" onAction="#UpdatePage" text="Update Info" />
                   <MenuItem mnemonicParsing="false" onAction="#ProjectPage" text="Project List" />
                   <MenuItem mnemonicParsing="false" onAction="#export" text="Export" />
-                  <MenuItem mnemonicParsing="false" onAction="#print" text="Print">
+                  <MenuItem mnemonicParsing="false" onAction="#print" text="Print"/>
+                  <MenuItem mnemonicParsing="false" onAction="#about" text="About.." />
 
-                  </MenuItem>
+
                </items>
             </MenuButton>
             <Text layoutX="230.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Projects" textAlignment="CENTER" underline="true" wrappingWidth="140.37890625">
