@@ -1,6 +1,8 @@
 package application;
 
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
+
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -10,11 +12,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuButton;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class mainPageController extends Main {
 
 	@FXML MenuButton menuButton;
+
 
 	@FXML
     public void moveOn(MouseEvent event) throws IOException {
@@ -29,6 +34,7 @@ public class mainPageController extends Main {
     public void mouseExited(MouseEvent event) throws IOException {
 		//do stuff
 	}
+
 
 	// MENU BUTTON START
 
@@ -51,6 +57,18 @@ public class mainPageController extends Main {
     @FXML
     void print(ActionEvent event) {
     	//prints stuff
+    }
+
+    @FXML
+    void about(ActionEvent event) throws IOException {
+    	Stage stage = new Stage();
+    	stage.setTitle("About");
+	 	stage.getIcons().add(new Image("application/resources/constructlogo.png"));
+        Parent root = (Parent) FXMLLoader.load(getClass().getResource("aboutPage.fxml")); //maybe the issue
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
     }
 
     // MENU BUTTON END
