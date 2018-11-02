@@ -16,11 +16,10 @@
                   <Image url="@resources/AboutBox.jpg" />
                </image>
             </ImageView>
-            <Text fx:id="aboutVersion" fill="#eeeaea" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" translateX="60.0" translateY="167.0" wrappingWidth="71.13671875">
+            <Text fx:id="aboutVersion" fill="white"  text="0.002" translateX="75.0" translateY="167.0" translateZ="60.0" wrappingWidth="115.0">
                <font>
                   <Font name="Arial Black" size="24.0" />
-               </font>
-            </Text>
+               </font></Text>
          </children>
       </StackPane>
    </children>
