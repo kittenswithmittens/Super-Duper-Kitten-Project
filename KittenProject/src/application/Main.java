@@ -63,7 +63,7 @@ public class Main extends Application {
 	        //sets new scene
 	        window.setScene(newbScene);
 	        window.show();
-
+//whoohoo
 	 	}
 
 	 	public String getVersion() {
