@@ -3,26 +3,46 @@ package application;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 
+import java.applet.Applet;
+import java.applet.AudioClip;
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.nio.file.Paths;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-public class mainPageController extends Main {
+public class mainPageController extends Main implements Initializable {
 //woohoo
 	@FXML MenuButton menuButton;
+
+	@FXML
+    private ImageView gifView;
+
+
+	@Override
+    public void initialize(URL url, ResourceBundle rb) {
+		// nothing
+    }
 
 
 	@FXML
     public void moveOn(MouseEvent event) throws IOException {
+		Sound.sounds[0].play();
 		changeScene("ProjectListView.fxml", event);
     }
 
@@ -72,4 +92,5 @@ public class mainPageController extends Main {
     }
 
     // MENU BUTTON END
+
 }
