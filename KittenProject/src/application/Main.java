@@ -1,7 +1,6 @@
 package application;
 
 import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -13,14 +12,11 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 
-
-
 public class Main extends Application {
 		public double version = 1.00;
-
-		//define your offsets here
-	    private double xOffset = 0;
-	    private double yOffset = 0;
+//	    private double xOffset = 0;
+//	    private double yOffset = 0;
+	    public Home theHome = new Home();
 
 	 @Override
 	    public void start(Stage stage) throws Exception {
@@ -32,7 +28,6 @@ public class Main extends Application {
 	        stage.setScene(scene);
 	        stage.setResizable(false);
 	        stage.show();
-
 
 //	      //grab your root here
 //           root.setOnMousePressed(new EventHandler<MouseEvent>() {
@@ -51,8 +46,6 @@ public class Main extends Application {
 //               stage.setY(event.getScreenY() - yOffset);
 //           }
 //       });
-
-
 	    }
 
 	 	public void changeScene(String A, MouseEvent event) throws IOException {
@@ -63,19 +56,16 @@ public class Main extends Application {
 	        //sets new scene
 	        window.setScene(newbScene);
 	        window.show();
-//whoohoo
 	 	}
 
 	 	public String getVersion() {
 	 		return Double.toString(version);
 	 	}
 
-
 	    /**
-	     * @param args the command line arguments
+	     * MAIN GO GO
 	     */
 	    public static void main(String[] args) {
-	        Home theHome = new Home();
 	    	launch(args);
 	    }
 }
