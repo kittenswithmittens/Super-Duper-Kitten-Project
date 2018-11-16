@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.listViewController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@resources/ProjectList.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="28.0" fitWidth="30.0" layoutX="8.0" layoutY="10.0" onMouseClicked="#menu" onMouseEntered="#hoverShadow" onMouseExited="#unglow">
+         <image>
+            <Image url="@resources/Menu%20Lines.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="550.0" layoutY="4.0" onMouseClicked="#about" onMouseEntered="#hoverShadow" onMouseExited="#unglow">
+         <image>
+            <Image url="@resources/About.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="576.0" layoutY="4.0" onMouseClicked="#halt" onMouseEntered="#hoverShadow" onMouseExited="#unglow">
+         <image>
+            <Image url="@resources/Exit.png" />
+         </image>
+      </ImageView>
+      <ListView layoutX="18.0" layoutY="56.0" prefHeight="329.0" prefWidth="564.0" />
+      <ImageView fitHeight="30.0" fitWidth="80.0" layoutX="451.0" layoutY="9.0" onMouseClicked="#energySort" onMouseEntered="#hoverGlow" onMouseExited="#unglow">
+         <image>
+            <Image url="@resources/EnergyButton.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="80.0" layoutX="361.0" layoutY="9.0" onMouseClicked="#difficultySort" onMouseEntered="#hoverGlow" onMouseExited="#unglow">
+         <image>
+            <Image url="@resources/DifficultyButton.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="80.0" layoutX="271.0" layoutY="9.0" onMouseClicked="#costSort" onMouseEntered="#hoverGlow" onMouseExited="#unglow">
+         <image>
+            <Image url="@resources/CostButton.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

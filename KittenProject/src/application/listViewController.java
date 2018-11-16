@@ -5,10 +5,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuButton;
+import javafx.scene.effect.Glow;
+import javafx.scene.effect.Shadow;
 import javafx.scene.image.Image;
-import javafx.stage.Stage;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import java.io.IOException;
+
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
@@ -42,9 +46,47 @@ public class listViewController extends Main {
     void print(ActionEvent event) {
     	//prints stuff
     }
+    
+    @FXML
+    void halt(MouseEvent event) {
+        Platform.exit();
+    }
+    
+    @FXML
+    void menu(MouseEvent event) {
+        System.out.println("menu");
+    }
+    
+    @FXML
+    void costSort(MouseEvent event) {
+        System.out.println("costSort");
+    }
+    @FXML
+    void difficultySort(MouseEvent event) {
+        System.out.println("difficultySort");
+    }
+    @FXML
+    void energySort(MouseEvent event) {
+        System.out.println("energySort");
+    }
+    
+    @FXML
+    void hoverGlow(MouseEvent event) {
+        ((Node) event.getSource()).setEffect(new Glow(0.8));
+    }
+    
+    @FXML
+    void hoverShadow(MouseEvent event) {
+        ((Node) event.getSource()).setEffect(new Shadow(0.8, null));
+    }
+    
+    @FXML
+    void unglow(MouseEvent event) {
+        ((Node) event.getSource()).setEffect(null);
+    }
 
     @FXML
-    void about(ActionEvent event) throws IOException {
+    void about(MouseEvent event) throws IOException {
     	Stage stage = new Stage();
     	stage.setTitle("About");
 	 	stage.getIcons().add(new Image("application/resources/constructlogo.png"));
@@ -54,6 +96,4 @@ public class listViewController extends Main {
         stage.setResizable(false);
         stage.show();
     }
-
-    // MENU BUTTON END
 }
