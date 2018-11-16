@@ -5,6 +5,7 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,6 +18,7 @@ public class Main extends Application {
 
 	 @Override
 	    public void start(Stage stage) throws Exception {
+	        stage.initStyle(StageStyle.UNDECORATED);
 		 	stage.setTitle("Kitten-Construction");
 		 	stage.getIcons().add(new Image("application/resources/constructlogo.png"));
 	        Parent root = (Parent) FXMLLoader.load(getClass().getResource("kittenproject.fxml")); //maybe the issue
@@ -41,10 +43,6 @@ public class Main extends Application {
 	 		return Double.toString(version);
 	 	}
 
-
-	    /**
-	     * @param args the command line arguments
-	     */
 	    public static void main(String[] args) {
 	        launch(args);
 	    }

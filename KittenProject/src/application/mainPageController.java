@@ -1,10 +1,8 @@
 package application;
 
 import javafx.scene.input.MouseEvent;
-import javafx.scene.text.Text;
-
 import java.io.IOException;
-
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuButton;
-import javafx.scene.control.TextField;
+import javafx.scene.effect.Shadow;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
@@ -20,23 +18,10 @@ public class mainPageController extends Main {
 
 	@FXML MenuButton menuButton;
 
-
 	@FXML
     public void moveOn(MouseEvent event) throws IOException {
-		changeScene("ProjectListView.fxml", event);
+		changeScene("list.fxml", event);
     }
-
-	@FXML
-    public void mouseEntered(MouseEvent event) throws IOException {
-		//do stuff
-	}
-	@FXML
-    public void mouseExited(MouseEvent event) throws IOException {
-		//do stuff
-	}
-
-
-	// MENU BUTTON START
 
 	@FXML
     void UpdatePage(ActionEvent event) throws IOException {
@@ -48,19 +33,24 @@ public class mainPageController extends Main {
         window.setScene(tableViewScene);
         window.show();
     }
-
+    
     @FXML
-    void export(ActionEvent event) {
-    	//exports stuff
+    void halt(MouseEvent event) {
+        Platform.exit();
+    }
+    
+    @FXML
+    void hoverShadow(MouseEvent event) {
+        ((Node) event.getSource()).setEffect(new Shadow(0.8, null));
+    }
+    
+    @FXML
+    void unglow(MouseEvent event) {
+        ((Node) event.getSource()).setEffect(null);
     }
 
     @FXML
-    void print(ActionEvent event) {
-    	//prints stuff
-    }
-
-    @FXML
-    void about(ActionEvent event) throws IOException {
+    void about(MouseEvent event) throws IOException {
     	Stage stage = new Stage();
     	stage.setTitle("About");
 	 	stage.getIcons().add(new Image("application/resources/constructlogo.png"));
@@ -70,6 +60,4 @@ public class mainPageController extends Main {
         stage.setResizable(false);
         stage.show();
     }
-
-    // MENU BUTTON END
 }
