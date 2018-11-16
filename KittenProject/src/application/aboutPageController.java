@@ -1,16 +1,21 @@
 package application;
 
-import javafx.scene.input.ContextMenuEvent;
-import javafx.scene.text.Text;
-import javafx.fxml.FXML;
 
-public class aboutPageController extends Main {
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.text.Text;
+
+public class aboutPageController extends Main implements Initializable {
 
 	@FXML Text aboutVersion;
 
-	@FXML
-    void update(ContextMenuEvent event) {
-		aboutVersion.setText(getVersion());
+
+	@Override
+    public void initialize(URL url, ResourceBundle rb) {
+        aboutVersion.setText(getVersion());
     }
 
 }

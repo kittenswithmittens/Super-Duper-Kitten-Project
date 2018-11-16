@@ -1,26 +1,34 @@
 package application;
 
 import javafx.scene.input.MouseEvent;
+
 import java.io.IOException;
 import javafx.application.Platform;
+
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.effect.Shadow;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-public class mainPageController extends Main {
-
+public class mainPageController extends Main implements Initializable {
+//woohoo
 	@FXML MenuButton menuButton;
+
 
 	@FXML
     public void moveOn(MouseEvent event) throws IOException {
 		changeScene("list.fxml", event);
+
     }
 
 	@FXML
