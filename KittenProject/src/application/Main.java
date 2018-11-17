@@ -20,7 +20,9 @@ public class Main extends Application {
 
 	 @Override
 	    public void start(Stage stage) throws Exception {
-		 	//stage.initStyle(StageStyle.UNDECORATED); //makes it borderless
+
+	        stage.initStyle(StageStyle.UNDECORATED);
+
 		 	stage.setTitle("Kitten-Construction");
 		 	stage.getIcons().add(new Image("application/resources/constructlogo.png"));
 	        Parent root = (Parent) FXMLLoader.load(getClass().getResource("kittenproject.fxml")); //maybe the issue
@@ -62,9 +64,7 @@ public class Main extends Application {
 	 		return Double.toString(version);
 	 	}
 
-	    /**
-	     * MAIN GO GO
-	     */
+
 	    public static void main(String[] args) {
 	    	launch(args);
 	    }

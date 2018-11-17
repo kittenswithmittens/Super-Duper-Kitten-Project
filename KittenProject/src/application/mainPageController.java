@@ -1,16 +1,10 @@
 package application;
 
 import javafx.scene.input.MouseEvent;
-import javafx.scene.text.Text;
 
-import java.applet.Applet;
-import java.applet.AudioClip;
-import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.nio.file.Paths;
-import java.util.ResourceBundle;
+import javafx.application.Platform;
+
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,7 +15,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
-import javafx.scene.control.TextField;
+import javafx.scene.effect.Shadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -30,33 +24,12 @@ public class mainPageController extends Main implements Initializable {
 //woohoo
 	@FXML MenuButton menuButton;
 
-	@FXML
-    private ImageView gifView;
-
-
-	@Override
-    public void initialize(URL url, ResourceBundle rb) {
-		// nothing
-    }
-
 
 	@FXML
     public void moveOn(MouseEvent event) throws IOException {
-		Sound.sounds[0].play();
-		changeScene("ProjectListView.fxml", event);
+		changeScene("list.fxml", event);
+
     }
-
-	@FXML
-    public void mouseEntered(MouseEvent event) throws IOException {
-		//do stuff
-	}
-	@FXML
-    public void mouseExited(MouseEvent event) throws IOException {
-		//do stuff
-	}
-
-
-	// MENU BUTTON START
 
 	@FXML
     void UpdatePage(ActionEvent event) throws IOException {
@@ -68,19 +41,24 @@ public class mainPageController extends Main implements Initializable {
         window.setScene(tableViewScene);
         window.show();
     }
-
+    
     @FXML
-    void export(ActionEvent event) {
-    	//exports stuff
+    void halt(MouseEvent event) {
+        Platform.exit();
+    }
+    
+    @FXML
+    void hoverShadow(MouseEvent event) {
+        ((Node) event.getSource()).setEffect(new Shadow(0.8, null));
+    }
+    
+    @FXML
+    void unglow(MouseEvent event) {
+        ((Node) event.getSource()).setEffect(null);
     }
 
     @FXML
-    void print(ActionEvent event) {
-    	//prints stuff
-    }
-
-    @FXML
-    void about(ActionEvent event) throws IOException {
+    void about(MouseEvent event) throws IOException {
     	Stage stage = new Stage();
     	stage.setTitle("About");
 	 	stage.getIcons().add(new Image("application/resources/constructlogo.png"));
@@ -90,7 +68,4 @@ public class mainPageController extends Main implements Initializable {
         stage.setResizable(false);
         stage.show();
     }
-
-    // MENU BUTTON END
-
 }
