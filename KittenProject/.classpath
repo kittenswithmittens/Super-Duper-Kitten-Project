@@ -9,5 +9,8 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/jackson/jackson-annotations-2.9.7.jar"/>
+	<classpathentry kind="lib" path="lib/jackson/jackson-core-2.9.7.jar"/>
+	<classpathentry kind="lib" path="lib/jackson/jackson-databind-2.9.7.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
