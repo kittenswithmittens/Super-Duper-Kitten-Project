@@ -4,6 +4,6 @@ public class ProjectList{
 	project[] myProjectList;
 
 	public ProjectList(){
-		//look at picture to find the outline for this class
+		//look at picture to find the outline for this class...
 	}
 }
