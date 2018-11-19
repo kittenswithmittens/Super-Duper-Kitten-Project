@@ -20,7 +20,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-public class mainPageController extends Main implements Initializable {
+public class mainPageController extends Main {
 //woohoo
 	@FXML MenuButton menuButton;
 
