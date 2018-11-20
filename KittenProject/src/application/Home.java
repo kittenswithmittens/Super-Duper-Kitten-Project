@@ -35,7 +35,7 @@ public class Home {
 	boolean myHouseFan;
 	boolean myProgThermostat;
 
-	/** Water Heater fields. */
+	/** Water Heater fields. * */
 	boolean myGasWaterHeater;
 	boolean myElectWaterHeat;
 	boolean myOnDemand;
@@ -82,38 +82,42 @@ public class Home {
 		myReader = myMapper.readerForUpdating(this);
 		myWriter = myMapper.writerWithDefaultPrettyPrinter();
 		
-		float myElectricBill;
-		float myGasBill;
-		float myWaterBill;
-		boolean myMainHeatGas;
-		boolean myMainHeatElect;
-		boolean myMainHeatRadiant;
-		boolean myFurnanceMultStage;
-		boolean myHouseFan;
-		boolean myProgThermostat;
-		boolean myGasWaterHeater;
-		boolean myElectWaterHeat;
-		boolean myOnDemand;
-		int myWaterHeaterAge;
-		int myTotalLight;
-		int myIncandLight;
-		int myLEDLight;
-		int myHalLight;
-		int myFlorLight;
-		boolean mySolarPanel;
-		int myWeatherProofedDoor;
-		int myNumWindow;
-		int myNumWindowBad;
-		int myNumWindowLowE;
-		boolean myInsulationWall;
-		boolean myInsulationCeiling;
-		boolean myInsulationFloor;
-		boolean myIrrigation;
-		boolean myIrrigationSensor;
-		boolean myEStarRefrig;
-		boolean myEStarDishWash;
-		boolean myEStarClothWash;
-		boolean myEStarDryer;
+		//initializes home from save file
+		importHome();
+		
+		//fields should only be initialized through importing
+//		float myElectricBill;
+//		float myGasBill;
+//		float myWaterBill;
+//		boolean myMainHeatGas;
+//		boolean myMainHeatElect;
+//		boolean myMainHeatRadiant;
+//		boolean myFurnanceMultStage;
+//		boolean myHouseFan;
+//		boolean myProgThermostat;
+//		boolean myGasWaterHeater;
+//		boolean myElectWaterHeat;
+//		boolean myOnDemand;
+//		int myWaterHeaterAge;
+//		int myTotalLight;
+//		int myIncandLight;
+//		int myLEDLight;
+//		int myHalLight;
+//		int myFlorLight;
+//		boolean mySolarPanel;
+//		int myWeatherProofedDoor;
+//		int myNumWindow;
+//		int myNumWindowBad;
+//		int myNumWindowLowE;
+//		boolean myInsulationWall;
+//		boolean myInsulationCeiling;
+//		boolean myInsulationFloor;
+//		boolean myIrrigation;
+//		boolean myIrrigationSensor;
+//		boolean myEStarRefrig;
+//		boolean myEStarDishWash;
+//		boolean myEStarClothWash;
+//		boolean myEStarDryer;
 	}
 
 	public float getMyElectricBill() {
@@ -381,10 +385,16 @@ public class Home {
 		try {
 			myReader.readValue(srcFile);
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Import failed... Making new Home save file.");
+			exportHome();
+//			e.printStackTrace();
 		}
 	}
 	
+	
+	/**
+	 * @author Isaiah Miller
+	 */
 	public void exportHome() {
 		File destFile = new File(Home.HOME_PATH);
 		try {

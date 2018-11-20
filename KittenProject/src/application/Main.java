@@ -67,7 +67,7 @@ public class Main extends Application {
 
 	    public static void main(String[] args) {
 	    	//remove (this is a test. Build real Junit test)!!!!
-//	    	Home test = new Home();
+	    	Home test = new Home();
 //	    	test.importHome();
 //	    	test.setMyElectricBill(test.getMyElectricBill() + 1);
 //	    	test.exportHome();
