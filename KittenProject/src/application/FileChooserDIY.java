@@ -82,7 +82,8 @@ public final class FileChooserDIY extends Application {
         try {
             desktop.open(file);
         } catch (IOException ex) {
-        	Settings.importSettings(file);
+        	System.out.println("Opening" + file);
+ //       	Settings.importSettings(file);
         	
 //            Logger.getLogger(
 //                FileChooserSample.class.getName()).log(
