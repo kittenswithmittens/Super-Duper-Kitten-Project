@@ -72,19 +72,17 @@ public class Main extends Application {
 
 	    public static void main(String[] args) {
 	    	//remove (this is a test. Build real Junit test)!!!!
-//	    	Home test = new Home();
-//	    	test.importHome();
-//	    	test.setMyElectricBill(test.getMyElectricBill() + 1);
-//	    	test.exportHome();
-//	    	System.out.println("Done!");
-//	    	System.exit(0);
+	    	Home test = new Home();
+	    	
+//	    	test.exportJSON(new File(Home.HOME_PATH));
+//	    	test.importJSON(new File(Home.HOME_PATH));
+//	    	System.out.println(test.myElectricBill);
 	    	
 //	    	String testPath = "save" + File.separatorChar + "settings.json";
 //	    	Settings testSettings = new Settings();
 //	    	testSettings.exportSettings(new File(testPath));
 //	    	testSettings.importSettings(new File(testPath));
 //	    	System.out.println(testSettings.getMyEmailAddress());
-	    	
 	    	
 	    	launch(args);
 	    }

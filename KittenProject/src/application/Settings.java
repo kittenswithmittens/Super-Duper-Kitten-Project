@@ -1,19 +1,10 @@
 package application;
 
 import java.io.File;
-import java.io.IOException;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectReader;
-import com.fasterxml.jackson.databind.ObjectWriter;
-
-public class Settings {
+public class Settings implements Exportable {
 
 	private String myName;
-	
-	
-
-
 	private String myEmailAddress;
 
 	// import/export fields
@@ -40,7 +31,7 @@ public class Settings {
 	 * 
 	 * @author Isaiah Miller
 	 */
-	public void importSettings(final File srcFile) {
+	public void importJSON(final File srcFile) {
 		myExporter.importFile(srcFile);
 	}
 
@@ -58,7 +49,7 @@ public class Settings {
 	/**
 	 * @author Isaiah Miller
 	 */
-	public void exportSettings(final File destFile) {
+	public void exportJSON(final File destFile) {
 		myExporter.exportFile(destFile);
 	}
 

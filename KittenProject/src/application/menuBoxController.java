@@ -24,12 +24,12 @@ public class menuBoxController extends Main {
     void importFile(MouseEvent event) {
         System.out.println("costSort");
         
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open Home Profile");
-        File file = fileChooser.showOpenDialog(myStage);
-        if (file != null) {
-        	System.out.println("Opening" + file);
-        }
+//        FileChooser fileChooser = new FileChooser();
+//        fileChooser.setTitle("Open Home Profile");
+//        File file = fileChooser.showOpenDialog(myStage);
+//        if (file != null) {
+//        	System.out.println("Opening" + file);
+//        }
     }
     
     @FXML
