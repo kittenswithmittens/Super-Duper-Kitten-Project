@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane prefHeight="385.0" prefWidth="275.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.menuBoxController">
+   <children>
+      <ImageView fitHeight="396.0" fitWidth="290.0">
+         <image>
+            <Image url="@resources/MenuBox.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="79.0" fitWidth="200.0" layoutX="43.0" layoutY="153.0" onMouseClicked="#exportFile" onMouseEntered="#hoverGlow" onMouseExited="#unglow">
+         <image>
+            <Image url="@resources/ExportButton.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="79.0" fitWidth="200.0" layoutX="43.0" layoutY="266.0" onMouseClicked="#importFile" onMouseEntered="#hoverGlow" onMouseExited="#unglow">
+         <image>
+            <Image url="@resources/ImportButton.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
