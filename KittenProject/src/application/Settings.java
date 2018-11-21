@@ -10,6 +10,10 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 public class Settings {
 
 	private String myName;
+	
+	
+
+
 	private String myEmailAddress;
 
 	// import/export fields
@@ -64,4 +68,26 @@ public class Settings {
 //		} catch (IOException e) {
 //			e.printStackTrace();
 //		}
+	
+	
+	
+	
+	
+	//getters and setters	
+	
+	public String getMyName() {
+		return myName;
+	}
+
+	public void setMyName(String myName) {
+		this.myName = myName;
+	}
+
+	public String getMyEmailAddress() {
+		return myEmailAddress;
+	}
+
+	public void setMyEmailAddress(String myEmailAddress) {
+		this.myEmailAddress = myEmailAddress;
+	}
 }
