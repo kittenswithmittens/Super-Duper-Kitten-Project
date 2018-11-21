@@ -75,9 +75,12 @@ public class Main extends Application {
 //	    	System.out.println("Done!");
 //	    	System.exit(0);
 	    	
-	    	String testPath = "save" + File.separatorChar + "settings.json";
-	    	Settings testSettings = new Settings();
-	    	testSettings.exportSettings(new File(testPath));
+//	    	String testPath = "save" + File.separatorChar + "settings.json";
+//	    	Settings testSettings = new Settings();
+//	    	testSettings.exportSettings(new File(testPath));
+//	    	testSettings.importSettings(new File(testPath));
+//	    	System.out.println(testSettings.getMyEmailAddress());
+	    	
 	    	
 	    	launch(args);
 	    }
