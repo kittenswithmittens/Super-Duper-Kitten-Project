@@ -25,53 +25,63 @@ public final class FileChooserDIY extends Application {
  
     @Override
     public void start(final Stage stage) {
-        stage.setTitle("Profile File Chooser");
+//        stage.setTitle("Profile File Chooser");
+// 
+//        final FileChooser fileChooser = new FileChooser();
  
-        final FileChooser fileChooser = new FileChooser();
+//        final Button openButton = new Button("Open a profile");
+//        final Button openMultipleButton = new Button("Open Pictures...");
  
-        final Button openButton = new Button("Open a profile");
-        final Button openMultipleButton = new Button("Open Pictures...");
+//        openButton.setOnAction(
+//            new EventHandler<ActionEvent>() {
+//                @Override
+//                public void handle(final ActionEvent e) {
+//                    File file = fileChooser.showOpenDialog(stage);
+//                    if (file != null) {
+//                        openFile(file);
+//                    }
+//                }
+//            });
  
-        openButton.setOnAction(
-            new EventHandler<ActionEvent>() {
-                @Override
-                public void handle(final ActionEvent e) {
-                    File file = fileChooser.showOpenDialog(stage);
-                    if (file != null) {
-                        openFile(file);
-                    }
-                }
-            });
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Home Profile");
+ //       fileChooser.showOpenDialog(stage);
+        
+        File file = fileChooser.showOpenDialog(stage);
+        if (file != null) {
+        	openFile(file);
+        }
+        
+//        openMultipleButton.setOnAction(
+//            new EventHandler<ActionEvent>() {
+//                @Override
+//                public void handle(final ActionEvent e) {
+//                    List<File> list =
+//                        fileChooser.showOpenMultipleDialog(stage);
+//                    if (list != null) {
+//                        for (File file : list) {
+//                            openFile(file);
+//                        }
+//                    }
+//                }
+//            });
  
-        openMultipleButton.setOnAction(
-            new EventHandler<ActionEvent>() {
-                @Override
-                public void handle(final ActionEvent e) {
-                    List<File> list =
-                        fileChooser.showOpenMultipleDialog(stage);
-                    if (list != null) {
-                        for (File file : list) {
-                            openFile(file);
-                        }
-                    }
-                }
-            });
  
- 
-        final GridPane inputGridPane = new GridPane();
- 
-        GridPane.setConstraints(openButton, 0, 0);
-        GridPane.setConstraints(openMultipleButton, 1, 0);
-        inputGridPane.setHgap(6);
-        inputGridPane.setVgap(6);
-        inputGridPane.getChildren().addAll(openButton, openMultipleButton);
- 
-        final Pane rootGroup = new VBox(12);
-        rootGroup.getChildren().addAll(inputGridPane);
-        rootGroup.setPadding(new Insets(12, 12, 12, 12));
- 
-        stage.setScene(new Scene(rootGroup));
-        stage.show();
+//        final GridPane inputGridPane = new GridPane();
+// 
+//        GridPane.setConstraints(openButton, 0, 0);
+//        GridPane.setConstraints(openMultipleButton, 1, 0);
+//        inputGridPane.setHgap(6);
+//        inputGridPane.setVgap(6);
+//        inputGridPane.getChildren().addAll(openButton, openMultipleButton);
+// 
+//        final Pane rootGroup = new VBox(12);
+//        rootGroup.getChildren().addAll(inputGridPane);
+//        rootGroup.setPadding(new Insets(12, 12, 12, 12));
+// 
+//        stage.setScene(new Scene(rootGroup));
+//        stage.show();
     }
  
 //    public static void main(String[] args) {
