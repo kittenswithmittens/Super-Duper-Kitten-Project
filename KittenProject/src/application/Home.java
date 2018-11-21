@@ -13,6 +13,10 @@ import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.ObjectWriter;
 
 /**
+ * Add code to support a default home 
+ * 
+ * 
+ * 
  * This is the Home class for the kitten project. It's fields hold information
  * necessary to choose a home DIY project.
  * 
