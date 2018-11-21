@@ -13,6 +13,10 @@ import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 
 public class Main extends Application {
+	
+	/* Stage field. */
+	public Stage myStage;
+	
 		public double version = 1.00;
 //	    private double xOffset = 0;
 //	    private double yOffset = 0;
@@ -54,10 +58,10 @@ public class Main extends Application {
 	 		Parent newb = FXMLLoader.load(getClass().getResource(A));
 	        Scene newbScene = new Scene(newb);
 	        //This line gets the Stage information
-	        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+	        myStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	        //sets new scene
-	        window.setScene(newbScene);
-	        window.show();
+	        myStage.setScene(newbScene);
+	        myStage.show();
 	 	}
 
 	 	public String getVersion() {
