@@ -53,11 +53,6 @@ public class listViewController extends Main {
     }
     
     @FXML
-    void menu(MouseEvent event) {
-        System.out.println("menu");
-    }
-    
-    @FXML
     void costSort(MouseEvent event) {
         System.out.println("costSort");
     }
@@ -91,6 +86,18 @@ public class listViewController extends Main {
     	stage.setTitle("About");
 	 	stage.getIcons().add(new Image("application/resources/constructlogo.png"));
         Parent root = (Parent) FXMLLoader.load(getClass().getResource("aboutPage.fxml")); //maybe the issue
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
+    
+    @FXML
+    void menu(MouseEvent event) throws IOException {
+        Stage stage = new Stage();
+        stage.setTitle("Menu");
+        stage.getIcons().add(new Image("application/resources/constructlogo.png"));
+        Parent root = (Parent) FXMLLoader.load(getClass().getResource("menuBox.fxml")); //maybe the issue
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setResizable(false);
