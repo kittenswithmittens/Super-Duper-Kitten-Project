@@ -1,5 +1,6 @@
 package application;
 
+import java.io.File;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -67,12 +68,16 @@ public class Main extends Application {
 
 	    public static void main(String[] args) {
 	    	//remove (this is a test. Build real Junit test)!!!!
-	    	Home test = new Home();
+//	    	Home test = new Home();
 //	    	test.importHome();
 //	    	test.setMyElectricBill(test.getMyElectricBill() + 1);
 //	    	test.exportHome();
 //	    	System.out.println("Done!");
 //	    	System.exit(0);
+	    	
+	    	String testPath = "save" + File.separatorChar + "settings.json";
+	    	Settings testSettings = new Settings();
+	    	testSettings.exportSettings(new File(testPath));
 	    	
 	    	launch(args);
 	    }

@@ -13,6 +13,8 @@ public class Exporter {
 		private final ObjectReader myReader;
 		private final ObjectWriter myWriter;
 		
+		private final Object myDestObject;
+		
 		/**
 		 * must instantiate one of this for a class to use
 		 * @author Isaiah Miller
@@ -22,6 +24,7 @@ public class Exporter {
 			myMapper = new ObjectMapper();
 			myReader = myMapper.readerForUpdating(destObject);
 			myWriter = myMapper.writerWithDefaultPrettyPrinter();
+			myDestObject = destObject;
 		}
 
 		/**
@@ -44,7 +47,7 @@ public class Exporter {
 		 */
 		public void exportFile(File destFile) {
 			try {
-				myWriter.writeValue(destFile, this);
+				myWriter.writeValue(destFile, myDestObject);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
