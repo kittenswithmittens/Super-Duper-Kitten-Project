@@ -6,6 +6,7 @@ import javafx.fxml.FXML;import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.effect.Glow;
 import javafx.scene.input.MouseEvent;
+
 //<<<<<<< Updated upstream
 //import javafx.stage.FileChooser;
 
@@ -63,14 +64,7 @@ public class menuBoxController {
 	}
 		
 
-//>>>>>>> Stashed changes
-//        FileChooser fileChooser = new FileChooser();
-//        fileChooser.setTitle("Open Home Profile");
-//        File file = fileChooser.showOpenDialog(myStage);
-//        if (file != null) {
-//        	System.out.println("Opening" + file);
-//        }
-	
+
 
 	@FXML
 	void hoverGlow(MouseEvent event) {
