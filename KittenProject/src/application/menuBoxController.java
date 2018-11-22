@@ -6,23 +6,31 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.effect.Glow;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 
-
-public class menuBoxController extends Main {
+//observe this with an export controller
+public class menuBoxController  {	
+	final Settings mySettings;
 	
-
-	
+	public menuBoxController(final Settings theSettings) {
+		mySettings = theSettings;
+	}
 	
     @FXML
-    void exportFile(MouseEvent event) {
-        System.out.println("costSort");
-
+    void exportFile(final MouseEvent event) {
+    	//call File chooser's export method pass the stage
+        System.out.println("exportButton");
+        final Stage stage =  (Stage)((Node) event.getSource()).getScene().getWindow();
+        final File exportDest = FileChooserDIY.specSaveFile(stage);
+        mySettings.exportJSON(exportDest);
     }
     @FXML
     void importFile(MouseEvent event) {
-        System.out.println("costSort");
+        System.out.println("importButton");
+        final Stage stage =  (Stage)((Node) event.getSource()).getScene().getWindow();
+        final File importDest = FileChooserDIY.specSaveFile(stage);
+        mySettings.importJSON(importDest);
         
 //        FileChooser fileChooser = new FileChooser();
 //        fileChooser.setTitle("Open Home Profile");
