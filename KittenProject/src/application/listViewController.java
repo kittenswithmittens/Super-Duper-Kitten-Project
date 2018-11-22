@@ -1,5 +1,11 @@
 package application;
 
+import java.io.IOException;
+import java.lang.ModuleLayer.Controller;
+
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -10,11 +16,7 @@ import javafx.scene.effect.Shadow;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import java.io.IOException;
-
-import javafx.application.Platform;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
+import javafx.util.Callback;
 
 
 public class listViewController extends Main {
@@ -82,22 +84,46 @@ public class listViewController extends Main {
 
     @FXML
     void about(MouseEvent event) throws IOException {
+//    	final URL rootURL = getClass().getResource("/application/kittenproject.fxml");
+    	
+    	
+    	
+    	
+    	
+    	
+    	
     	Stage stage = new Stage();
     	stage.setTitle("About");
 	 	stage.getIcons().add(new Image("application/resources/constructlogo.png"));
         Parent root = (Parent) FXMLLoader.load(getClass().getResource("aboutPage.fxml")); //maybe the issue
-        Scene scene = new Scene(root);
+	 	Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
     }
     
+    //Isaiah, Look here!!!!!!!!!!!
     @FXML
     void menu(MouseEvent event) throws IOException {
+    	final Settings model = new Settings();
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("menuBox.fxml"));
+        loader.setControllerFactory(new Callback<Class<?>, Object>() {
+            @Override
+            public Object call(Class<?> aClass) {
+                return new menuBoxController(model);
+            }
+        });
+    	
+    	
+    	
         Stage stage = new Stage();
         stage.setTitle("Menu");
         stage.getIcons().add(new Image("application/resources/constructlogo.png"));
-        Parent root = (Parent) FXMLLoader.load(getClass().getResource("menuBox.fxml")); //maybe the issue
+        //direct access to the menuBox Controller
+//        Parent root = (Parent) FXMLLoader.load(getClass().getResource("menuBoxController.fxml")); //maybe the issue
+        Parent root = (Parent) loader.load();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setResizable(false);

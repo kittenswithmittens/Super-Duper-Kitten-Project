@@ -26,11 +26,30 @@ public class Main extends Application {
 	 @Override
 	    public void start(Stage stage) throws Exception {
 
+//		 final URL rootURL = getClass().getResource("/application/kittenproject.fxml");
+		 
+//		 final Settings modelSettings = new Settings();
+
+//	        FXMLLoader loader = new FXMLLoader(rootURL);
+////	        loader.setLocation(getClass().getResource("sample.fxml"));
+//	        loader.setLocation(rootURL);
+//	        loader.setControllerFactory(new Callback<Class<?>, Object>() {
+//	            @Override
+//	            public Object call(Class<?> aClass) {
+//	                return new menuBoxController(modelSettings);
+//	            }
+//	        });
+
+
 	        stage.initStyle(StageStyle.UNDECORATED);
 
 		 	stage.setTitle("Kitten-Construction");
 		 	stage.getIcons().add(new Image("application/resources/constructlogo.png"));
+
 	        Parent root = (Parent) FXMLLoader.load(getClass().getResource("kittenproject.fxml")); //maybe the issue
+
+//		 	InputStream input = rootURL.openStream();
+//		 	Parent root = (Parent) loader.load();
 	        Scene scene = new Scene(root);
 	        stage.setScene(scene);
 	        stage.setResizable(false);
