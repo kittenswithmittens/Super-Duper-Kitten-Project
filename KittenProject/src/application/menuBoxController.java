@@ -2,7 +2,7 @@ package application;
 
 import java.io.File;
 
-import javafx.fxml.FXML;import javafx.fxml.FXMLLoader;
+import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.effect.Glow;
 import javafx.scene.input.MouseEvent;
@@ -28,7 +28,6 @@ import javafx.scene.input.MouseEvent;
 //        
 //=======
 import javafx.stage.Stage;
-import javafx.util.Callback;
 
 //observe this with an export controller
 public class menuBoxController {
