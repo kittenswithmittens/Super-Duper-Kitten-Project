@@ -2,12 +2,13 @@ package application;
 
 import java.io.File;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Settings implements Exportable {
 
-	private String myName;
-	private String myEmailAddress;
+	private StringProperty myName;
+	private StringProperty myEmailAddress;
 
 	// import/export fields
 //	private final ObjectMapper myMapper;
@@ -25,6 +26,8 @@ public class Settings implements Exportable {
 //		myReader = myMapper.readerForUpdating(this);
 //		myWriter = myMapper.writerWithDefaultPrettyPrinter();
 
+		myName = new SimpleStringProperty();
+		myEmailAddress = new SimpleStringProperty();
 		myExporter = new Exporter(this);
 	}
 
@@ -61,33 +64,32 @@ public class Settings implements Exportable {
 //		} catch (IOException e) {
 //			e.printStackTrace();
 //		}
-	
-	
-	
-	
-	
-	//getters and setters	
-	
+
+	// getters and setters
+
 	public String getMyName() {
-		return myName;
+		return myName.getValue();
 	}
 
-	public void setMyName(String myName) {
-		this.myName=myName;
+	public void setMyName(String theName) {
+//		System.out.println(myName);
+		myName.setValue(theName);
 	}
-	
+
 //	public StringProperty myNameProperty() {
 //		return myName;
 //	}
 
 	public String getMyEmailAddress() {
-		return myEmailAddress;
+		return myEmailAddress.getValue();
 	}
 
-	public void setMyEmailAddress(String myEmailAddress) {
-		this.myEmailAddress=myEmailAddress;
+	public void setMyEmailAddress(String theEmailAddress) {
+		if (theEmailAddress != null) {
+			myEmailAddress.setValue(theEmailAddress);
+		}
 	}
-	
+
 //	public StringProperty myEmailAddressProperty() {
 //		return myEmailAddress;
 //	}
