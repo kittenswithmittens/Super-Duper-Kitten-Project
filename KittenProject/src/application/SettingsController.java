@@ -3,6 +3,7 @@ package application;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 /*
  * should contain an instance of Settings
@@ -26,6 +27,11 @@ public class SettingsController {
 //		GridPane x = (GridPane) (((Node) event.getSource()).getParent());
 		mySettings.setMyName(myNameField.getText());
 		mySettings.setMyEmailAddress(myEmailField.getText());
+		
+		//close window
+		((Stage)myNameField.getScene().getWindow()).close();
+		
+		
 		System.out.println("myNameField is: " + myNameField.getText());
 		System.out.println("myEmailField is: " + myEmailField.getText());
 	}
