@@ -1,33 +1,18 @@
 package application;
 
 import java.io.File;
+import java.io.IOException;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.effect.Glow;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
-
-//<<<<<<< Updated upstream
-//import javafx.stage.FileChooser;
-
-
-
-//public class menuBoxController extends Main {
-//	
-//
-//	
-//	
-//    @FXML
-//    void exportFile(MouseEvent event) {
-//        System.out.println("costSort");
-//
-//    }
-//    @FXML
-//    void importFile(MouseEvent event) {
-//        System.out.println("costSort");
-//        
-//=======
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 //observe this with an export controller
 public class menuBoxController {
@@ -61,9 +46,38 @@ public class menuBoxController {
 			System.out.println("File chosen is null. No export performed.");
 		}
 	}
+	
+	/**
+	 * @author Isaiah Miller
+	 * Opens the Settings view for modifying settings.
+	 * @throws IOException 
+	 */
+	@FXML
+	void openSettingsView(MouseEvent event) throws IOException {
+		//open settings view, pass settings object
 		
-
-
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("Settings.fxml"));
+        loader.setControllerFactory(new Callback<Class<?>, Object>() {
+            @Override
+            public Object call(Class<?> aClass) {
+                return new SettingsController(mySettings);
+            }
+        });
+    	
+    	
+    	
+        Stage stage = new Stage();
+        stage.setTitle("Settings");
+        stage.getIcons().add(new Image("application/resources/constructlogo.png"));
+        //direct access to the menuBox Controller
+//        Parent root = (Parent) FXMLLoader.load(getClass().getResource("menuBoxController.fxml")); //maybe the issue
+        Parent root = (Parent) loader.load();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
 
 	@FXML
 	void hoverGlow(MouseEvent event) {

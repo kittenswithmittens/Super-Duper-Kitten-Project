@@ -84,13 +84,7 @@ public class listViewController extends Main {
     @FXML
     void about(MouseEvent event) throws IOException {
 //    	final URL rootURL = getClass().getResource("/application/kittenproject.fxml");
-    	
-    	
-    	
-    	
-    	
-    	
-    	
+    	   	
     	Stage stage = new Stage();
     	stage.setTitle("About");
 	 	stage.getIcons().add(new Image("application/resources/constructlogo.png"));
@@ -101,11 +95,10 @@ public class listViewController extends Main {
         stage.show();
     }
     
-    //Isaiah, Look here!!!!!!!!!!!
+
     @FXML
     void menu(MouseEvent event) throws IOException {
     	final Settings model = new Settings();
-
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("menuBox.fxml"));
         loader.setControllerFactory(new Callback<Class<?>, Object>() {

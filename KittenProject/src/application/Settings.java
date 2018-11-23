@@ -2,6 +2,8 @@ package application;
 
 import java.io.File;
 
+import javafx.beans.property.StringProperty;
+
 public class Settings implements Exportable {
 
 	private String myName;
@@ -71,14 +73,22 @@ public class Settings implements Exportable {
 	}
 
 	public void setMyName(String myName) {
-		this.myName = myName;
+		this.myName=myName;
 	}
+	
+//	public StringProperty myNameProperty() {
+//		return myName;
+//	}
 
 	public String getMyEmailAddress() {
 		return myEmailAddress;
 	}
 
 	public void setMyEmailAddress(String myEmailAddress) {
-		this.myEmailAddress = myEmailAddress;
+		this.myEmailAddress=myEmailAddress;
 	}
+	
+//	public StringProperty myEmailAddressProperty() {
+//		return myEmailAddress;
+//	}
 }
