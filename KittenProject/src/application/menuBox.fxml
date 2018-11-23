@@ -21,10 +21,14 @@
             <Image url="@resources/ImportButton.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="79.0" fitWidth="200.0" layoutX="45.0" layoutY="374.0" onMouseClicked="#openSettingsView" onMouseEntered="#hoverGlow" onMouseExited="#unglow">
+      <!--
+      <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="146.0" fitHeight="79.0" fitWidth="200.0" layoutX="45.0" layoutY="374.0" onMouseClicked="#openSettingsView" text="Edit Settings"/>
+      -->
+      <ImageView fitHeight="49.0" fitWidth="200.0" layoutX="45.0" layoutY="374.0" onMouseClicked="#openSettingsView" onMouseEntered="#hoverGlow" onMouseExited="#unglow">
          <image>
-            <Image url="@resources/EnergyButton.png" />
+            <Image url="@resources/SettingsButton.png" />
          </image>
       </ImageView>
+      
    </children>
 </Pane>
