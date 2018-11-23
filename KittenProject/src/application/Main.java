@@ -120,7 +120,6 @@ public class Main extends Application {
 //	    	testSettings.exportSettings(new File(testPath));
 //	    	testSettings.importSettings(new File(testPath));
 //	    	System.out.println(testSettings.getMyEmailAddress());
-	    	System.out.println("Edit Settings");
 	    	launch(args);
 	    }
 }

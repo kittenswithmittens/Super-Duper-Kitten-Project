@@ -20,7 +20,6 @@ public final class FileChooserDIY {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open");
         File file = fileChooser.showOpenDialog(theStage);
-        Objects.requireNonNull(file);
         return file;
     }
     
@@ -32,7 +31,6 @@ public final class FileChooserDIY {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save");
         File file = fileChooser.showSaveDialog(theStage);
-//        Objects.requireNonNull(file);
         return file;
     }
     

@@ -26,8 +26,8 @@ public class Settings implements Exportable {
 //		myReader = myMapper.readerForUpdating(this);
 //		myWriter = myMapper.writerWithDefaultPrettyPrinter();
 
-		myName = new SimpleStringProperty();
-		myEmailAddress = new SimpleStringProperty();
+		myName = new SimpleStringProperty("");
+		myEmailAddress = new SimpleStringProperty("");
 		myExporter = new Exporter(this);
 	}
 
@@ -73,7 +73,9 @@ public class Settings implements Exportable {
 
 	public void setMyName(String theName) {
 //		System.out.println(myName);
-		myName.setValue(theName);
+		if(theName != null) {
+			myName.setValue(theName);
+		}
 	}
 
 //	public StringProperty myNameProperty() {
