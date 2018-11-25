@@ -6,11 +6,6 @@
 package application;
 
 import java.io.File;
-import java.io.IOException;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectReader;
-import com.fasterxml.jackson.databind.ObjectWriter;
 
 /**
  * Add code to support a default home 
@@ -23,7 +18,7 @@ import com.fasterxml.jackson.databind.ObjectWriter;
  * @author richw253
  * @author Isaiah Miller
  */
-public class Home {
+public class Home implements Exportable {
 	public static final String HOME_PATH = "save" + File.separatorChar + "home.json";
 
 	/** Costs of the home fields. */
@@ -76,52 +71,25 @@ public class Home {
 	boolean myEStarClothWash;
 	boolean myEStarDryer;
 
-	private final ObjectMapper myMapper;
-	private final ObjectReader myReader;
-	private final ObjectWriter myWriter;
+//	private final ObjectMapper myMapper;
+//	private final ObjectReader myReader;
+//	private final ObjectWriter myWriter;
+	
+	private final Exporter myExporter;
 
 	public Home() {
-		//sets up JSON object mapper
-		myMapper = new ObjectMapper();
-		myReader = myMapper.readerForUpdating(this);
-		myWriter = myMapper.writerWithDefaultPrettyPrinter();
+//		//sets up JSON object mapper
+//		myMapper = new ObjectMapper();
+//		myReader = myMapper.readerForUpdating(this);
+//		myWriter = myMapper.writerWithDefaultPrettyPrinter();
+//		
+//		//initializes home from save file
+//		importHome();
 		
-		//initializes home from save file
-		importHome();
+		myExporter = new Exporter(this);
 		
 		//fields should only be initialized through importing
-//		float myElectricBill;
-//		float myGasBill;
-//		float myWaterBill;
-//		boolean myMainHeatGas;
-//		boolean myMainHeatElect;
-//		boolean myMainHeatRadiant;
-//		boolean myFurnanceMultStage;
-//		boolean myHouseFan;
-//		boolean myProgThermostat;
-//		boolean myGasWaterHeater;
-//		boolean myElectWaterHeat;
-//		boolean myOnDemand;
-//		int myWaterHeaterAge;
-//		int myTotalLight;
-//		int myIncandLight;
-//		int myLEDLight;
-//		int myHalLight;
-//		int myFlorLight;
-//		boolean mySolarPanel;
-//		int myWeatherProofedDoor;
-//		int myNumWindow;
-//		int myNumWindowBad;
-//		int myNumWindowLowE;
-//		boolean myInsulationWall;
-//		boolean myInsulationCeiling;
-//		boolean myInsulationFloor;
-//		boolean myIrrigation;
-//		boolean myIrrigationSensor;
-//		boolean myEStarRefrig;
-//		boolean myEStarDishWash;
-//		boolean myEStarClothWash;
-//		boolean myEStarDryer;
+
 	}
 
 	public float getMyElectricBill() {
@@ -384,28 +352,35 @@ public class Home {
 	 * Imports home data from save file into to this instance.
 	 * @author Isaiah Miller
 	 */
-	public void importHome() {
-		File srcFile = new File(Home.HOME_PATH);
-		try {
-			myReader.readValue(srcFile);
-		} catch (IOException e) {
-			System.out.println("Import failed... Making new Home save file.");
-			exportHome();
-//			e.printStackTrace();
-		}
+	public void importJSON(File srcFile) {
+		myExporter.importFile(srcFile);
 	}
+//		File srcFile = new File(Home.HOME_PATH);
+//		try {
+//			myReader.readValue(srcFile);
+//		} catch (IOException e) {
+//			System.out.println("Import failed... Making new Home save file.");
+//			exportHome();
+////			e.printStackTrace();
+//		}
+	
 	
 	
 	/**
 	 * @author Isaiah Miller
 	 */
-	public void exportHome() {
-		File destFile = new File(Home.HOME_PATH);
-		try {
-			myWriter.writeValue(destFile, this);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	public void exportJSON(File destFile) {
+		myExporter.exportFile(destFile);
 	}
+		
+		
+		
+//		File destFile = new File(Home.HOME_PATH);
+//		try {
+//			myWriter.writeValue(destFile, this);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+	
 
 }

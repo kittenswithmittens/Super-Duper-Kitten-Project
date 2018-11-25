@@ -1,20 +1,14 @@
 package application;
 
 import java.io.File;
-import java.io.IOException;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectReader;
-import com.fasterxml.jackson.databind.ObjectWriter;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
-public class Settings {
+public class Settings implements Exportable {
 
-	private String myName;
-	
-	
-
-
-	private String myEmailAddress;
+	private StringProperty myName;
+	private StringProperty myEmailAddress;
 
 	// import/export fields
 //	private final ObjectMapper myMapper;
@@ -32,6 +26,8 @@ public class Settings {
 //		myReader = myMapper.readerForUpdating(this);
 //		myWriter = myMapper.writerWithDefaultPrettyPrinter();
 
+		myName = new SimpleStringProperty("");
+		myEmailAddress = new SimpleStringProperty("");
 		myExporter = new Exporter(this);
 	}
 
@@ -40,7 +36,7 @@ public class Settings {
 	 * 
 	 * @author Isaiah Miller
 	 */
-	public void importSettings(final File srcFile) {
+	public void importJSON(final File srcFile) {
 		myExporter.importFile(srcFile);
 	}
 
@@ -58,7 +54,7 @@ public class Settings {
 	/**
 	 * @author Isaiah Miller
 	 */
-	public void exportSettings(final File destFile) {
+	public void exportJSON(final File destFile) {
 		myExporter.exportFile(destFile);
 	}
 
@@ -68,26 +64,35 @@ public class Settings {
 //		} catch (IOException e) {
 //			e.printStackTrace();
 //		}
-	
-	
-	
-	
-	
-	//getters and setters	
-	
+
+	// getters and setters
+
 	public String getMyName() {
-		return myName;
+		return myName.getValue();
 	}
 
-	public void setMyName(String myName) {
-		this.myName = myName;
+	public void setMyName(String theName) {
+//		System.out.println(myName);
+		if(theName != null) {
+			myName.setValue(theName);
+		}
 	}
+
+//	public StringProperty myNameProperty() {
+//		return myName;
+//	}
 
 	public String getMyEmailAddress() {
-		return myEmailAddress;
+		return myEmailAddress.getValue();
 	}
 
-	public void setMyEmailAddress(String myEmailAddress) {
-		this.myEmailAddress = myEmailAddress;
+	public void setMyEmailAddress(String theEmailAddress) {
+		if (theEmailAddress != null) {
+			myEmailAddress.setValue(theEmailAddress);
+		}
 	}
+
+//	public StringProperty myEmailAddressProperty() {
+//		return myEmailAddress;
+//	}
 }

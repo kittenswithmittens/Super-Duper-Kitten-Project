@@ -1,17 +1,18 @@
 package application;
 
-import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.util.Callback;
 
 public class Main extends Application {
 	
@@ -25,12 +26,48 @@ public class Main extends Application {
 
 	 @Override
 	    public void start(Stage stage) throws Exception {
+		 final URL rootURL = getClass().getResource("/application/kittenproject.fxml");
+		 
+		 final Settings modelSettings = new Settings();
+
+	        FXMLLoader loader = new FXMLLoader(rootURL);
+//	        loader.setLocation(getClass().getResource("sample.fxml"));
+	        loader.setLocation(rootURL);
+	        loader.setControllerFactory(new Callback<Class<?>, Object>() {
+	            @Override
+	            public Object call(Class<?> aClass) {
+	                return new menuBoxController(modelSettings);
+	            }
+	        });
+
+//		 final URL rootURL = getClass().getResource("/application/kittenproject.fxml");
+		 
+//		 final Settings modelSettings = new Settings();
+
+//	        FXMLLoader loader = new FXMLLoader(rootURL);
+////	        loader.setLocation(getClass().getResource("sample.fxml"));
+//	        loader.setLocation(rootURL);
+//	        loader.setControllerFactory(new Callback<Class<?>, Object>() {
+//	            @Override
+//	            public Object call(Class<?> aClass) {
+//	                return new menuBoxController(modelSettings);
+//	            }
+//	        });
+
 
 	        stage.initStyle(StageStyle.UNDECORATED);
 
 		 	stage.setTitle("Kitten-Construction");
 		 	stage.getIcons().add(new Image("application/resources/constructlogo.png"));
+
+
 	        Parent root = (Parent) FXMLLoader.load(getClass().getResource("kittenproject.fxml")); //maybe the issue
+
+//		 	InputStream input = rootURL.openStream();
+//		 	Parent root = (Parent) loader.load();
+//		 	InputStream input = rootURL.openStream();
+//	        Parent root = FXMLLoader.load(getClass().getResource("kittenproject.fxml"));/*(Parent) loader.load(input);*/ //maybe the issue
+
 	        Scene scene = new Scene(root);
 	        stage.setScene(scene);
 	        stage.setResizable(false);
@@ -73,19 +110,16 @@ public class Main extends Application {
 	    public static void main(String[] args) {
 	    	//remove (this is a test. Build real Junit test)!!!!
 //	    	Home test = new Home();
-//	    	test.importHome();
-//	    	test.setMyElectricBill(test.getMyElectricBill() + 1);
-//	    	test.exportHome();
-//	    	System.out.println("Done!");
-//	    	System.exit(0);
+	    	
+//	    	test.exportJSON(new File(Home.HOME_PATH));
+//	    	test.importJSON(new File(Home.HOME_PATH));
+//	    	System.out.println(test.myElectricBill);
 	    	
 //	    	String testPath = "save" + File.separatorChar + "settings.json";
 //	    	Settings testSettings = new Settings();
 //	    	testSettings.exportSettings(new File(testPath));
 //	    	testSettings.importSettings(new File(testPath));
 //	    	System.out.println(testSettings.getMyEmailAddress());
-	    	
-	    	
 	    	launch(args);
 	    }
 }
