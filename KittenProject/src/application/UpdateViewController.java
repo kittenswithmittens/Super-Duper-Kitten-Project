@@ -83,6 +83,7 @@ public class UpdateViewController extends Main {
     @FXML
     void export(ActionEvent event) {
     	//exports stuff
+    	System.out.println("export controller method called");
     }
 
     @FXML
