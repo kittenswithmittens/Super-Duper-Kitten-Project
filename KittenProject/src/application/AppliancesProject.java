@@ -14,6 +14,9 @@ public class AppliancesProject extends project { //still needs calculation for s
 	public AppliancesProject() {
 		super();
 		
+		name = "Appliances";
+				
+		
 		myEStarRefrig = theHome.isMyEStarRefrig();
 		myEStarDishWash = theHome.isMyEStarDishWash(); 
 		myEStarClothWash = theHome.isMyEStarClothWash();

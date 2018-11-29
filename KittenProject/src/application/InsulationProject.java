@@ -11,6 +11,8 @@ public class InsulationProject extends project { //still needs calculation for s
 	public InsulationProject() {
 		super();
 		
+		name = "Insulation";
+		
 		myInsulationWall = theHome.isMyInsulationWall();
 		myInsulationCeiling = theHome.isMyInsulationCeiling();
 		myInsulationFloor = theHome.isMyInsulationFloor();

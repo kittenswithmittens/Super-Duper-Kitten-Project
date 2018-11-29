@@ -14,6 +14,8 @@ public class WindowsDoorsProject extends project { //still needs calculation for
 	public WindowsDoorsProject() {
 		super();
 		
+		name = "Window and Door";
+		
 		myWeatherProofedDoor = theHome.getMyWeatherProofedDoor();
 		myNumWindow  = theHome.getMyNumWindow();
 		myNumWindowBad = theHome.getMyNumWindowBad();

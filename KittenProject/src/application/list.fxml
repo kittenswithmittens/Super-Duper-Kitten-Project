@@ -5,7 +5,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.listViewController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.listViewController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0">
          <image>
@@ -27,7 +27,7 @@
             <Image url="@resources/Exit.png" />
          </image>
       </ImageView>
-      <ListView layoutX="18.0" layoutY="56.0" prefHeight="329.0" prefWidth="564.0" />
+      <ListView fx:id="listView" layoutX="18.0" layoutY="56.0" prefHeight="329.0" prefWidth="564.0" onMouseClicked="#handleMouseClick" />
       <ImageView fitHeight="30.0" fitWidth="80.0" layoutX="451.0" layoutY="9.0" onMouseClicked="#energySort" onMouseEntered="#hoverGlow" onMouseExited="#unglow">
          <image>
             <Image url="@resources/EnergyButton.png" />

@@ -12,6 +12,8 @@ public class IrrigationProject extends project { //still needs calculation for s
 	public IrrigationProject() {
 		super();
 		
+		name = "Irrigation";
+		
 		myIrrigation = theHome.isMyIrrigation();
 		myIrrigationSensor = theHome.isMyIrrigationSensor();
 		

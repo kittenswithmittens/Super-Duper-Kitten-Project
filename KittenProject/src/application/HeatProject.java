@@ -20,6 +20,9 @@ public class HeatProject extends project { //still needs calculation for savings
 
 	public HeatProject() {
 		super();
+		
+		name = "Heat";
+		
 		myMainHeatGas = theHome.isMyMainHeatGas();
 		myMainHeatElect = theHome.isMyMainHeatElect();
 		myMainHeatRadiant = theHome.isMyMainHeatRadiant();

@@ -13,6 +13,7 @@ public class SolarProject extends project { //still needs calculation for saving
 		
 		mySolarPanel = theHome.isMySolarPanel();
 		
+		name ="Solar Panels";
 		
 		description = "Solar harnesses the power of the sun and at least like 4 kenyans and a bear";
 		difficulty = 1;

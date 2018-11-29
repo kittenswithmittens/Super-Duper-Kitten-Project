@@ -2,20 +2,32 @@ package application;
 
 import java.util.ArrayList;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 public class ProjectList{
-	ArrayList<project> myProjectList;
+	ObservableList<project> myProjects;
 
 	public ProjectList(){
 		//look at picture to find the outline for this class...
 		super();
-		myProjectList = new ArrayList<project>();
-		myProjectList.add(new AppliancesProject());
-		myProjectList.add(new LightBulbProject());
-		myProjectList.add(new HeatProject());
-		myProjectList.add(new WindowsDoorsProject());
-		myProjectList.add(new InsulationProject());
-		myProjectList.add(new IrrigationProject());
-		myProjectList.add(new SolarProject());
-		
+		myProjects =FXCollections.observableArrayList (
+		(new AppliancesProject()),
+		(new LightBulbProject()),
+		(new HeatProject()),
+		(new WindowsDoorsProject()),
+		(new InsulationProject()),
+		(new IrrigationProject()),
+		(new SolarProject())
+		);
+	}
+	
+	
+	public ObservableList<String> getProjects() {
+		ObservableList<String> output = FXCollections.observableArrayList();
+		for(int i = 0; i < myProjects.size(); i++) {
+			output.add(myProjects.get(i).toString());
+		}
+		return output;
 	}
 }

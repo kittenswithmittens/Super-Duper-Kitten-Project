@@ -25,9 +25,8 @@ import javafx.stage.StageStyle;
 import javafx.util.Callback;
 
 
-public class listViewController extends Main implements Initializable {
+public class projectViewController extends Main implements Initializable {
 	@FXML MenuButton menuButton;
-	@FXML ListView<String> listView;
 	private double xOffset = 0;
     private double yOffset = 0;
     
@@ -36,40 +35,25 @@ public class listViewController extends Main implements Initializable {
 	
 	@Override
     public void initialize(URL url, ResourceBundle rb) {
-		//populates list
-		listView.setEditable(true);
-		ProjectList myProjects = new ProjectList();
-		ObservableList<String> list = (myProjects.getProjects());
-		listView.setItems(list); 
-		//end populate
-		
+		//do stuff
     }
 	
-	//clicking list item
-	@FXML public void handleMouseClick(MouseEvent arg0) throws IOException {
-	    selected = listView.getSelectionModel().getSelectedItem();                      //remembers what was clicked, needs to be pass on to projectview
-	    //System.out.println("clicked on " + selected); //prints what you clicked on
-	    changeScene("projectView.fxml", arg0);
-	}
+
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
     @FXML
     void halt(MouseEvent event) {
         Platform.exit();
     }
-    
-    @FXML
-    void costSort(MouseEvent event) {
-        System.out.println("costSort");
-    }
-    @FXML
-    void difficultySort(MouseEvent event) {
-        System.out.println("difficultySort");
-    }
-    @FXML
-    void energySort(MouseEvent event) {
-        System.out.println("energySort");
-    }
+
     
     @FXML
     void hoverGlow(MouseEvent event) {
