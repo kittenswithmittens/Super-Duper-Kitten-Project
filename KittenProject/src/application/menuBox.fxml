@@ -2,33 +2,43 @@
 
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane prefHeight="533.0" prefWidth="275.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.menuBoxController">
+<Pane prefHeight="200.0" prefWidth="100.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.menuBoxController">
    <children>
-      <ImageView fitHeight="541.0" fitWidth="290.0">
+      <ImageView fitHeight="200.0" fitWidth="100.0">
          <image>
             <Image url="@resources/MenuBox.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="79.0" fitWidth="200.0" layoutX="43.0" layoutY="153.0" onMouseClicked="#exportFile" onMouseEntered="#hoverGlow" onMouseExited="#unglow">
-         <image>
-            <Image url="@resources/ExportButton.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="79.0" fitWidth="200.0" layoutX="43.0" layoutY="266.0" onMouseClicked="#importFile" onMouseEntered="#hoverGlow" onMouseExited="#unglow">
-         <image>
-            <Image url="@resources/ImportButton.png" />
-         </image>
-      </ImageView>
-      <!--
-      <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="146.0" fitHeight="79.0" fitWidth="200.0" layoutX="45.0" layoutY="374.0" onMouseClicked="#openSettingsView" text="Edit Settings"/>
-      -->
-      <ImageView fitHeight="49.0" fitWidth="200.0" layoutX="45.0" layoutY="374.0" onMouseClicked="#openSettingsView" onMouseEntered="#hoverGlow" onMouseExited="#unglow">
-         <image>
-            <Image url="@resources/SettingsButton.png" />
-         </image>
-      </ImageView>
+      <AnchorPane prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <ImageView fitHeight="20.0" fitWidth="20.0" onMouseClicked="#halt" onMouseEntered="#hoverGlow" onMouseExited="#unglow" scaleX="0.5" scaleY="0.5" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+               <image>
+                  <Image url="@resources/Exit.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="75.0" layoutX="11.0" layoutY="37.0" onMouseClicked="#exportFile" onMouseEntered="#hoverGlow" onMouseExited="#unglow">
+               <image>
+                  <Image url="@resources/ExportButton.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="75.0" layoutX="11.0" layoutY="83.0" onMouseClicked="#importFile" onMouseEntered="#hoverGlow" onMouseExited="#unglow">
+               <image>
+                  <Image url="@resources/ImportButton.png" />
+               </image>
+            </ImageView>
+            <!--
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="146.0" fitHeight="79.0" fitWidth="200.0" layoutX="45.0" layoutY="374.0" onMouseClicked="#openSettingsView" text="Edit Settings"/>
+            -->
+            <ImageView fitHeight="35.0" fitWidth="75.0" layoutX="13.0" layoutY="128.0" onMouseClicked="#openSettingsView" onMouseEntered="#hoverGlow" onMouseExited="#unglow">
+               <image>
+                  <Image url="@resources/SettingsButton.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
       
    </children>
 </Pane>

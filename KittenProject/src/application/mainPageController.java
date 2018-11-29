@@ -3,7 +3,7 @@ package application;
 import java.io.IOException;
 
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -14,29 +14,21 @@ import javafx.scene.effect.Shadow;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class mainPageController extends Main {
-//woohoo
 	@FXML MenuButton menuButton;
+    private double xOffset = 0;
+    private double yOffset = 0;
 
 
 	@FXML
     public void moveOn(MouseEvent event) throws IOException {
+		Sound.sounds[0].play();
 		changeScene("list.fxml", event);
 
     }
-
-	@FXML
-    void UpdatePage(ActionEvent event) throws IOException {
-    	Parent UpdateMainParent = FXMLLoader.load(getClass().getResource("UpdateMainPageView.fxml"));
-        Scene tableViewScene = new Scene(UpdateMainParent);
-        //This line gets the Stage information
-        Stage window = (Stage) menuButton.getScene().getWindow();
-        //sets new scene
-        window.setScene(tableViewScene);
-        window.show();
-    }
-    
+  
     @FXML
     void halt(MouseEvent event) {
         Platform.exit();
@@ -55,6 +47,7 @@ public class mainPageController extends Main {
     @FXML
     void about(MouseEvent event) throws IOException {
     	Stage stage = new Stage();
+    	stage.initStyle(StageStyle.UNDECORATED);
     	stage.setTitle("About");
 	 	stage.getIcons().add(new Image("application/resources/constructlogo.png"));
         Parent root = (Parent) FXMLLoader.load(getClass().getResource("aboutPage.fxml")); //maybe the issue
@@ -62,5 +55,23 @@ public class mainPageController extends Main {
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
+        
+	      //grab your root here
+        root.setOnMousePressed(new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent event) {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        }
+    });
+
+    //move around here
+        root.setOnMouseDragged(new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent event) {
+            stage.setX(event.getScreenX() - xOffset);
+            stage.setY(event.getScreenY() - yOffset);
+        }
+    });
     }
 }

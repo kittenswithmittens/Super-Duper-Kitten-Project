@@ -1,53 +1,47 @@
 package application;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
 import javafx.scene.control.MenuButton;
 import javafx.scene.effect.Glow;
 import javafx.scene.effect.Shadow;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Callback;
 
 
-public class listViewController extends Main {
+public class listViewController extends Main implements Initializable {
 	@FXML MenuButton menuButton;
+	@FXML ListView<?> listView;
+	private double xOffset = 0;
+    private double yOffset = 0;
 
-	// MENU BUTTON START
-    @FXML
-    void UpdatePage(ActionEvent event) throws IOException {
-    	Parent UpdateMainParent = FXMLLoader.load(getClass().getResource("UpdateMainPageView.fxml"));
-        Scene tableViewScene = new Scene(UpdateMainParent);
-        //This line gets the Stage information
-        Stage window = (Stage) menuButton.getScene().getWindow();
-        //sets new scene
-        window.setScene(tableViewScene);
-        window.show();
+	
+	@Override
+    public void initialize(URL url, ResourceBundle rb) {
+		ProjectList myProjects = new ProjectList();
+		//listView.setEditable(true);
+		
+		
     }
-
-    @FXML
-    void ProjectPage(ActionEvent event) throws IOException {
-    	// do nothing, already there
-    }
-
-    @FXML
-    void export(ActionEvent event) {
-    	//exports stuff
-    }
-
-    @FXML
-    void print(ActionEvent event) {
-    	//prints stuff
-    }
-    
+	
+	
+	
+	
     @FXML
     void halt(MouseEvent event) {
         Platform.exit();
@@ -83,21 +77,42 @@ public class listViewController extends Main {
 
     @FXML
     void about(MouseEvent event) throws IOException {
-//    	final URL rootURL = getClass().getResource("/application/kittenproject.fxml");
-    	   	
     	Stage stage = new Stage();
+    	stage.initStyle(StageStyle.UNDECORATED);
     	stage.setTitle("About");
 	 	stage.getIcons().add(new Image("application/resources/constructlogo.png"));
         Parent root = (Parent) FXMLLoader.load(getClass().getResource("aboutPage.fxml")); //maybe the issue
-	 	Scene scene = new Scene(root);
+        Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
+        
+        //movability section
+	      //grab your root here
+        root.setOnMousePressed(new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent event) {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        }
+    });
+
+    //move around here
+        root.setOnMouseDragged(new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent event) {
+            stage.setX(event.getScreenX() - xOffset);
+            stage.setY(event.getScreenY() - yOffset);
+        }
+    });
     }
     
-
+    
+    
     @FXML
     void menu(MouseEvent event) throws IOException {
+    	double x = ((Node)(event.getSource())).getScene().getWindow().getX();
+        double y = ((Node)(event.getSource())).getScene().getWindow().getY();
     	final Settings model = new Settings();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("menuBox.fxml"));
@@ -111,14 +126,51 @@ public class listViewController extends Main {
     	
     	
         Stage stage = new Stage();
+        stage.initStyle(StageStyle.UNDECORATED);
         stage.setTitle("Menu");
         stage.getIcons().add(new Image("application/resources/constructlogo.png"));
-        //direct access to the menuBox Controller
-//        Parent root = (Parent) FXMLLoader.load(getClass().getResource("menuBoxController.fxml")); //maybe the issue
         Parent root = (Parent) loader.load();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setResizable(false);
+        //position menu
+        stage.setX(x + 35);
+        stage.setY(y + 35);      
+        //end position menu
+        
         stage.show();
+        
+
+        
+        
+        //movability section
+	      //grab your root here
+        root.setOnMousePressed(new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent event) {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        }
+    });
+
+    //move around here
+        root.setOnMouseDragged(new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent event) {
+            stage.setX(event.getScreenX() - xOffset);
+            stage.setY(event.getScreenY() - yOffset);
+        }
+    });
     }
+
+    
+    
+    
+    
+    
+    
+    
+    
 }
+   
+

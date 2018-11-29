@@ -3,6 +3,7 @@ package application;
 import java.io.File;
 import java.io.IOException;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -70,8 +71,7 @@ public class menuBoxController {
         Stage stage = new Stage();
         stage.setTitle("Settings");
         stage.getIcons().add(new Image("application/resources/constructlogo.png"));
-        //direct access to the menuBox Controller
-//        Parent root = (Parent) FXMLLoader.load(getClass().getResource("menuBoxController.fxml")); //maybe the issue
+
         Parent root = (Parent) loader.load();
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -88,4 +88,9 @@ public class menuBoxController {
 	void unglow(MouseEvent event) {
 		((Node) event.getSource()).setEffect(null);
 	}
+	
+	 @FXML
+	    void halt(MouseEvent event) {
+		 ((Node)(event.getSource())).getScene().getWindow().hide();
+	    }
 }
