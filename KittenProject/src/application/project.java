@@ -1,6 +1,7 @@
 package application;
 
 public abstract class project extends Main {
+	String name;
 	int cost;
 	int difficulty;
 	int savings;
@@ -44,6 +45,10 @@ public abstract class project extends Main {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public String toString() {
+		return this.name;
 	}
 
 }

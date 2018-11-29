@@ -13,6 +13,9 @@ public class LightBulbProject extends project { //still needs calculation for sa
 
 	public LightBulbProject() {
 		super();
+		
+		name = "Lighting";
+		
 		numberOfBulbs = theHome.getMyTotalLight();
 		myIncandLight = theHome.getMyIncandLight();
 		myLEDLight = theHome.getMyLEDLight();
