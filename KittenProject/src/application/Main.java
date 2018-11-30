@@ -16,6 +16,7 @@ import javafx.stage.StageStyle;
 import javafx.util.Callback;
 
 public class Main extends Application {
+
 	/* Stage field. */
 	public Stage myStage;
 	
@@ -127,6 +128,8 @@ public class Main extends Application {
 //	    	testSettings.exportSettings(new File(testPath));
 //	    	testSettings.importSettings(new File(testPath));
 //	    	System.out.println(testSettings.getMyEmailAddress());
+	    	System.out.println("Working Directory = " +
+	                System.getProperty("user.dir"));
 	    	launch(args);
 	    	
 	    }
