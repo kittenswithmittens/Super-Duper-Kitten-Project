@@ -22,7 +22,7 @@ public class Exporter {
 		 * must instantiate one of this for a class to use
 		 * @author Isaiah Miller
 		 */
-		public Exporter(Object destObject) {
+		public Exporter(Exportable destObject) {
 			// sets up JSON object mapper
 			myMapper = new ObjectMapper();
 			myReader = myMapper.readerForUpdating(destObject);
