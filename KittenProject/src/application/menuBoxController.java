@@ -78,6 +78,11 @@ public class menuBoxController {
         stage.setResizable(false);
         stage.show();
     }
+	
+	@FXML
+    void openUpdaterView(MouseEvent event) throws IOException {
+	    System.out.println("Update your house!");
+	}
 
 	@FXML
 	void hoverGlow(MouseEvent event) {

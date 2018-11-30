@@ -38,16 +38,10 @@ public class projectViewController extends Main implements Initializable {
 		//do stuff
     }
 	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	@FXML
+    void back(MouseEvent arg0) throws IOException {
+	    changeScene("list.fxml", arg0);
+    }
 	
     @FXML
     void halt(MouseEvent event) {
