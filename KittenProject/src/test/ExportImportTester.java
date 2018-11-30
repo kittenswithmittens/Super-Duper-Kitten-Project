@@ -40,7 +40,11 @@ public class ExportImportTester {
 	@Test
 	public void exportTypical() throws FileNotFoundException {
 		myActualSettings = typicalSettings();
-		URL testURL = getClass().getResource(EXPORT + "/" + "typExp.json");
+		System.out.println("Base URL path: " + getClass().getResource(""));
+		final String testURLPath = EXPORT + "/" + "typExp.json";
+		URL testURL = getClass().getResource(testURLPath);
+		System.out.println("typ export path " + testURLPath);
+		System.out.println(testURL);
 		final String filePath = testURL.getPath();
 		myActualSettings.exportJSON(new File(filePath));
 
