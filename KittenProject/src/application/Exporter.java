@@ -7,6 +7,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.ObjectWriter;
 
+/**
+ * @author Isaiah Miller
+ */
 public class Exporter {
 	//import/export fields
 		private final ObjectMapper myMapper;
@@ -19,7 +22,7 @@ public class Exporter {
 		 * must instantiate one of this for a class to use
 		 * @author Isaiah Miller
 		 */
-		public Exporter(Object destObject) {
+		public Exporter(Exportable destObject) {
 			// sets up JSON object mapper
 			myMapper = new ObjectMapper();
 			myReader = myMapper.readerForUpdating(destObject);
