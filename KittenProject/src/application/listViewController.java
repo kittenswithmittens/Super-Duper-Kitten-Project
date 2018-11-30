@@ -32,14 +32,15 @@ public class listViewController extends Main implements Initializable {
     private double yOffset = 0;
     
     String selected;
-
+    ProjectList myProjects;
+    ObservableList<String> list;
 	
 	@Override
     public void initialize(URL url, ResourceBundle rb) {
 		//populates list
 		listView.setEditable(true);
-		ProjectList myProjects = new ProjectList();
-		ObservableList<String> list = (myProjects.getProjects());
+		myProjects = new ProjectList();
+		list = (myProjects.getProjects());
 		listView.setItems(list); 
 		//end populate
 		
@@ -60,14 +61,22 @@ public class listViewController extends Main implements Initializable {
     
     @FXML
     void costSort(MouseEvent event) {
+    	myProjects.sortCost();
         System.out.println("costSort");
     }
+    
     @FXML
     void difficultySort(MouseEvent event) {
+    	listView.getItems().clear();
+    	myProjects.sortDifficulty();
+    	list = (myProjects.getProjects());
         System.out.println("difficultySort");
+        listView.setItems(list);
     }
+    
     @FXML
     void energySort(MouseEvent event) {
+    	myProjects.sortEnergySavings();
         System.out.println("energySort");
     }
     

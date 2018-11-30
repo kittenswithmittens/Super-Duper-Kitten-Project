@@ -1,6 +1,5 @@
 package application;
 
-
 public class HeatProject extends project { //still needs calculation for savings and such
 
 	/** Heating and cooling fields. */

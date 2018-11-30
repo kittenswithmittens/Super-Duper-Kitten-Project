@@ -1,5 +1,6 @@
 package application;
 
+import application.project;
 
 public class SolarProject extends project { //still needs calculation for savings and such
 
