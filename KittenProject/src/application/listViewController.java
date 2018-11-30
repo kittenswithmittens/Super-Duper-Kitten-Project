@@ -145,8 +145,8 @@ public class listViewController extends Main implements Initializable {
         stage.setScene(scene);
         stage.setResizable(false);
         //position menu
-        stage.setX(x + 35);
-        stage.setY(y + 35);      
+        stage.setX(x);
+        stage.setY(y);      
         //end position menu
         
         stage.show();
