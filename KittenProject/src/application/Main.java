@@ -115,7 +115,8 @@ public class Main extends Application {
 	 	
 
 
-		public static void main(String[] args) {
+		public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException {
+			new Home(true);
 	    	//remove (this is a test. Build real Junit test)!!!!
 //	    	Home test = new Home();
 	    	
@@ -128,9 +129,9 @@ public class Main extends Application {
 //	    	testSettings.exportSettings(new File(testPath));
 //	    	testSettings.importSettings(new File(testPath));
 //	    	System.out.println(testSettings.getMyEmailAddress());
-	    	System.out.println("Working Directory = " +
-	                System.getProperty("user.dir"));
-	    	launch(args);
+//	    	System.out.println("Working Directory = " +
+//	                System.getProperty("user.dir"));
+//	    	launch(args);
 	    	
 	    }
 }
