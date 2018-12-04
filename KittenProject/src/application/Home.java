@@ -20,10 +20,6 @@ import java.util.Random;
  * @author richw253
  * @author Isaiah Miller
  */
-/**
- * @author Isaiah Miller
- *
- */
 public class Home implements Exportable {
 	public static final String HOME_PATH = "save" + File.separatorChar + "home.json";
 
@@ -83,6 +79,9 @@ public class Home implements Exportable {
 	
 	private final Exporter myExporter;
 
+	/**
+	 * @author Isaiah Miller
+	 */
 	public Home() {
 //		//sets up JSON object mapper
 //		myMapper = new ObjectMapper();
@@ -101,6 +100,7 @@ public class Home implements Exportable {
 	
 	/**
 	 * This method produceds a home with random values and exports it to a default save file.
+	 * @author Isaiah Miller
 	 * @param isDefault this paramater is ignored. 
 	 * @throws IllegalArgumentException
 	 * @throws IllegalAccessException
