@@ -27,12 +27,8 @@ public class ProjectList{
 	}
 	
 	
-	public ObservableList<String> getProjects() {
-		ObservableList<String> output = FXCollections.observableArrayList();
-		for(int i = 0; i < myProjects.size(); i++) {
-			output.add(myProjects.get(i).toString());
-		}
-		return output;
+	public ObservableList<project> getPros() {
+		return this.myProjects;
 	}
 	
 	

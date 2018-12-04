@@ -21,7 +21,7 @@ public class LightBulbProject extends project { //still needs calculation for sa
 		myLEDLight = theHome.getMyLEDLight();
 		myHalLight = theHome.getMyHalLight();
 		myFlorLight = theHome.getMyFlorLight();
-		description = "Take some light bulbs out, put some new ones in, its darn simple";
+		description = "And on the 7th isle of Lowe's some kid in a red vest said \"LET THERE BE LIGHT\" Take some light bulbs out, put some new ones in, its darn simple";
 		difficulty = 1;
 		cost = calculateCost();
 		savings = calculateSavings();
@@ -30,12 +30,12 @@ public class LightBulbProject extends project { //still needs calculation for sa
 
 	private int calculateSavings() {
 		// do some math
-		return 0;
+		return 5;
 	}
 
 	private int calculateCost() {
 		// do some math
-		return 0;
+		return 24;
 	}
 
 	public int getNumberOfBulbs() {
