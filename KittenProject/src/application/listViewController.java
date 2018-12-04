@@ -27,21 +27,20 @@ import javafx.util.Callback;
 
 public class listViewController extends Main implements Initializable {
 	@FXML MenuButton menuButton;
-	@FXML ListView<String> listView;
+	@FXML ListView<project> listView;
 	private double xOffset = 0;
     private double yOffset = 0;
     
-    String selected;
+    static project selected;
     ProjectList myProjects;
-    ObservableList<String> list;
+    
 	
 	@Override
     public void initialize(URL url, ResourceBundle rb) {
 		//populates list
 		listView.setEditable(true);
 		myProjects = new ProjectList();
-		list = (myProjects.getProjects());
-		listView.setItems(list); 
+		listView.setItems(myProjects.getPros()); 
 		//end populate
 		
     }
@@ -62,22 +61,19 @@ public class listViewController extends Main implements Initializable {
     @FXML
     void costSort(MouseEvent event) {
     	myProjects.sortCost();
-        System.out.println("costSort");
+       
     }
     
     @FXML
     void difficultySort(MouseEvent event) {
-    	listView.getItems().clear();
     	myProjects.sortDifficulty();
-    	list = (myProjects.getProjects());
-        System.out.println("difficultySort");
-        listView.setItems(list);
+    	
     }
     
     @FXML
     void energySort(MouseEvent event) {
     	myProjects.sortEnergySavings();
-        System.out.println("energySort");
+       
     }
     
     @FXML
@@ -183,7 +179,9 @@ public class listViewController extends Main implements Initializable {
     });
     }
 
-    
+    public static project getSelected() {
+    	return selected;
+    }
     
     
 

@@ -18,7 +18,8 @@ public class IrrigationProject extends project { //still needs calculation for s
 		myIrrigationSensor = theHome.isMyIrrigationSensor();
 		
 		
-		description = "Take some light bulbs out, put some new ones in, its darn simple";
+		description = "Sometimes water doesn't fall from the sky. So instead, make it come from the ground so you can keep your lawn green"
+				+ " and of course spray anyone walking by your house.";
 		difficulty = 1;
 		cost = calculateCost();
 		savings = calculateSavings();
@@ -27,12 +28,12 @@ public class IrrigationProject extends project { //still needs calculation for s
 
 	private int calculateSavings() {
 		// do some math
-		return 0;
+		return 8;
 	}
 
 	private int calculateCost() {
 		// do some math
-		return 0;
+		return 99;
 	}
 
 	public boolean isMyIrrigation() {

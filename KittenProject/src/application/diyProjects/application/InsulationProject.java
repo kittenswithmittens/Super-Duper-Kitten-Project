@@ -17,7 +17,7 @@ public class InsulationProject extends project { //still needs calculation for s
 		myInsulationCeiling = theHome.isMyInsulationCeiling();
 		myInsulationFloor = theHome.isMyInsulationFloor();
 		
-		description = "Brrrr.... could be even warmer in here, right?";
+		description = "Brrrr.... could be even warmer in here, right? Lets put a bunch of fluffy glass in the walls eh?";
 		difficulty = 1;
 		cost = calculateCost();
 		savings = calculateSavings();
@@ -26,12 +26,12 @@ public class InsulationProject extends project { //still needs calculation for s
 
 	private int calculateSavings() {
 		// do some math
-		return 0;
+		return 4;
 	}
 
 	private int calculateCost() {
 		// do some math
-		return 0;
+		return 25;
 	}
 
 	public boolean isMyInsulationWall() {
