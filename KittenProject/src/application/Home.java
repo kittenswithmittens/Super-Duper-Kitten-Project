@@ -6,6 +6,8 @@
 package application;
 
 import java.io.File;
+import java.lang.reflect.Field;
+import java.util.Random;
 
 /**
  * Add code to support a default home 
@@ -77,6 +79,9 @@ public class Home implements Exportable {
 	
 	private final Exporter myExporter;
 
+	/**
+	 * @author Isaiah Miller
+	 */
 	public Home() {
 //		//sets up JSON object mapper
 //		myMapper = new ObjectMapper();
@@ -92,6 +97,45 @@ public class Home implements Exportable {
 
 	}
 
+	
+	/**
+	 * This method produceds a home with random values and exports it to a default save file.
+	 * @author Isaiah Miller
+	 * @param isDefault this paramater is ignored. 
+	 * @throws IllegalArgumentException
+	 * @throws IllegalAccessException
+	 */
+	public Home(final boolean isDefault) throws IllegalArgumentException, IllegalAccessException {
+		myExporter = new Exporter(this);
+		final Field[] fields = this.getClass().getDeclaredFields();
+		final Class<Boolean> boolClass = Boolean.TYPE;
+		final int spreadRandInt = 10000;
+		final int spreadRandFloat = 10000;
+		for(Field field: fields) {
+			final Random rand = new Random();
+			//System.out.println(field.getType());
+			if(field.getType().equals(Boolean.TYPE)) {
+				field.set(this, rand.nextBoolean());
+				System.out.println("is a boolean");
+			} else if (field.getType().equals(Integer.TYPE)) {
+				field.set(this, rand.nextInt(spreadRandInt));
+				System.out.println("is an int");
+			} else if(field.getType().equals(Float.TYPE)) {
+				field.set(this, rand.nextFloat() * spreadRandFloat);
+				System.out.println("is a float");
+			} else {
+				System.out.print("Not a match: " + field.getType());
+				System.out.println();
+			}
+			System.out.println(field.get(this));
+			}
+		File test = new File("");
+		
+		System.out.println("path is: " + test.getAbsolutePath());
+		exportJSON(new File("src" + File.separatorChar + "application" + File.separatorChar + "save" + File.separatorChar + "homeDefault.json"));
+		
+	}
+	
 	public float getMyElectricBill() {
 		return myElectricBill;
 	}

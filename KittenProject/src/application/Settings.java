@@ -5,6 +5,10 @@ import java.io.File;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+/**
+ * @author Isaiah Miller
+ *
+ */
 public class Settings implements Exportable {
 
 	private StringProperty myName;

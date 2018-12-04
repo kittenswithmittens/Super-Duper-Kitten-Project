@@ -12,16 +12,26 @@ import org.junit.Test;
 
 import application.Settings;
 
+/**
+ * @author Isaiah Miller
+ *
+ */
 public class ExportImportTester {
 	public static final String EXPORT = "export";
 	public static final String TYPICAL = "typical.json";
 	Settings myActualSettings;
 
+	/**
+	 * @author Isaiah Miller
+	 */
 	@Before
 	public void init() {
 		myActualSettings = new Settings();
 	}
 
+	/**
+	 * @author Isaiah Miller
+	 */
 	@Test
 	public void importTypical() {
 		final Settings expectedSettings = typicalSettings();
@@ -30,6 +40,10 @@ public class ExportImportTester {
 		assertEquals(expectedSettings, myActualSettings);
 	}
 
+	/**
+	 * @author Isaiah Miller
+	 * @return
+	 */
 	private static Settings typicalSettings() {
 		final Settings res = new Settings();
 		res.setMyEmailAddress("myemail@gmail.com");
@@ -37,6 +51,10 @@ public class ExportImportTester {
 		return res;
 	}
 
+	/**
+	 * @author Isaiah Miller
+	 * @throws FileNotFoundException
+	 */
 	@Test
 	public void exportTypical() throws FileNotFoundException {
 		myActualSettings = typicalSettings();
@@ -61,12 +79,21 @@ public class ExportImportTester {
 		out.close();
 	}
 
+	/**
+	 * @author Isaiah Miller
+	 * @throws FileNotFoundException
+	 */
 	@Test
 	public void exportNull() throws FileNotFoundException {
 		final String nullFileName = "null";
 		exportFile(nullFileName);
 	}
 
+	/**
+	 * @author Isaiah Miller
+	 * @param fileName
+	 * @throws FileNotFoundException
+	 */
 	private void exportFile(final String fileName) throws FileNotFoundException {
 		if (fileName != "null") {
 			myActualSettings = inMemSettings(fileName);
@@ -104,6 +131,10 @@ public class ExportImportTester {
 		out.close();
 	}
 
+	/**
+	 * @author Isaiah Miller
+	 * @param fileName
+	 */
 	private void importFile(final String fileName) {
 		final Settings actualSettings = new Settings();
 		final Settings expectedSettings = typicalSettings();
@@ -112,6 +143,11 @@ public class ExportImportTester {
 		assertEquals(expectedSettings, actualSettings);
 	}
 
+	/**
+	 * @author Isaiah Miller
+	 * @param fileName
+	 * @return
+	 */
 	private static Settings inMemSettings(final String fileName) {
 		final Settings res = new Settings();
 		res.setMyEmailAddress(fileName + "@gmail.com");
