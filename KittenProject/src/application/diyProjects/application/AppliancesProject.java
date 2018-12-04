@@ -22,7 +22,8 @@ public class AppliancesProject extends project { //still needs calculation for s
 		myEStarClothWash = theHome.isMyEStarClothWash();
 		myEStarDryer = theHome.isMyEStarDryer();
 		
-		description = "Appliances, replace em, feel good. ";
+		description = "Does the Fidge leak water? Does the Dryer catch fire? Does your Stove still have last year's pumpkin pie baked into the burners? "
+				+ "maybe it's time to get some new fancy appliances";
 		difficulty = 2;
 		cost = calculateCost();
 		savings = calculateSavings();
@@ -31,12 +32,12 @@ public class AppliancesProject extends project { //still needs calculation for s
 
 	private int calculateSavings() {
 		// do some math
-		return 0;
+		return 45;
 	}
 
 	private int calculateCost() {
 		// do some math
-		return 0;
+		return 10000;
 	}
 
 	public boolean isMyEStarRefrig() {

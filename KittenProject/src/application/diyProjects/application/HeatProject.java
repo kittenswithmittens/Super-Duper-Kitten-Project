@@ -1,6 +1,5 @@
 package application;
 
-
 public class HeatProject extends project { //still needs calculation for savings and such
 
 	/** Heating and cooling fields. */
@@ -36,7 +35,8 @@ public class HeatProject extends project { //still needs calculation for savings
 		myOnDemand = theHome.isMyOnDemand();
 		myWaterHeaterAge = theHome.getMyWaterHeaterAge();
 		
-		description = "upgrade some stuff yo";
+		description = "Do you often hear \"DONT TURN ON THE HEAT UNTIL YOU CAN SEE YOUR BREATH!\" screamed from you spouse? "
+				+ "Maybe its time to upgrade the ol' costly bundle of sticks you've been using for heat ";
 		difficulty = 2;
 		cost = calculateCost();
 		savings = calculateSavings();
@@ -45,12 +45,12 @@ public class HeatProject extends project { //still needs calculation for savings
 
 	private int calculateSavings() {
 		// do some math
-		return 0;
+		return 40;
 	}
 
 	private int calculateCost() {
 		// do some math
-		return 0;
+		return 50;
 	}
 
 	public boolean isMyMainHeatGas() {

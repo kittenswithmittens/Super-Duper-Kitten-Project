@@ -1,5 +1,6 @@
 package application;
 
+import application.project;
 
 public class SolarProject extends project { //still needs calculation for savings and such
 
@@ -15,7 +16,7 @@ public class SolarProject extends project { //still needs calculation for saving
 		
 		name ="Solar Panels";
 		
-		description = "Solar harnesses the power of the sun and at least like 4 kenyans and a bear";
+		description = "Solar harnesses the power of the sun! Along with junk emails, a hungry bear and one lady named Karen";
 		difficulty = 1;
 		cost = calculateCost();
 		savings = calculateSavings();
@@ -24,7 +25,7 @@ public class SolarProject extends project { //still needs calculation for saving
 
 	private int calculateSavings() {
 		// do some math
-		return 0;
+		return 1000000;
 	}
 
 	private int calculateCost() {

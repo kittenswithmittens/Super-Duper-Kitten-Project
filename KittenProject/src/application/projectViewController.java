@@ -20,6 +20,7 @@ import javafx.scene.effect.Glow;
 import javafx.scene.effect.Shadow;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
@@ -27,15 +28,26 @@ import javafx.util.Callback;
 
 public class projectViewController extends Main implements Initializable {
 	@FXML MenuButton menuButton;
+	@FXML Text projectName;
+    @FXML Text projectCost;
+    @FXML Text projectDifficulty;
+    @FXML Text projectSavings;
+    @FXML Text projectDescription;
+
 	private double xOffset = 0;
     private double yOffset = 0;
     
-    String selected;
+    project selected;
 
 	
 	@Override
     public void initialize(URL url, ResourceBundle rb) {
-		//do stuff
+		selected = listViewController.getSelected();
+		projectName.setText(selected.toString());
+		projectCost.setText("Cost: $" + selected.getCost());
+		projectDifficulty.setText("Difficulty: " + selected.getDifficulty());
+		projectSavings.setText("Energy Savings: $" + selected.getSavings());
+		projectDescription.setText(selected.getDescription());
     }
 	
 	@FXML

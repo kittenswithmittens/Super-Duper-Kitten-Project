@@ -14,15 +14,15 @@ public class WindowsDoorsProject extends project { //still needs calculation for
 	public WindowsDoorsProject() {
 		super();
 		
-		name = "Window and Door";
+		name = "Windows and Doors";
 		
 		myWeatherProofedDoor = theHome.getMyWeatherProofedDoor();
 		myNumWindow  = theHome.getMyNumWindow();
 		myNumWindowBad = theHome.getMyNumWindowBad();
 		myNumWindowLowE = theHome.getMyNumWindowLowE();
 		
-		description = "Windows are nice to see out of";
-		difficulty = 1;
+		description = "Windows are nice to see out of, Doors are nice to close. Just imagine if your house didnt have doors. Where would FedEx leave your package?";
+		difficulty = 2;
 		cost = calculateCost();
 		savings = calculateSavings();
 
@@ -30,12 +30,12 @@ public class WindowsDoorsProject extends project { //still needs calculation for
 
 	private int calculateSavings() {
 		// do some math
-		return 0;
+		return 43;
 	}
 
 	private int calculateCost() {
 		// do some math
-		return 0;
+		return 2500;
 	}
 
 	public int getMyWeatherProofedDoor() {
