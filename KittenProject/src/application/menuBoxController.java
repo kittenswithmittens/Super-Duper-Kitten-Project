@@ -17,6 +17,7 @@ import javafx.util.Callback;
 
 //observe this with an export controller
 public class menuBoxController extends Main{
+
 	final Settings mySettings;
 
 	public menuBoxController(final Settings theSettings) {
@@ -82,6 +83,10 @@ public class menuBoxController extends Main{
 	@FXML
     void openUpdaterView(MouseEvent arg0) throws IOException {
 	    super.changeScene("edithome.fxml", arg0);
+
+//     void openUpdaterView(MouseEvent event) throws IOException {
+// 		changeScene("homeUpdaterPage.fxml", event);
+
 	}
 
 	@FXML
