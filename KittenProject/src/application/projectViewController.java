@@ -46,7 +46,7 @@ public class projectViewController extends Main implements Initializable {
 		projectName.setText(selected.toString());
 		projectCost.setText("Cost: $" + selected.getCost());
 		projectDifficulty.setText("Difficulty: " + selected.getDifficulty());
-		projectSavings.setText("Energy Savings: $" + selected.getSavings());
+		projectSavings.setText("Energy Savings per year: $" + selected.getSavings());
 		projectDescription.setText(selected.getDescription());
     }
 	
