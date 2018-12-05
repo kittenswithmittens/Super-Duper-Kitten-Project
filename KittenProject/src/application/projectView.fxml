@@ -6,16 +6,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.projectViewController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.projectViewController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0">
          <image>
-            <Image url="@resources/ProjectList.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="28.0" fitWidth="30.0" layoutX="8.0" layoutY="10.0" onMouseClicked="#menu" onMouseEntered="#hoverShadow" onMouseExited="#unglow">
-         <image>
-            <Image url="@resources/Menu%20Lines.png" />
+            <Image url="@resources/ProjectView.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="550.0" layoutY="4.0" onMouseClicked="#about" onMouseEntered="#hoverShadow" onMouseExited="#unglow">
@@ -28,39 +23,39 @@
             <Image url="@resources/Exit.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="20.0" fitWidth="23.0" layoutX="521.0" layoutY="4.0" onMouseClicked="#back" onMouseEntered="#hoverGlow" onMouseExited="#unglow">
+      <Text fx:id="projectName" fill="WHITE" layoutX="10.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project Name" wrappingWidth="549.13671875">
+         <font>
+            <Font name="Arial Black" size="30.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="20.0" fitWidth="23.0" layoutX="521.0" layoutY="4.0" onMouseClicked="#back" onMouseEntered="#hoverShadow" onMouseExited="#unglow">
          <image>
             <Image url="@resources/BackButton.png" />
          </image>
       </ImageView>
-      <Text fx:id="projectName" layoutX="38.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project Name" wrappingWidth="549.13671875">
+      <Text fx:id="projectCost" fill="WHITE" layoutX="55.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project Cost" wrappingWidth="203.13671875">
          <font>
-            <Font name="Arial Black" size="20.0" />
+            <Font name="Arial Black" size="18.0" />
          </font>
       </Text>
-      <Text fx:id="projectCost" layoutX="100.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project Cost" wrappingWidth="203.13671875">
+      <Text fx:id="projectDifficulty" fill="WHITE" layoutX="55.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project Difficulty" wrappingWidth="203.13671875">
          <font>
-            <Font name="Arial Black" size="14.0" />
+            <Font name="Arial Black" size="18.0" />
          </font>
       </Text>
-      <Text fx:id="projectDifficulty" layoutX="100.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project Difficulty" wrappingWidth="203.13671875">
+      <Text fx:id="projectSavings" fill="WHITE" layoutX="55.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project Savings" wrappingWidth="203.13671875">
          <font>
-            <Font name="Arial Black" size="14.0" />
+            <Font name="Arial Black" size="18.0" />
          </font>
       </Text>
-      <Text fx:id="projectSavings" layoutX="100.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project Savings" wrappingWidth="203.13671875">
+      <Text fx:id="projectDescription" fill="WHITE" layoutX="55.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="big ol description text" wrappingWidth="375.0">
          <font>
-            <Font name="Arial Black" size="14.0" />
+            <Font name="Arial" size="14.0" />
          </font>
       </Text>
-      <Text fx:id="projectDescription" layoutX="100.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="big ol description text" wrappingWidth="375.0">
+      <Text fill="WHITE" layoutX="55.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description:" wrappingWidth="203.13671875">
          <font>
-            <Font name="Arial" size="12.0" />
-         </font>
-      </Text>
-      <Text layoutX="100.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description:" wrappingWidth="203.13671875">
-         <font>
-            <Font name="Arial Black" size="14.0" />
+            <Font name="Arial Black" size="18.0" />
          </font>
       </Text>
    </children>

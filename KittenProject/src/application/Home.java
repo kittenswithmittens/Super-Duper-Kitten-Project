@@ -142,6 +142,7 @@ public class Home implements Exportable {
 
 	public void setMyElectricBill(float myElectricBill) {
 		this.myElectricBill = myElectricBill;
+		System.out.println(myElectricBill);
 	}
 
 	public float getMyGasBill() {
