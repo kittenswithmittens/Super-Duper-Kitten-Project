@@ -8,8 +8,17 @@ public class AppliancesProject extends project { //still needs calculation for s
 	boolean myEStarClothWash;
 	boolean myEStarDryer;
 
-
-
+	/** Average EStar Refrigerator cost. */
+	int EStarRefrigCost = 1000;
+	
+	/** Average Estar Dishwasher cost. */
+	int EStarDishWashCost = 500;
+	
+	/** Average Estar Clothes washer cost. */
+	int EStarClothesWashCost = 1100;
+	
+	/** Average Estar Dryer cost. */
+	int EStarDryerCost = 700;
 
 	public AppliancesProject() {
 		super();
@@ -31,13 +40,39 @@ public class AppliancesProject extends project { //still needs calculation for s
 	}
 
 	private int calculateSavings() {
-		// do some math
-		return 45;
+
+		int savings = 0;
+		if (!myEStarRefrig) {
+			savings += 54;
+		} 
+		if (!myEStarDishWash) {
+			savings += 10;
+		} 
+		if (!myEStarClothWash) {
+			savings += 30;
+		} 
+		if (!myEStarDryer) {
+			savings += 20;
+		} 
+		
+		return savings;
 	}
 
 	private int calculateCost() {
-		// do some math
-		return 10000;
+		int cost = 0;
+		if (!myEStarRefrig) {
+			cost += EStarRefrigCost;
+		} 
+		if (!myEStarDishWash) {
+			cost += EStarDishWashCost;
+		} 
+		if (!myEStarClothWash) {
+			cost += EStarClothesWashCost;
+		} 
+		if (!myEStarDryer) {
+			cost += EStarDryerCost;
+		}
+		return cost;
 	}
 
 	public boolean isMyEStarRefrig() {
