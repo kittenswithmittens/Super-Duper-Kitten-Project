@@ -4,10 +4,10 @@ package application;
 public class LightBulbProject extends project { //still needs calculation for savings and such
 
 	int numberOfBulbs;
-	int myIncandLight;
-	int myLEDLight;
-	int myHalLight;
-	int myFlorLight;
+	boolean myIncandLight;
+	boolean myLEDLight;
+	boolean myHalLight;
+	boolean myFlorLight;
 
 
 
@@ -50,49 +50,49 @@ public class LightBulbProject extends project { //still needs calculation for sa
 
 
 
-	public int getMyIncandLight() {
+	public boolean getMyIncandLight() {
 		return myIncandLight;
 	}
 
 
 
-	public void setMyIncandLight(int myIncandLight) {
+	public void setMyIncandLight(boolean myIncandLight) {
 		this.myIncandLight = myIncandLight;
 	}
 
 
 
-	public int getMyLEDLight() {
+	public boolean getMyLEDLight() {
 		return myLEDLight;
 	}
 
 
 
-	public void setMyLEDLight(int myLEDLight) {
+	public void setMyLEDLight(boolean myLEDLight) {
 		this.myLEDLight = myLEDLight;
 	}
 
 
 
-	public int getMyHalLight() {
+	public boolean getMyHalLight() {
 		return myHalLight;
 	}
 
 
 
-	public void setMyHalLight(int myHalLight) {
+	public void setMyHalLight(boolean myHalLight) {
 		this.myHalLight = myHalLight;
 	}
 
 
 
-	public int getMyFlorLight() {
+	public boolean getMyFlorLight() {
 		return myFlorLight;
 	}
 
 
 
-	public void setMyFlorLight(int myFlorLight) {
+	public void setMyFlorLight(boolean myFlorLight) {
 		this.myFlorLight = myFlorLight;
 	}
 }
