@@ -75,6 +75,7 @@ public class projectViewController extends Main implements Initializable {
     @FXML
     void about(MouseEvent event) throws IOException {
     	if (selected.toString() == "Heat") {
+    		Sound.sounds[1].play();
     		changeScene("UpdateMainPageView.fxml", event);
     	}else {
     	Stage stage = new Stage();

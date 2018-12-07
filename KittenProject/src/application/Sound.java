@@ -8,7 +8,7 @@ import java.io.File;
 public class Sound {
 
     public static final Sound[] sounds = {
-        new Sound("eagle.mp3") , new Sound("Sad-cat.mp3")
+        new Sound("Sad-cat.mp3"), new Sound("KittensinMittens.mp3")
     };
 
     MediaPlayer mediaPlayer;

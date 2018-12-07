@@ -19,6 +19,7 @@ public class UpdateViewController extends Main {
 
     @FXML
     void BackButton(MouseEvent event) throws IOException {
+    	Sound.sounds[1].mediaPlayer.stop();
     	changeScene("projectView.fxml", event);
     }
 
