@@ -43,6 +43,7 @@ public class projectViewController extends Main implements Initializable {
 		projectDifficulty.setText("Difficulty: " + selected.getDifficulty());
 		projectSavings.setText("Energy Savings per year: $" + selected.getSavings());
 		projectDescription.setText(selected.getDescription());
+		
     }
 	
 	@FXML
@@ -73,6 +74,9 @@ public class projectViewController extends Main implements Initializable {
 
     @FXML
     void about(MouseEvent event) throws IOException {
+    	if (selected.toString() == "Heat") {
+    		changeScene("UpdateMainPageView.fxml", event);
+    	}else {
     	Stage stage = new Stage();
     	stage.initStyle(StageStyle.UNDECORATED);
     	stage.setTitle("About");
@@ -101,7 +105,7 @@ public class projectViewController extends Main implements Initializable {
             stage.setY(event.getScreenY() - yOffset);
         }
     });
-    }
+    	}}
 }
    
 
