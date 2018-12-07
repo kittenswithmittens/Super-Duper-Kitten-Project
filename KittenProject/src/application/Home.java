@@ -90,6 +90,16 @@ public class Home implements Exportable {
 //		
 //		//initializes home from save file
 //		importHome();
+	    myMainHeatElect = true;
+	    myFurnanceMultStage = true;
+	    myProgThermostat = true;
+	    myOnDemand = true;
+	    myHalLight = true;
+	    myTotalLight = 12;
+	    myNumWindow = 8;
+	    myNumWindowBad = 8;
+	    myInsulationCeiling = true;
+	    myEStarRefrig = true;
 		myExporter = new Exporter(this);
 		
 		//fields should only be initialized through importing

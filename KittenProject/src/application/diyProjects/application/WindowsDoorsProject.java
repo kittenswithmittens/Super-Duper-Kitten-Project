@@ -3,8 +3,21 @@ package application;
 
 public class WindowsDoorsProject extends project { //still needs calculation for savings and such
 	
+	/** Cost of weather-proofing external door. */
+	private final static int DOOR_COST = 65;
+	
+	/** Cost of replacing window. */
+	private final static int WINDOW_COST = 1000;
+	
+	/** Energy savings weather proofing. */
+	private final static double WEATHER_PROOFING_PERCENT_SAVINGS = .11;
+
+	/** Average annual cost of heating home. */
+	private final static int HEATING_COST = 900;
+	
+	
 	/** Windows and Door fields. */
-    boolean myWeatherProofedDoor;
+	boolean myWeatherProofedDoor;
 	int myNumWindow;
 	int myNumWindowBad;
 	int myNumWindowLowE;
@@ -29,17 +42,19 @@ public class WindowsDoorsProject extends project { //still needs calculation for
 	}
 
 	private int calculateSavings() {
-		// do some math
-		return 43;
+		return (int) (HEATING_COST * WEATHER_PROOFING_PERCENT_SAVINGS);
 	}
 
 	private int calculateCost() {
-		// do some math
-		return 2500;
-	}
-
-	public boolean getMyWeatherProofedDoor() {
-		return myWeatherProofedDoor;
+		
+		int cost = 0;
+		if (!myWeatherProofedDoor) {
+			cost += DOOR_COST * 2;
+		}
+		if (myNumWindowBad != 0) {
+			cost += (myNumWindow - myNumWindowLowE) * WINDOW_COST;
+		}
+		return cost;
 	}
 
 	public void setMyWeatherProofedDoor(boolean myWeatherProofedDoor) {
