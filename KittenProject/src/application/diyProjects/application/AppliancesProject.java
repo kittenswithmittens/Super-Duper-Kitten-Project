@@ -30,8 +30,7 @@ public class AppliancesProject extends project { //still needs calculation for s
 	boolean myEStarRefrig;
 	boolean myEStarDishWash; 
 	boolean myEStarClothWash;
-	boolean myEStarDryer;
-
+	boolean myEStarDryer; //yes
 
 	public AppliancesProject() {
 		super();
