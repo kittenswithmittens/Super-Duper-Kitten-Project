@@ -6,7 +6,7 @@ import java.util.Comparator;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-//import diyProjects.SolarProject;
+
 
 
 public class ProjectList{
