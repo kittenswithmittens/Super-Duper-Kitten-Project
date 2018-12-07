@@ -6,9 +6,10 @@ public abstract class project extends Main {
 	int difficulty;
 	int savings;
 	String description;
-	Home myHome = theHome;
+	Home myHome;
 
 	public project(){
+	    myHome = theHome;
 		cost = 0;
 		difficulty = 0;
 		savings = 0;

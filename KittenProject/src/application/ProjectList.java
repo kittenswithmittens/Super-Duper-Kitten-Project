@@ -22,7 +22,8 @@ public class ProjectList{
 		(new WindowsDoorsProject()),
 		(new InsulationProject()),
 		(new IrrigationProject()),
-		(new SolarProject())
+		(new SolarProject()),
+		(new ThermostatProject())
 		);
 	}
 	
@@ -52,7 +53,7 @@ public class ProjectList{
 	 */
 	class SortbyEnergySavings implements Comparator<project> {
 		public int compare(project a, project b) {
-			return a.getSavings() - b.getSavings();
+			return b.getSavings() - a.getSavings();
 		}
 	}
 	

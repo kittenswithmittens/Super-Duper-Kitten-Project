@@ -13,50 +13,35 @@ import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import javafx.util.Callback;
 
 public class Main extends Application {
 
 	/* Stage field. */
 	public Stage myStage;
 	
-		public double version = 1.00;
+		public String version = "0.1.9.0";
 	    private double xOffset = 0;
 	    private double yOffset = 0;
-	    public Home theHome = new Home();
+	    public static Home theHome;
 
 	 @Override
 	    public void start(Stage stage) throws Exception {
+	     myStage = stage;
 		 final URL rootURL = getClass().getResource("/application/kittenproject.fxml");
 		 
-		 final Settings modelSettings = new Settings();
-
 	        FXMLLoader loader = new FXMLLoader(rootURL);
 //	        loader.setLocation(getClass().getResource("sample.fxml"));
 	        loader.setLocation(rootURL);
-	        loader.setControllerFactory(new Callback<Class<?>, Object>() {
-	            @Override
-	            public Object call(Class<?> aClass) {
-	                return new menuBoxController(modelSettings);
-	            }
-	        });
-
 	        stage.initStyle(StageStyle.UNDECORATED);
 		 	stage.setTitle("Kitten-Construction");
 		 	stage.getIcons().add(new Image("application/resources/constructlogo.png"));
 	        Parent root = (Parent) FXMLLoader.load(getClass().getResource("kittenproject.fxml")); //maybe the issue
 
-
 	        Scene scene = new Scene(root);
 	        stage.setScene(scene);
 	        stage.setResizable(false);
 	        
-	        
 	        stage.show();
-	        
-	       
-	      
-	        
 
 	      //grab your root here
            root.setOnMousePressed(new EventHandler<MouseEvent>() {
@@ -77,12 +62,10 @@ public class Main extends Application {
            }
        });
            
-           
- 
 	    }
-
+	    
 	 	public void changeScene(String A, MouseEvent event) throws IOException {
-	 		Parent newb = FXMLLoader.load(getClass().getResource(A));
+	 	    Parent newb = FXMLLoader.load(getClass().getResource(A));
 	        Scene newbScene = new Scene(newb);
 	        //This line gets the Stage information
 	        myStage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -110,12 +93,15 @@ public class Main extends Application {
 	 	}
 
 	 	public String getVersion() {
-	 		return Double.toString(version);
+	 		return version;
 	 	}
 	 	
 
 
 		public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException {
+		    if(theHome == null) {
+		        theHome = new Home();
+		    }
 //			new Home(true);
 	    	//remove (this is a test. Build real Junit test)!!!!
 //	    	Home test = new Home();

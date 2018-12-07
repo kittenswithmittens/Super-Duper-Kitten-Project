@@ -1,14 +1,29 @@
 package application;
 
 
-public class IrrigationProject extends project { //still needs calculation for savings and such
+/**
+ * Irrigation Project Class
+ * @author richw253
+ * @version 6 Dec 2018
+ */
+public class IrrigationProject extends project {
 
+	/** Cost of rain sensor. */
+	private final static int SENSOR_COST = 70;
+	
+	/** Average annual cost of water in Tacoma. */
+	private final static int WATER_COST = 380;
+	
+	/** Water cost savings of rain sensor. */
+	private final static double PERCENT_SAVINGS = .45;
+	
 	/** Irrigation fields. */
 	boolean myIrrigation;
 	boolean myIrrigationSensor;
 
-
-
+	/**
+	 * Constructor for Irrigation Project.
+	 */
 	public IrrigationProject() {
 		super();
 		
@@ -27,13 +42,19 @@ public class IrrigationProject extends project { //still needs calculation for s
 	}
 
 	private int calculateSavings() {
-		// do some math
-		return 8;
+		int savings = 0;
+		if (myIrrigation) {
+			savings =(int) (WATER_COST * PERCENT_SAVINGS);
+		}
+		return savings;
 	}
 
 	private int calculateCost() {
-		// do some math
-		return 99;
+		int cost = 0;
+		if (myIrrigation) {
+			cost = SENSOR_COST;
+		}
+		return cost;
 	}
 
 	public boolean isMyIrrigation() {

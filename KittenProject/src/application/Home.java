@@ -24,9 +24,9 @@ public class Home implements Exportable {
 	public static final String HOME_PATH = "save" + File.separatorChar + "home.json";
 
 	/** Costs of the home fields. */
-	float myElectricBill;
-	float myGasBill;
-	float myWaterBill;
+	float myElectricBill; //
+	float myGasBill; //
+	float myWaterBill; //
 
 	/** Heating and cooling fields. */
 	boolean myMainHeatGas; // EnergyStar gas furnace will save $75 per year
@@ -40,23 +40,23 @@ public class Home implements Exportable {
 	boolean myGasWaterHeater;
 	boolean myElectWaterHeat;
 	boolean myOnDemand;
-	int myWaterHeaterAge;
+	int myWaterHeaterAge; //
 
 	/** Lights within the home field. */
 	int myTotalLight;
-	int myIncandLight;
-	int myLEDLight;
-	int myHalLight;
-	int myFlorLight;
+	boolean myIncandLight;
+	boolean myLEDLight;
+	boolean myHalLight;
+	boolean myFlorLight;
 
 	/** Electricity usage field. */
-	boolean mySolarPanel;
+	boolean mySolarPanel; //
 
 	/** Windows and Door fields. */
-	int myWeatherProofedDoor;
+	boolean myWeatherProofedDoor;
 	int myNumWindow;
 	int myNumWindowBad;
-	int myNumWindowLowE;
+	int myNumWindowLowE; //
 
 	/** Insulations information fields. */
 	boolean myInsulationWall;
@@ -64,7 +64,7 @@ public class Home implements Exportable {
 	boolean myInsulationFloor;
 
 	/** Irrigation fields. */
-	boolean myIrrigation;
+	boolean myIrrigation; //
 	boolean myIrrigationSensor;
 
 	/** Appliance fields. */
@@ -90,11 +90,20 @@ public class Home implements Exportable {
 //		
 //		//initializes home from save file
 //		importHome();
-		
+	    myMainHeatElect = true;
+	    myFurnanceMultStage = true;
+	    myProgThermostat = true;
+	    myOnDemand = true;
+	    myHalLight = true;
+	    myTotalLight = 12;
+	    myNumWindow = 8;
+	    myNumWindowBad = 8;
+	    myInsulationCeiling = true;
+	    myEStarRefrig = true;
+	    myIrrigation = true;
 		myExporter = new Exporter(this);
 		
 		//fields should only be initialized through importing
-
 	}
 
 	
@@ -108,7 +117,7 @@ public class Home implements Exportable {
 	public Home(final boolean isDefault) throws IllegalArgumentException, IllegalAccessException {
 		myExporter = new Exporter(this);
 		final Field[] fields = this.getClass().getDeclaredFields();
-		final Class<Boolean> boolClass = Boolean.TYPE;
+		//final Class<Boolean> boolClass = Boolean.TYPE;     //dunno why this is here.. Isaiah...
 		final int spreadRandInt = 10000;
 		final int spreadRandFloat = 10000;
 		for(Field field: fields) {
@@ -140,8 +149,8 @@ public class Home implements Exportable {
 		return myElectricBill;
 	}
 
-	public void setMyElectricBill(float myElectricBill) {
-		this.myElectricBill = myElectricBill;
+	public void setMyElectricBill(float theElectricBill) {
+		this.myElectricBill = theElectricBill;
 	}
 
 	public float getMyGasBill() {
@@ -248,35 +257,35 @@ public class Home implements Exportable {
 		this.myTotalLight = myTotalLight;
 	}
 
-	public int getMyIncandLight() {
+	public boolean getMyIncandLight() {
 		return myIncandLight;
 	}
 
-	public void setMyIncandLight(int myIncandLight) {
+	public void setMyIncandLight(boolean myIncandLight) {
 		this.myIncandLight = myIncandLight;
 	}
 
-	public int getMyLEDLight() {
+	public boolean getMyLEDLight() {
 		return myLEDLight;
 	}
 
-	public void setMyLEDLight(int myLEDLight) {
+	public void setMyLEDLight(boolean myLEDLight) {
 		this.myLEDLight = myLEDLight;
 	}
 
-	public int getMyHalLight() {
+	public boolean getMyHalLight() {
 		return myHalLight;
 	}
 
-	public void setMyHalLight(int myHalLight) {
+	public void setMyHalLight(boolean myHalLight) {
 		this.myHalLight = myHalLight;
 	}
 
-	public int getMyFlorLight() {
+	public boolean getMyFlorLight() {
 		return myFlorLight;
 	}
 
-	public void setMyFlorLight(int myFlorLight) {
+	public void setMyFlorLight(boolean myFlorLight) {
 		this.myFlorLight = myFlorLight;
 	}
 
@@ -288,11 +297,11 @@ public class Home implements Exportable {
 		this.mySolarPanel = mySolarPanel;
 	}
 
-	public int getMyWeatherProofedDoor() {
+	public boolean getMyWeatherProofedDoor() {
 		return myWeatherProofedDoor;
 	}
 
-	public void setMyWeatherProofedDoor(int myWeatherProofedDoor) {
+	public void setMyWeatherProofedDoor(boolean myWeatherProofedDoor) {
 		this.myWeatherProofedDoor = myWeatherProofedDoor;
 	}
 

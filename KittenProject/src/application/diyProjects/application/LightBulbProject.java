@@ -1,13 +1,28 @@
 package application;
 
+/**
+ * Lightbult Project
+ * @author richw253
+ * @version Dec 6
+ *
+ */
+public class LightBulbProject extends project {
 
-public class LightBulbProject extends project { //still needs calculation for savings and such
+	/** Average cost of lighting per year. */
+	private static final int LIGHTING_COST = 150;
+	
+	/** Average cost of savings per year. */
+	private static final int LIGHTING_SAVINGS = 45;
+	
+	/** Average cost of LED light. */
+	private static final int LED_COST = 5;
 
+	
 	int numberOfBulbs;
-	int myIncandLight;
-	int myLEDLight;
-	int myHalLight;
-	int myFlorLight;
+	boolean myIncandLight;
+	boolean myLEDLight;
+	boolean myHalLight;
+	boolean myFlorLight;
 
 
 
@@ -29,13 +44,13 @@ public class LightBulbProject extends project { //still needs calculation for sa
 	}
 
 	private int calculateSavings() {
-		// do some math
-		return 5;
+		
+		return LIGHTING_SAVINGS;
 	}
 
 	private int calculateCost() {
-		// do some math
-		return 24;
+
+		return numberOfBulbs * LED_COST;
 	}
 
 	public int getNumberOfBulbs() {
@@ -50,49 +65,49 @@ public class LightBulbProject extends project { //still needs calculation for sa
 
 
 
-	public int getMyIncandLight() {
+	public boolean getMyIncandLight() {
 		return myIncandLight;
 	}
 
 
 
-	public void setMyIncandLight(int myIncandLight) {
+	public void setMyIncandLight(boolean myIncandLight) {
 		this.myIncandLight = myIncandLight;
 	}
 
 
 
-	public int getMyLEDLight() {
+	public boolean getMyLEDLight() {
 		return myLEDLight;
 	}
 
 
 
-	public void setMyLEDLight(int myLEDLight) {
+	public void setMyLEDLight(boolean myLEDLight) {
 		this.myLEDLight = myLEDLight;
 	}
 
 
 
-	public int getMyHalLight() {
+	public boolean getMyHalLight() {
 		return myHalLight;
 	}
 
 
 
-	public void setMyHalLight(int myHalLight) {
+	public void setMyHalLight(boolean myHalLight) {
 		this.myHalLight = myHalLight;
 	}
 
 
 
-	public int getMyFlorLight() {
+	public boolean getMyFlorLight() {
 		return myFlorLight;
 	}
 
 
 
-	public void setMyFlorLight(int myFlorLight) {
+	public void setMyFlorLight(boolean myFlorLight) {
 		this.myFlorLight = myFlorLight;
 	}
 }
