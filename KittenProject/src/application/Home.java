@@ -93,8 +93,7 @@ public class Home implements Exportable {
 		
 		myExporter = new Exporter(this);
 		
-		//fields should only be initialized through importing
-		System.out.println("Made Home ");
+		
 		
 	}
 
