@@ -131,7 +131,8 @@ public class Main extends Application {
 //	    	System.out.println(testSettings.getMyEmailAddress());
 //	    	System.out.println("Working Directory = " +
 //	                System.getProperty("user.dir"));
+
+			new Config();
 	    	launch(args);
-	    	
 	    }
 }
