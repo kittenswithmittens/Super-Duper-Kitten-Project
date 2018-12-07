@@ -1,5 +1,11 @@
-package application;
+/**
+ * Exporter class
+ * Authors: Isaiah Miller
+ * version 1.0
+ * 12/2018
+ */
 
+package application;
 import java.io.File;
 import java.io.IOException;
 
@@ -7,20 +13,30 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.ObjectWriter;
 
-/**
- * @author Isaiah Miller
- */
 public class Exporter {
 	//import/export fields
+		/**
+		 * myMapper
+		 */
 		private final ObjectMapper myMapper;
+		/**
+		 * myReader
+		 */
 		private final ObjectReader myReader;
+		/**
+		 * myWriter
+		 */
 		private final ObjectWriter myWriter;
 		
+		/**
+		 * myDestObject
+		 */
 		private final Object myDestObject;
+		
 		
 		/**
 		 * must instantiate one of this for a class to use
-		 * @author Isaiah Miller
+		 * @param destObject
 		 */
 		public Exporter(Exportable destObject) {
 			// sets up JSON object mapper
@@ -30,10 +46,10 @@ public class Exporter {
 			myDestObject = destObject;
 		}
 
+	
 		/**
 		 * Imports home data from save file into to this instance.
-		 * 
-		 * @author Isaiah Miller
+		 * @param srcFile
 		 */
 		public void importFile(File srcFile) {
 			try {
@@ -45,8 +61,10 @@ public class Exporter {
 			}
 		}
 
+
 		/**
-		 * @author Isaiah Miller
+		 * exports the file
+		 * @param destFile
 		 */
 		public void exportFile(File destFile) {
 			try {
