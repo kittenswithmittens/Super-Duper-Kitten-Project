@@ -12,6 +12,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.Glow;
 import javafx.scene.effect.Shadow;
@@ -26,19 +28,110 @@ import javafx.stage.StageStyle;
  * the settings instance to
  */
 public class editHomeController extends Main implements Initializable {
-    @FXML TextField electricBill;
+    //Heat
+    @FXML RadioButton gasHeater;
+    @FXML RadioButton electricHeater;
+    @FXML RadioButton radiantHeater;
+    @FXML CheckBox msFurnace;
+    @FXML CheckBox houseFan;
+    @FXML CheckBox pThermostat;
+    //Water
+    @FXML RadioButton gasWater;
+    @FXML RadioButton electricWater;
+    @FXML RadioButton onDemandWater;
+    //Light
+    @FXML RadioButton incandLights;
+    @FXML RadioButton ledLights;
+    @FXML RadioButton halogenLights;
+    @FXML RadioButton florLights;
+    @FXML TextField numLights;
+    //Windows and Doors
+    @FXML CheckBox wpDoors;
+    @FXML TextField numWindows;
+    @FXML TextField numBadWindows;
+    //Insulation
+    @FXML CheckBox iWalls;
+    @FXML CheckBox iCeiling;
+    @FXML CheckBox iFloors;
+    //Irrigation
+    @FXML CheckBox irrigationSensor;
+    //Appliances
+    @FXML CheckBox eStarFridge;
+    @FXML CheckBox eStarWasher;
+    @FXML CheckBox eStarDryer;
+    @FXML CheckBox eStarDish;
     
     private double xOffset = 0;
     private double yOffset = 0;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        electricBill.setText("" + theHome.getMyElectricBill());
+        //gasHeater.setText("" + theHome.getMyElectricBill());
+        gasHeater.setSelected(theHome.isMyMainHeatGas());
+        electricHeater.setSelected(theHome.isMyMainHeatElect());
+        radiantHeater.setSelected(theHome.isMyMainHeatRadiant());
+        msFurnace.setSelected(theHome.isMyFurnanceMultStage());
+        houseFan.setSelected(theHome.isMyHouseFan());
+        pThermostat.setSelected(theHome.isMyProgThermostat());
+        //
+        gasWater.setSelected(theHome.isMyGasWaterHeater());
+        electricWater.setSelected(theHome.isMyElectWaterHeat());
+        onDemandWater.setSelected(theHome.isMyOnDemand());
+        //
+        incandLights.setSelected(theHome.getMyIncandLight());
+        ledLights.setSelected(theHome.getMyLEDLight());
+        halogenLights.setSelected(theHome.getMyHalLight());
+        numLights.setText("" + theHome.getMyTotalLight());
+        //
+        wpDoors.setSelected(theHome.getMyWeatherProofedDoor());
+        numWindows.setText("" + theHome.getMyNumWindow());
+        numBadWindows.setText("" + theHome.getMyNumWindowBad());
+        //
+        iWalls.setSelected(theHome.isMyInsulationWall());
+        iCeiling.setSelected(theHome.isMyInsulationCeiling());
+        //iFloors.setSelected(theHome.isMyInsulationFloor());
+        //
+        irrigationSensor.setSelected(theHome.isMyIrrigationSensor());
+        //
+        eStarFridge.setSelected(theHome.isMyEStarRefrig());
+        eStarWasher.setSelected(theHome.isMyEStarClothWash());
+        eStarDryer.setSelected(theHome.isMyEStarDryer());
+        eStarDish.setSelected(theHome.isMyEStarDishWash());
     }
     
     @FXML
     void saveClose(MouseEvent arg0) throws IOException {
-        theHome.setMyElectricBill(Float.parseFloat(electricBill.getText()));
+        //theHome.setMyElectricBill(Float.parseFloat(gasHeater.getText()));
+        theHome.setMyMainHeatGas(gasHeater.isSelected());
+        theHome.setMyMainHeatElect(electricHeater.isSelected());
+        theHome.setMyMainHeatRadiant(radiantHeater.isSelected());
+        theHome.setMyFurnanceMultStage(msFurnace.isSelected());
+        theHome.setMyHouseFan(houseFan.isSelected());
+        theHome.setMyProgThermostat(pThermostat.isSelected());
+        //
+        theHome.setMyGasWaterHeater(gasWater.isSelected());
+        theHome.setMyElectWaterHeat(electricWater.isSelected());
+        theHome.setMyOnDemand(onDemandWater.isSelected());
+        //
+        theHome.setMyIncandLight(incandLights.isSelected());
+        theHome.setMyLEDLight(ledLights.isSelected());
+        theHome.setMyHalLight(halogenLights.isSelected());
+        theHome.setMyTotalLight(Integer.parseInt(numLights.getText()));
+        //
+        theHome.setMyWeatherProofedDoor(wpDoors.isSelected());
+        theHome.setMyNumWindow(Integer.parseInt(numWindows.getText()));
+        theHome.setMyNumWindowBad(Integer.parseInt(numBadWindows.getText()));
+        //
+        theHome.setMyInsulationWall(iWalls.isSelected());
+        theHome.setMyInsulationCeiling(iCeiling.isSelected());
+        //theHome.setMyInsulationFloor(iFloors.isSelected());
+        //
+        theHome.setMyIrrigationSensor(irrigationSensor.isSelected());
+        //
+        theHome.setMyEStarRefrig(eStarFridge.isSelected());
+        theHome.setMyEStarClothWash(eStarWasher.isSelected());
+        theHome.setMyEStarDryer(eStarDryer.isSelected());
+        theHome.setMyEStarDishWash(eStarDish.isSelected());
         changeScene("list.fxml", arg0);
     }
 	
