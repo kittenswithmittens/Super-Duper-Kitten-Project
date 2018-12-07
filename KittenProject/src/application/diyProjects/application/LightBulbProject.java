@@ -1,8 +1,23 @@
 package application;
 
+/**
+ * Lightbult Project
+ * @author richw253
+ * @version Dec 6
+ *
+ */
+public class LightBulbProject extends project {
 
-public class LightBulbProject extends project { //still needs calculation for savings and such
+	/** Average cost of lighting per year. */
+	private static final int LIGHTING_COST = 150;
+	
+	/** Average cost of savings per year. */
+	private static final int LIGHTING_SAVINGS = 45;
+	
+	/** Average cost of LED light. */
+	private static final int LED_COST = 5;
 
+	
 	int numberOfBulbs;
 	boolean myIncandLight;
 	boolean myLEDLight;
@@ -21,8 +36,7 @@ public class LightBulbProject extends project { //still needs calculation for sa
 		myLEDLight = theHome.getMyLEDLight();
 		myHalLight = theHome.getMyHalLight();
 		myFlorLight = theHome.getMyFlorLight();
-		description = "And on the 7th isle of Lowe's some kid in a red vest said \"LET THERE BE LIGHT\" \n\nTake some light bulbs out, put some new ones in.... "
-				+ "or just wait for the sun to rise in the East";
+		description = "And on the 7th isle of Lowe's some kid in a red vest said \"LET THERE BE LIGHT\" Take some light bulbs out, put some new ones in, its darn simple";
 		difficulty = 1;
 		cost = calculateCost();
 		savings = calculateSavings();
@@ -30,13 +44,13 @@ public class LightBulbProject extends project { //still needs calculation for sa
 	}
 
 	private int calculateSavings() {
-		// do some math
-		return 5;
+		
+		return LIGHTING_SAVINGS;
 	}
 
 	private int calculateCost() {
-		// do some math
-		return 24;
+
+		return numberOfBulbs * LED_COST;
 	}
 
 	public int getNumberOfBulbs() {
