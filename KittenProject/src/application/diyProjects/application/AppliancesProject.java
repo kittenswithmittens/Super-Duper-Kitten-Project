@@ -3,22 +3,35 @@ package application;
 
 public class AppliancesProject extends project { //still needs calculation for savings and such
 
+	/** Average EStar Refrigerator cost. */
+	private static final int ESTAR_REFRIG_COST= 1000;
+	
+	/** Average EStar Dishwasher cost. */
+	private static final int ESTAR_DISHWASH_COST = 500;
+	
+	/** Average EStar Clothes washer cost. */
+	private static final int ESTAR_CLOTHESWASH_COST = 1100;
+	
+	/** Average EStar Dryer cost. */
+	private static final int ESTAR_DRYER_COST = 700;
+	
+	/** Average EStar Refrigerator yearly savings. */
+	private static final int ESTAR_REFRIG_SAVINGS = 54;
+	
+	/** Average EStar Dishwasher yearly savings. */
+	private static final int ESTAR_DISHWASH_SAVINGS = 10;
+	
+	/** Average EStar Clothes washer yearly savings. */
+	private static final int ESTAR_CLOTHESWASH_SAVINGS = 30;
+	
+	/** Average Estar Clothes drier yearly savings. */
+	private static final int ESTAR_DRYER_SAVINGS = 20;
+	
 	boolean myEStarRefrig;
 	boolean myEStarDishWash; 
 	boolean myEStarClothWash;
 	boolean myEStarDryer;
 
-	/** Average EStar Refrigerator cost. */
-	int EStarRefrigCost = 1000;
-	
-	/** Average Estar Dishwasher cost. */
-	int EStarDishWashCost = 500;
-	
-	/** Average Estar Clothes washer cost. */
-	int EStarClothesWashCost = 1100;
-	
-	/** Average Estar Dryer cost. */
-	int EStarDryerCost = 700;
 
 	public AppliancesProject() {
 		super();
@@ -43,16 +56,16 @@ public class AppliancesProject extends project { //still needs calculation for s
 
 		int savings = 0;
 		if (!myEStarRefrig) {
-			savings += 54;
+			savings += ESTAR_REFRIG_SAVINGS;
 		} 
 		if (!myEStarDishWash) {
-			savings += 10;
+			savings += ESTAR_DISHWASH_SAVINGS;
 		} 
 		if (!myEStarClothWash) {
-			savings += 30;
+			savings += ESTAR_CLOTHESWASH_SAVINGS;
 		} 
 		if (!myEStarDryer) {
-			savings += 20;
+			savings += ESTAR_DRYER_SAVINGS;
 		} 
 		
 		return savings;
@@ -61,16 +74,16 @@ public class AppliancesProject extends project { //still needs calculation for s
 	private int calculateCost() {
 		int cost = 0;
 		if (!myEStarRefrig) {
-			cost += EStarRefrigCost;
+			cost += ESTAR_REFRIG_COST;
 		} 
 		if (!myEStarDishWash) {
-			cost += EStarDishWashCost;
+			cost += ESTAR_DISHWASH_COST;
 		} 
 		if (!myEStarClothWash) {
-			cost += EStarClothesWashCost;
+			cost += ESTAR_CLOTHESWASH_COST;
 		} 
 		if (!myEStarDryer) {
-			cost += EStarDryerCost;
+			cost += ESTAR_DRYER_COST;
 		}
 		return cost;
 	}
