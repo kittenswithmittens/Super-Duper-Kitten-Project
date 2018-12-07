@@ -8,13 +8,13 @@ import java.io.File;
 public class Sound {
 
     public static final Sound[] sounds = {
-        new Sound("eagle.mp3") , new Sound("Sad-cat.mp3")
+        new Sound("Sad-cat.mp3"), new Sound("KittensinMittens.mp3")
     };
 
     MediaPlayer mediaPlayer;
 
     private Sound(String name) {
-    	name = "sounds\\" + name;
+    	name = "src\\application\\sound\\" + name;
     	Media sound = new Media(new File(name).toURI().toString());
     	mediaPlayer = new MediaPlayer(sound);
 
