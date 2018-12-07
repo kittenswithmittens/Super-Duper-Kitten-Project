@@ -183,7 +183,7 @@
       </ImageView>
       <ImageView fitHeight="33.0" fitWidth="83.0" layoutX="259.0" layoutY="8.0" onMouseClicked="#saveClose" onMouseEntered="#hoverGlow" onMouseExited="#unglow">
          <image>
-            <Image url="@../../../../../Desktop/Kitten%20Project/SaveCloseButton.png" />
+            <Image url="@resources/SaveCloseButton.png" />
          </image>
       </ImageView>
    </children>

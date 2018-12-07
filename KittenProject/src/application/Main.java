@@ -19,7 +19,7 @@ public class Main extends Application {
 	/* Stage field. */
 	public Stage myStage;
 	
-		public double version = 1.00;
+		public String version = "0.1.9.0";
 	    private double xOffset = 0;
 	    private double yOffset = 0;
 	    public static Home theHome;
@@ -93,7 +93,7 @@ public class Main extends Application {
 	 	}
 
 	 	public String getVersion() {
-	 		return Double.toString(version);
+	 		return version;
 	 	}
 	 	
 

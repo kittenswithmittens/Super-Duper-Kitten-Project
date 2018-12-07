@@ -54,7 +54,9 @@ public class listViewController extends Main implements Initializable {
 	@FXML public void handleMouseClick(MouseEvent arg0) throws IOException {
 	    selected = listView.getSelectionModel().getSelectedItem();                      //remembers what was clicked, needs to be pass on to projectview
 	    //System.out.println("clicked on " + selected); //prints what you clicked on
-	    changeScene("projectView.fxml", arg0);
+	    if(selected != null) {
+	        changeScene("projectView.fxml", arg0);
+	    }
 	}
 	
 	

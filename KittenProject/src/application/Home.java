@@ -106,7 +106,7 @@ public class Home implements Exportable {
 	public Home(final boolean isDefault) throws IllegalArgumentException, IllegalAccessException {
 		myExporter = new Exporter(this);
 		final Field[] fields = this.getClass().getDeclaredFields();
-		final Class<Boolean> boolClass = Boolean.TYPE;
+		//final Class<Boolean> boolClass = Boolean.TYPE;     //dunno why this is here.. Isaiah...
 		final int spreadRandInt = 10000;
 		final int spreadRandFloat = 10000;
 		for(Field field: fields) {

@@ -8,7 +8,7 @@
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" onMouseClicked="#moveOn">
          <image>
-            <Image url="@resources/Splash.jpg" />
+            <Image url="@resources/Splash2.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="17.0" fitWidth="19.0" layoutX="567.0" layoutY="14.0" onMouseClicked="#halt" onMouseEntered="#hoverShadow" onMouseExited="#unglow">

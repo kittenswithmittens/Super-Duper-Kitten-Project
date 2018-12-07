@@ -31,7 +31,7 @@ public class SettingsController {
 	private void initialize() {
 		// initialize text Field contents
 		if (mySettings.getMyName() != null) {
-			System.out.println("myNameField is: " + myNameField);
+			//System.out.println("myNameField is: " + myNameField);
 			myNameField.setText(mySettings.getMyName());
 		}
 		if (mySettings.getMyEmailAddress() != null) {
@@ -49,8 +49,8 @@ public class SettingsController {
 		// close window
 		((Stage) myNameField.getScene().getWindow()).close();
 
-		System.out.println("myNameField is: " + myNameField.getText());
-		System.out.println("myEmailField is: " + myEmailField.getText());
+		//System.out.println("myNameField is: " + myNameField.getText());
+		//System.out.println("myEmailField is: " + myEmailField.getText());
 	}
 
 }
