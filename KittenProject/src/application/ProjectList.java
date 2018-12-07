@@ -53,7 +53,7 @@ public class ProjectList{
 	 */
 	class SortbyEnergySavings implements Comparator<project> {
 		public int compare(project a, project b) {
-			return a.getSavings() - b.getSavings();
+			return b.getSavings() - a.getSavings();
 		}
 	}
 	

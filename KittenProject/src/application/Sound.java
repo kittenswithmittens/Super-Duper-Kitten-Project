@@ -8,7 +8,7 @@ import java.io.File;
 public class Sound {
 
     public static final Sound[] sounds = {
-        new Sound("eagle.mp3")
+        new Sound("eagle.mp3") , new Sound("Sad-cat.mp3")
     };
 
     MediaPlayer mediaPlayer;
@@ -23,6 +23,7 @@ public class Sound {
     public void play() {
         new Thread() {
             public void run() {
+            	mediaPlayer.setVolume(.025); //volume set
                 mediaPlayer.play();
             }
         }.start();

@@ -25,6 +25,7 @@ public class mainPageController extends Main {
 	@FXML
     public void moveOn(MouseEvent event) throws IOException {
 		//Sound.sounds[0].play();  //LET AMERICA FLY
+		Sound.sounds[1].play();   // LET UR INNER CAT OUT
 		changeScene("list.fxml", event);
 
     }

@@ -1,6 +1,13 @@
 package application;
 
-public class HeatProject extends project { //still needs calculation for savings and such
+
+/**
+ * Heating project
+ * @author richw253
+ * @version Dec 6
+ */
+public class HeatProject extends project {
+
 	
 	/** Price of EStar Gas Water Heater. */
 	private static final int GAS_WATER_HEATER_COST = 900;

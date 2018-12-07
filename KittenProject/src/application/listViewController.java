@@ -1,12 +1,11 @@
 package application;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.application.Platform;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,36 +19,44 @@ import javafx.scene.effect.Glow;
 import javafx.scene.effect.Shadow;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
 
-
 public class listViewController extends Main implements Initializable {
 	@FXML MenuButton menuButton;
+	@FXML Pane pane;
 	@FXML ListView<project> listView;
 	private double xOffset = 0;
     private double yOffset = 0;
+    Settings mySettings;
     
     static project selected;
     ProjectList myProjects;
     
-	
 	@Override
     public void initialize(URL url, ResourceBundle rb) {
 		//populates list
 		listView.setEditable(true);
 		myProjects = new ProjectList();
-		listView.setItems(myProjects.getPros()); 
+		listView.setItems(myProjects.getPros());
+		pane.setVisible(false);
+		mySettings = new Settings();
 		//end populate
-		
     }
+	
+	public static project getSelected() {
+	    return selected;
+	}
 	
 	//clicking list item
 	@FXML public void handleMouseClick(MouseEvent arg0) throws IOException {
 	    selected = listView.getSelectionModel().getSelectedItem();                      //remembers what was clicked, needs to be pass on to projectview
 	    //System.out.println("clicked on " + selected); //prints what you clicked on
-	    changeScene("projectView.fxml", arg0);
+	    if(selected != null) {
+	        changeScene("projectView.fxml", arg0);
+	    }
 	}
 	
 	
@@ -123,71 +130,77 @@ public class listViewController extends Main implements Initializable {
     });
     }
     
-    
-    
     @FXML
     void menu(MouseEvent event) throws IOException {
-    	double x = ((Node)(event.getSource())).getScene().getWindow().getX();
-        double y = ((Node)(event.getSource())).getScene().getWindow().getY();
-    	final Settings model = new Settings();
+        pane.setVisible(true);
+    }
+    
+    @FXML
+    void hideMenu(MouseEvent event) throws IOException {
+        pane.setVisible(false);
+    }
+    
+    @FXML
+    void exportFile(final MouseEvent event) {
+        // call File chooser's export method pass the stage
+        System.out.println("exportButton");
+        final Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        final File exportDest = FileChooserDIY.specSaveFile(stage);
+        if (exportDest != null) {
+            mySettings.exportJSON(exportDest);
+        } else {
+            System.out.println("File chosen is null. No export performed.");
+        }
+    }
+
+    @FXML
+    void importFile(MouseEvent event) {
+        System.out.println("importButton");
+        final Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        final File importDest = FileChooserDIY.specOpenFile(stage);
+        if (importDest != null) {
+            mySettings.importJSON(importDest);
+        } else {
+            System.out.println("File chosen is null. No export performed.");
+        }
+    }
+    
+    /**
+     * @author Isaiah Miller
+     * Opens the Settings view for modifying settings.
+     * @throws IOException 
+     */
+    @FXML
+    void openSettingsView(MouseEvent event) throws IOException {
+        //open settings view, pass settings object
+        
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("menuBox.fxml"));
+        loader.setLocation(getClass().getResource("Settings.fxml"));
         loader.setControllerFactory(new Callback<Class<?>, Object>() {
             @Override
             public Object call(Class<?> aClass) {
-                return new menuBoxController(model);
+                return new SettingsController(mySettings);
             }
         });
-    	
-    	
-    	
+        
+        
+        
         Stage stage = new Stage();
-        stage.initStyle(StageStyle.UNDECORATED);
-        stage.setTitle("Menu");
+        stage.setTitle("Settings");
         stage.getIcons().add(new Image("application/resources/constructlogo.png"));
+
         Parent root = (Parent) loader.load();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setResizable(false);
-        //position menu
-        stage.setX(x);
-        stage.setY(y);      
-        //end position menu
-        
         stage.show();
-        
-
-        
-        
-        //movability section
-	      //grab your root here
-        root.setOnMousePressed(new EventHandler<MouseEvent>() {
-        @Override
-        public void handle(MouseEvent event) {
-            xOffset = event.getSceneX();
-            yOffset = event.getSceneY();
-        }
-    });
-
-    //move around here
-        root.setOnMouseDragged(new EventHandler<MouseEvent>() {
-        @Override
-        public void handle(MouseEvent event) {
-            stage.setX(event.getScreenX() - xOffset);
-            stage.setY(event.getScreenY() - yOffset);
-        }
-    });
-    }
-
-    public static project getSelected() {
-    	return selected;
     }
     
-    
-
-    
-    
-    
+    @FXML
+    void openUpdaterView(MouseEvent arg0) throws IOException {
+        //((Node)(arg0.getSource())).getScene().getWindow().hide();
+        changeScene("edithome.fxml", arg0);
+    }
 }
    
 

@@ -2,7 +2,12 @@ package application;
 
 import application.project;
 
-public class SolarProject extends project { //still needs calculation for savings and such
+/**
+ * Solar Panel System project
+ * @author richw253
+ * @version Dec 6
+ */
+public class SolarProject extends project {
 
 	/** Electricity usage field. */
 	boolean mySolarPanel;
