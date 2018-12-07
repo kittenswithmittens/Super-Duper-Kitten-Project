@@ -22,7 +22,8 @@ public class ProjectList{
 		(new WindowsDoorsProject()),
 		(new InsulationProject()),
 		(new IrrigationProject()),
-		(new SolarProject())
+		(new SolarProject()),
+		(new ThermostatProject())
 		);
 	}
 	
