@@ -1,7 +1,6 @@
 package application;
 
 import java.io.File;
-import java.util.Objects;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
  

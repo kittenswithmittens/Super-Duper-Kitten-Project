@@ -4,7 +4,7 @@ package application;
 public class WindowsDoorsProject extends project { //still needs calculation for savings and such
 	
 	/** Windows and Door fields. */
-	int myWeatherProofedDoor;
+    boolean myWeatherProofedDoor;
 	int myNumWindow;
 	int myNumWindowBad;
 	int myNumWindowLowE;
@@ -38,11 +38,11 @@ public class WindowsDoorsProject extends project { //still needs calculation for
 		return 2500;
 	}
 
-	public int getMyWeatherProofedDoor() {
+	public boolean getMyWeatherProofedDoor() {
 		return myWeatherProofedDoor;
 	}
 
-	public void setMyWeatherProofedDoor(int myWeatherProofedDoor) {
+	public void setMyWeatherProofedDoor(boolean myWeatherProofedDoor) {
 		this.myWeatherProofedDoor = myWeatherProofedDoor;
 	}
 
