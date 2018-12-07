@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
+
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -25,15 +26,19 @@
             <AnchorPane prefHeight="1137.0" prefWidth="599.0" style="-fx-background-color: #22dac2;">
                <children>
                   <Text fill="WHITE" layoutX="238.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HEATING">
+
                      <font>
                         <Font name="Arial Black" size="24.0" />
                      </font>
                   </Text>
+
                   <Text fill="WHITE" layoutX="115.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What kind of heater do you have?">
+
                      <font>
                         <Font name="Arial Black" size="12.0" />
                      </font>
                   </Text>
+
                   <RadioButton fx:id="gasHeater" layoutX="349.0" layoutY="77.0" mnemonicParsing="false" text="Gas">
                      <toggleGroup>
                         <ToggleGroup fx:id="heat" />
@@ -42,10 +47,12 @@
                   <RadioButton fx:id="electricHeater" layoutX="349.0" layoutY="98.0" mnemonicParsing="false" text="Electric" toggleGroup="$heat" />
                   <RadioButton fx:id="radiantHeater" layoutX="349.0" layoutY="119.0" mnemonicParsing="false" text="Radiant" toggleGroup="$heat" />
                   <Text fill="WHITE" layoutX="191.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do you have any of the following?">
+
                      <font>
                         <Font name="Arial Black" size="12.0" />
                      </font>
                   </Text>
+
                   <CheckBox fx:id="houseFan" layoutX="225.0" layoutY="180.0" mnemonicParsing="false" text="House Fan" />
                   <CheckBox fx:id="msFurnace" layoutX="23.0" layoutY="180.0" mnemonicParsing="false" text="Multi-Stage Furnace" />
                   <CheckBox fx:id="pThermostat" layoutX="367.0" layoutY="180.0" mnemonicParsing="false" text="Programmable Thermostat" />
@@ -87,10 +94,12 @@
                      </font>
                   </Text>
                   <Text fill="WHITE" layoutX="75.0" layoutY="529.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How many light bulbs do you have?">
+
                      <font>
                         <Font name="Arial Black" size="12.0" />
                      </font>
                   </Text>
+
                   <TextField fx:id="numLights" layoutX="337.0" layoutY="512.0" />
                   <Separator layoutX="18.0" layoutY="561.0" prefWidth="550.0" />
                   <Text fill="WHITE" layoutX="148.0" layoutY="608.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WINDOWS AND DOORS">
@@ -157,6 +166,7 @@
                   <CheckBox fx:id="eStarFridge" layoutX="52.0" layoutY="1062.0" mnemonicParsing="false" text="Energy Star Refrigerator" />
                   <CheckBox fx:id="eStarWasher" layoutX="344.0" layoutY="1062.0" mnemonicParsing="false" text="Energy Star Washing Machine" />
                   <CheckBox fx:id="eStarDryer" layoutX="344.0" layoutY="1095.0" mnemonicParsing="false" text="Energy Star Dryer" />
+
                </children>
             </AnchorPane>
          </content>
@@ -181,10 +191,12 @@
             <Image url="@resources/backbutton.png" />
          </image>
       </ImageView>
+
       <ImageView fitHeight="33.0" fitWidth="83.0" layoutX="259.0" layoutY="8.0" onMouseClicked="#saveClose" onMouseEntered="#hoverGlow" onMouseExited="#unglow">
          <image>
             <Image url="@resources/SaveCloseButton.png" />
          </image>
       </ImageView>
+
    </children>
 </Pane>

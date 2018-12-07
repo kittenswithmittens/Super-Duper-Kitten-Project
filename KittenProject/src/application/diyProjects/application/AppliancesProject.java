@@ -1,11 +1,13 @@
 package application;
 
+
 /**
  * Appliance project
  * @author richw253
  * @version Dec 6
  */
 public class AppliancesProject extends project {
+
 
 	/** Average EStar Refrigerator cost. */
 	private static final int ESTAR_REFRIG_COST= 1000;
@@ -34,7 +36,9 @@ public class AppliancesProject extends project {
 	boolean myEStarRefrig;
 	boolean myEStarDishWash; 
 	boolean myEStarClothWash;
+
 	boolean myEStarDryer;
+
 
 
 	public AppliancesProject() {

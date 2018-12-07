@@ -1,11 +1,13 @@
 package application;
 
 
+
 /**
  * Thermostat project
  * @author richw253
  * @version Dec 6
  */
+
 public class ThermostatProject extends project{
 	
 	/** Cost of programmable thermostat. */

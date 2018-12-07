@@ -103,7 +103,7 @@ public class Home implements Exportable {
 	    myIrrigation = true;
 		myExporter = new Exporter(this);
 		
-		//fields should only be initialized through importing
+
 	}
 
 	
@@ -148,6 +148,7 @@ public class Home implements Exportable {
 	public float getMyElectricBill() {
 		return myElectricBill;
 	}
+
 
 	public void setMyElectricBill(float theElectricBill) {
 		this.myElectricBill = theElectricBill;
