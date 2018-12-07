@@ -14,7 +14,7 @@ public class Sound {
     MediaPlayer mediaPlayer;
 
     private Sound(String name) {
-    	name = "sounds\\" + name;
+    	name = "src\\application\\sound\\" + name;
     	Media sound = new Media(new File(name).toURI().toString());
     	mediaPlayer = new MediaPlayer(sound);
 
