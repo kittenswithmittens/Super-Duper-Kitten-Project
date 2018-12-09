@@ -10,18 +10,21 @@ import java.util.Scanner;
 import org.junit.Before;
 import org.junit.Test;
 
+import application.Config;
 import application.Settings;
 
 /**
+ * Date 11/30/18
  * @author Isaiah Miller
- *
  */
 public class ExportImportTester {
 	public static final String EXPORT = "export";
 	public static final String TYPICAL = "typical.json";
+	private static final String TYPICAL_CONFIG = "typicalConfig.json";
 	Settings myActualSettings;
 
 	/**
+	 * Date 11/30/18
 	 * @author Isaiah Miller
 	 */
 	@Before
@@ -35,11 +38,50 @@ public class ExportImportTester {
 	@Test
 	public void importTypical() {
 		final Settings expectedSettings = typicalSettings();
-		URL testURL = getClass().getResource(TYPICAL);
+		final URL testURL = getClass().getResource(TYPICAL);
 		myActualSettings.importJSON(new File(testURL.getPath()));
 		assertEquals(expectedSettings, myActualSettings);
 	}
+	
+	
+	/**
+	 * Date:12/8/18
+	 * @author Isaiah Miller
+	 */
+	@Test
+	public void importConfig() {
+		final Config expected = typicalConfig();
+		final URL testURL = getClass().getResource(TYPICAL_CONFIG);
+		final Config actual = new Config();
+		actual.importJSON(new File(testURL.getPath()));
+		assertEquals(expected, actual);
+	}
 
+	
+	
+	
+	
+	
+	/**
+	 * Date: 12/8/18
+	 * @author Isaiah Miller
+	 */
+	@Test
+	public void exportConfig() {
+		//export typical file
+		final Config expected = typicalConfig();
+		final Config origConfig = typicalConfig();
+		final String destPathEnding  = EXPORT + "/" + TYPICAL_CONFIG;
+		System.out.println("destPathEnding is: " + destPathEnding);
+		final URL testURL = getClass().getResource(destPathEnding);
+		origConfig.exportJSON(new File(testURL.getPath()));
+		
+		//import file to new object and test against expected
+		final Config actual = new Config();
+		actual.importJSON(new File(testURL.getPath()));
+		assertEquals(expected, actual);
+	}
+	
 	/**
 	 * @author Isaiah Miller
 	 * @return
@@ -48,6 +90,24 @@ public class ExportImportTester {
 		final Settings res = new Settings();
 		res.setMyEmailAddress("myemail@gmail.com");
 		res.setMyName("Bob");
+		return res;
+	}
+	
+	/**
+	 * Date: 12/8/18
+	 * @author Isaiah Miller
+	 * @return
+	 */
+	private static Config typicalConfig() {
+		final Config res = new Config();
+//		private String mySourcePath;
+//		private String mySavePath;
+//		private String myHomePath;
+//		private String mySettingsPath
+		res.setMyHomePath("/Home");
+		res.setMySavePath("/Save");
+		res.setMySettingsPath("/Settings");
+		res.setMySourcePath("/source");
 		return res;
 	}
 

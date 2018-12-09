@@ -693,16 +693,6 @@ public class Home implements Exportable {
 	public void importJSON(File srcFile) {
 		myExporter.importFile(srcFile);
 	}
-//		File srcFile = new File(Home.HOME_PATH);
-//		try {
-//			myReader.readValue(srcFile);
-//		} catch (IOException e) {
-//			System.out.println("Import failed... Making new Home save file.");
-//			exportHome();
-////			e.printStackTrace();
-//		}
-	
-	
 	
 	/**
 	 * exports home data to a save file
@@ -713,15 +703,6 @@ public class Home implements Exportable {
 	public void exportJSON(File destFile) {
 		myExporter.exportFile(destFile);
 	}
-		
-		
-		
-//		File destFile = new File(Home.HOME_PATH);
-//		try {
-//			myWriter.writeValue(destFile, this);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
 	
 
 }

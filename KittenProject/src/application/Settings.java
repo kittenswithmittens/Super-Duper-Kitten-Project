@@ -100,6 +100,10 @@ public class Settings implements Exportable {
 //		return myEmailAddress;
 //	}
 	
+	/* 
+	 * Date: 11/23/18
+	 * @author Isaiah Miller
+	 */
 	@Override
 	public boolean equals(Object other) {
 		boolean res;
@@ -113,9 +117,12 @@ public class Settings implements Exportable {
 			res = emailAddressIsEqual && nameIsEqual;
 		}
 		return res;
-		
 	}
 	
+	/* 
+	 * Date: 11/23/18
+	 * @author Isaiah Miller
+	 */
 	@Override
 	public String toString() {
 		return "name" + myName + ", " + "email address: " + myEmailAddress;
