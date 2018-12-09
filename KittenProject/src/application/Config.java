@@ -8,6 +8,9 @@ import java.net.URL;
  *         persistent data.
  */
 public class Config implements Exportable {
+	/**
+	 * The path to the config file. This should not change. It is not an exportable property.
+	 */
 	private String mySourcePath;
 	private String mySavePath;
 	private String myHomePath;
@@ -27,19 +30,30 @@ public class Config implements Exportable {
 //		final File sourceFile = new File(mySourcePath);
 //		myExporter.importFile(sourceFile);
 
-		mySourcePath = retConfigPath();
+//		System.out.println(this);
 		mySavePath = retSavePath();
+//		System.out.println(this);
+		myHomePath = retHomePath();
+//		System.out.println(this);
+		mySettingsPath = retSettingsPath();
+		System.out.println("OHI" + this);
+		
+		
 //		System.out.println("mySource path is: " + mySourcePath);
 
 	}
 
-	public String getMySourcePath() {
-		return mySourcePath;
-	}
+//	/**
+//	 * @author Isaiah Miller
+//	 * @return
+//	 */
+//	public String retySourcePath() {
+//		return mySourcePath;
+//	}
 
-	public void setMySourcePath(String mySourcePath) {
-		this.mySourcePath = mySourcePath;
-	}
+//	public void setMySourcePath(String mySourcePath) {
+//		this.mySourcePath = mySourcePath;
+//	}
 
 	public String getMySavePath() {
 		return mySavePath;
@@ -65,12 +79,42 @@ public class Config implements Exportable {
 		this.mySettingsPath = mySettingsPath;
 	}
 
+	/**
+	 * Date 12/8/18
+	 * @author Isaiah Miller
+	 * @return
+	 */
 	public String retSavePath() {
 		final URL saveURL = getClass().getResource("save");
 //		System.out.println("my URL save path is: " + saveURL.getPath());
 		return saveURL.getPath();
 	}
+	
+	/**
+	 * Date 12/8/18
+	 * @author Isaiah Miller
+	 * @return
+	 */
+	public String retHomePath() {
+		final URL homeURL = getClass().getResource("save/home.json");
+		System.out.println("home URL is: " + homeURL);
+//		System.out.println("my URL save path is: " + saveURL.getPath());
+		return homeURL.getPath();
+	}
 
+	/**
+	 * Date 12/8/18
+	 * @author Isaiah Miller
+	 * @return
+	 */
+	public String retSettingsPath() {
+		System.out.println("Start retSettings");
+		final URL saveURL = getClass().getResource("save/settings.json");
+		System.out.println("made URL: " + saveURL);
+//		System.out.println("my URL save path is: " + saveURL.getPath());
+		return saveURL.getPath();
+	}
+	
 	/**
 	 * Date 12/5/18
 	 * 

@@ -1,6 +1,5 @@
 {
 	"myHomePath" : "/Home",
 	"mySavePath" : "/Save",
-	"mySettingsPath" : "/Settings",
-	"mySourcePath" : "/source" 
+	"mySettingsPath" : "/Settings"
 }

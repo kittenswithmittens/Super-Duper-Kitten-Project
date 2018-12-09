@@ -107,7 +107,7 @@ public class ExportImportTester {
 		res.setMyHomePath("/Home");
 		res.setMySavePath("/Save");
 		res.setMySettingsPath("/Settings");
-		res.setMySourcePath("/source");
+//		res.setMySourcePath("/source");
 		return res;
 	}
 

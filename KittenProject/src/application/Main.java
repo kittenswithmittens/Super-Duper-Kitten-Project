@@ -1,5 +1,6 @@
 package application;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
@@ -118,7 +119,12 @@ public class Main extends Application {
 //	    	System.out.println("Working Directory = " +
 //	                System.getProperty("user.dir"));
 
-			new Config();
-	    	launch(args);
+			final Config template = new Config();
+			System.out.println("construction.");
+			final String confPath = template.retConfigPath();
+			System.out.println("made conf path: " + confPath);
+			template.exportJSON(new File(confPath));
+			System.out.println("finished exporting.");
+//	    	launch(args);
 	    }
 }
