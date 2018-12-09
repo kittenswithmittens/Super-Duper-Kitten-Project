@@ -58,11 +58,11 @@ public class ExportImportTester {
 	@Test
 	public void exportTypical() throws FileNotFoundException {
 		myActualSettings = typicalSettings();
-		System.out.println("Base URL path: " + getClass().getResource(""));
+//		System.out.println("Base URL path: " + getClass().getResource(""));
 		final String testURLPath = EXPORT + "/" + "typExp.json";
 		URL testURL = getClass().getResource(testURLPath);
-		System.out.println("typ export path " + testURLPath);
-		System.out.println(testURL);
+//		System.out.println("typ export path " + testURLPath);
+//		System.out.println(testURL);
 		final String filePath = testURL.getPath();
 		myActualSettings.exportJSON(new File(filePath));
 
@@ -109,11 +109,11 @@ public class ExportImportTester {
 		out.useDelimiter("\\Z");
 		final String actual = out.next();
 
-		System.out.println(getClass().getResource(""));
-		System.out.println(fileName.length());
+//		System.out.println(getClass().getResource(""));
+//		System.out.println(fileName.length());
 		URL testURL2 = getClass().getResource(fileName + ".json");
-		System.out.println(testURL2);
-		System.out.println(testURL2.getPath());
+//		System.out.println(testURL2);
+//		System.out.println(testURL2.getPath());
 		String expected;
 		if (fileName != "null") {
 			Scanner in = new Scanner(new File(testURL2.getPath()));

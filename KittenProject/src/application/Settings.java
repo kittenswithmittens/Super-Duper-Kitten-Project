@@ -102,10 +102,8 @@ public class Settings implements Exportable {
 	
 	@Override
 	public boolean equals(Object other) {
-		System.out.println("in equals");
 		boolean res;
 		if(other == null || other.getClass() != this.getClass()) {
-			System.out.println("res not same type");
 			res = false;
 		} else { //check all fields equal
 			Settings otherSettings = (Settings) other;

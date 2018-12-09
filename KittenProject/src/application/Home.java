@@ -11,6 +11,11 @@ import java.lang.reflect.Field;
 import java.util.Random;
 
 
+/**
+ * Date: 10/20/18
+ * Editor: Isaiah Miller
+ *
+ */
 public class Home implements Exportable {
 	/**
 	 * HOME_PATH
@@ -219,22 +224,15 @@ public class Home implements Exportable {
 			//System.out.println(field.getType());
 			if(field.getType().equals(Boolean.TYPE)) {
 				field.set(this, rand.nextBoolean());
-				System.out.println("is a boolean");
 			} else if (field.getType().equals(Integer.TYPE)) {
 				field.set(this, rand.nextInt(spreadRandInt));
-				System.out.println("is an int");
 			} else if(field.getType().equals(Float.TYPE)) {
 				field.set(this, rand.nextFloat() * spreadRandFloat);
-				System.out.println("is a float");
-			} else {
-				System.out.print("Not a match: " + field.getType());
-				System.out.println();
+			} 
 			}
-			System.out.println(field.get(this));
-			}
-		File test = new File("");
-		
-		System.out.println("path is: " + test.getAbsolutePath());
+//		File test = new File("");
+//		
+//		System.out.println("path is: " + test.getAbsolutePath());
 		exportJSON(new File("src" + File.separatorChar + "application" + File.separatorChar + "save" + File.separatorChar + "homeDefault.json"));
 		
 	}
@@ -708,6 +706,8 @@ public class Home implements Exportable {
 	
 	/**
 	 * exports home data to a save file
+	 * @pre file has a valid path.
+	 * @post a file is written containing a json representation of this instance.
 	 * @author Isaiah Miller
 	 */
 	public void exportJSON(File destFile) {

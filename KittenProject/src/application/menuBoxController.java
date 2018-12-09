@@ -27,14 +27,12 @@ public class menuBoxController extends Main{
 	@FXML
 	void exportFile(final MouseEvent event) {
 		// call File chooser's export method pass the stage
-		System.out.println("exportButton");
+//		System.out.println("exportButton");
 		final Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		final File exportDest = FileChooserDIY.specSaveFile(stage);
 		if (exportDest != null) {
 			mySettings.exportJSON(exportDest);
-		} else {
-			System.out.println("File chosen is null. No export performed.");
-		}
+		} 
 	}
 
 	@FXML
@@ -44,9 +42,7 @@ public class menuBoxController extends Main{
 		final File importDest = FileChooserDIY.specOpenFile(stage);
 		if (importDest != null) {
 			mySettings.importJSON(importDest);
-		} else {
-			System.out.println("File chosen is null. No export performed.");
-		}
+		} 
 	}
 	
 	/**

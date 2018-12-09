@@ -143,25 +143,19 @@ public class listViewController extends Main implements Initializable {
     @FXML
     void exportFile(final MouseEvent event) {
         // call File chooser's export method pass the stage
-        System.out.println("exportButton");
         final Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         final File exportDest = FileChooserDIY.specSaveFile(stage);
         if (exportDest != null) {
             mySettings.exportJSON(exportDest);
-        } else {
-            System.out.println("File chosen is null. No export performed.");
         }
     }
 
     @FXML
     void importFile(MouseEvent event) {
-        System.out.println("importButton");
         final Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         final File importDest = FileChooserDIY.specOpenFile(stage);
         if (importDest != null) {
             mySettings.importJSON(importDest);
-        } else {
-            System.out.println("File chosen is null. No export performed.");
         }
     }
     
