@@ -72,7 +72,7 @@ public class ExportImportTester {
 		final Config expected = typicalConfig();
 		final Config origConfig = typicalConfig();
 		final String destPathEnding  = EXPORT + "/" + TYPICAL_CONFIG;
-		System.out.println("destPathEnding is: " + destPathEnding);
+//		System.out.println("destPathEnding is: " + destPathEnding);
 		final URL testURL = getClass().getResource(destPathEnding);
 		origConfig.exportJSON(new File(testURL.getPath()));
 		

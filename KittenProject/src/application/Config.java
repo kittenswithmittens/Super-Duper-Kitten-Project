@@ -23,12 +23,13 @@ public class Config implements Exportable {
 	public Config() {
 		myExporter = new Exporter(this);
 		mySourcePath = retConfigPath();
+		System.out.println("My source path is: " + mySourcePath);
 //		final File sourceFile = new File(mySourcePath);
 //		myExporter.importFile(sourceFile);
 
 		mySourcePath = retConfigPath();
 		mySavePath = retSavePath();
-		System.out.println("mySource path is: " + mySourcePath);
+//		System.out.println("mySource path is: " + mySourcePath);
 
 	}
 
@@ -66,7 +67,7 @@ public class Config implements Exportable {
 
 	public String retSavePath() {
 		final URL saveURL = getClass().getResource("save");
-		System.out.println("my URL save path is: " + saveURL.getPath());
+//		System.out.println("my URL save path is: " + saveURL.getPath());
 		return saveURL.getPath();
 	}
 
@@ -109,7 +110,6 @@ public class Config implements Exportable {
 	 */
 	@Override
 	public boolean equals(Object other) {
-		System.out.println("in correct equals method");
 		boolean res;
 		if (other == null || other.getClass() != this.getClass()) {
 			res = false;
