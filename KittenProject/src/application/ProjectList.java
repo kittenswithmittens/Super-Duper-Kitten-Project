@@ -1,3 +1,9 @@
+/**
+ * project list class
+ * Authors: Logan Jenny, Rich Williams, Jake Owens, Isaiah Miller
+ * version 1.0
+ * 12/2018
+ */
 package application;
 
 import java.util.ArrayList;
@@ -10,8 +16,14 @@ import javafx.collections.ObservableList;
 
 
 public class ProjectList{
+	/**
+	 * myProjects
+	 */
 	public ObservableList<project> myProjects;
 
+	/**
+	 *  constructs a list of all the projects
+	 */
 	public ProjectList(){
 		//look at picture to find the outline for this class...
 		super();
@@ -28,21 +40,34 @@ public class ProjectList{
 	}
 	
 	
+	/**
+	 * returns a list of projects
+	 * @return list of projects
+	 */
 	public ObservableList<project> getPros() {
 		return this.myProjects;
 	}
 	
 	
 	
+	/**
+	 * sorts by cost
+	 */
 	public void sortCost() {
 		Collections.sort(myProjects, new SortbyCost());
 		
 	}
 	
+	/**
+	 * sorts by difficulty
+	 */
 	public void sortDifficulty() {
 		Collections.sort(myProjects,  new SortbyDifficulty());
 	}
 	
+	/**
+	 * sorts by energy savings
+	 */
 	public void sortEnergySavings() {
 		Collections.sort(myProjects, new SortbyEnergySavings());
 	}

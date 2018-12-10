@@ -1,3 +1,9 @@
+/**
+ * Settings Page Controller
+ * Authors: Logan Jenny, Rich Williams, Jake Owens, Isaiah Miller
+ * version 1.0
+ * 12/2018
+ */
 package application;
 
 import javafx.fxml.FXML;
@@ -11,12 +17,25 @@ import javafx.stage.Stage;
  * the settings instance to
  */
 public class SettingsController {
+	/**
+	 * mySettings
+	 */
 	final Settings mySettings;
+	/**
+	 * myNameField
+	 */
 	@FXML
 	TextField myNameField;
+	/**
+	 * myEmailField
+	 */
 	@FXML
 	TextField myEmailField;
 
+	/**
+	 * sets the settings
+	 * @param theSettings
+	 */
 	public SettingsController(final Settings theSettings) {
 		mySettings = theSettings;
 	}
@@ -39,6 +58,10 @@ public class SettingsController {
 		}
 	}
 
+	/**
+	 * save settings
+	 * @param event
+	 */
 	@FXML
 	private void saveSettings(final MouseEvent event) {
 		// save settings from the text fields to model object

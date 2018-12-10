@@ -1,3 +1,9 @@
+/**
+ * Settings class
+ * Authors: Logan Jenny, Rich Williams, Jake Owens, Isaiah Miller
+ * version 1.0
+ * 12/2018
+ */
 package application;
 
 import java.io.File;
@@ -7,11 +13,16 @@ import javafx.beans.property.StringProperty;
 
 /**
  * @author Isaiah Miller
- *
  */
 public class Settings implements Exportable {
 
+	/**
+	 * myName
+	 */
 	private StringProperty myName;
+	/**
+	 * myEmailAddress
+	 */
 	private StringProperty myEmailAddress;
 
 	// import/export fields
@@ -19,9 +30,13 @@ public class Settings implements Exportable {
 //	private final ObjectReader myReader;
 //	private final ObjectWriter myWriter;
 
+	/**
+	 * myExporter
+	 */
 	private final Exporter myExporter;
 
 	/**
+	 * constructs settings
 	 * @author Isaiah Miller
 	 */
 	public Settings() {
@@ -39,6 +54,7 @@ public class Settings implements Exportable {
 	 * Imports home data from save file into to this instance.
 	 * 
 	 * @author Isaiah Miller
+	 * @see application.Exportable#importJSON(java.io.File)
 	 */
 	public void importJSON(final File srcFile) {
 		myExporter.importFile(srcFile);
@@ -56,7 +72,9 @@ public class Settings implements Exportable {
 //	}
 
 	/**
+	 * exports json
 	 * @author Isaiah Miller
+	 * @see application.Exportable#exportJSON(java.io.File)
 	 */
 	public void exportJSON(final File destFile) {
 		myExporter.exportFile(destFile);
@@ -71,10 +89,18 @@ public class Settings implements Exportable {
 
 	// getters and setters
 
+	/**
+	 * gets name
+	 * @return
+	 */
 	public String getMyName() {
 		return myName.getValue();
 	}
 
+	/**
+	 * sets name
+	 * @param theName
+	 */
 	public void setMyName(String theName) {
 //		System.out.println(myName);
 		if(theName != null) {
@@ -86,10 +112,18 @@ public class Settings implements Exportable {
 //		return myName;
 //	}
 
+	/**
+	 * gets email address
+	 * @return
+	 */
 	public String getMyEmailAddress() {
 		return myEmailAddress.getValue();
 	}
 
+	/**
+	 * sets email address
+	 * @param theEmailAddress
+	 */
 	public void setMyEmailAddress(String theEmailAddress) {
 		if (theEmailAddress != null) {
 			myEmailAddress.setValue(theEmailAddress);
@@ -100,6 +134,10 @@ public class Settings implements Exportable {
 //		return myEmailAddress;
 //	}
 	
+	/* 
+	 * equals method
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	@Override
 	public boolean equals(Object other) {
 		System.out.println("in equals");
@@ -118,6 +156,10 @@ public class Settings implements Exportable {
 		
 	}
 	
+	/* 
+	 * to String
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "name" + myName + ", " + "email address: " + myEmailAddress;

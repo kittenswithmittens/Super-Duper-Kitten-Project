@@ -1,10 +1,12 @@
-package application;
-
 /**
  * Insulation project
- * @author richw253
- * @version Dec 6
+ * Authors: Logan Jenny, Rich Williams, Jake Owens, Isaiah Miller
+ * version 1.0
+ * 12/2018
  */
+package application;
+
+
 public class InsulationProject extends project {
 	
 	/** Cost of insulating ceiling. */
@@ -23,11 +25,23 @@ public class InsulationProject extends project {
 	private final static int HEATING_COST = 900;
 	
 	/** Insulations information fields. */
+	/**
+	 * myInsulationWall
+	 */
 	boolean myInsulationWall;
+	/**
+	 * myInsulationCeiling
+	 */
 	boolean myInsulationCeiling;
+	/**
+	 * myInsulationFloor
+	 */
 	boolean myInsulationFloor;
 
 
+	/**
+	 * constructs project
+	 */
 	public InsulationProject() {
 		super();
 		
@@ -44,11 +58,19 @@ public class InsulationProject extends project {
 
 	}
 
+	/**
+	 * gets savings
+	 * @return
+	 */
 	private int calculateSavings() {
 		// do some math
 		return (int) (HEATING_COST * INSULATION_PERCENT_ENERGY_SAVINGS);
 	}
 
+	/**
+	 * gets cost
+	 * @return
+	 */
 	private int calculateCost() {
 		// do some math
 		int cost = 0;
@@ -64,26 +86,50 @@ public class InsulationProject extends project {
 		return cost;
 	}
 
+	/**
+	 * gets wall insulation
+	 * @return
+	 */
 	public boolean isMyInsulationWall() {
 		return myInsulationWall;
 	}
 
+	/**
+	 * sets wall insulation
+	 * @param myInsulationWall
+	 */
 	public void setMyInsulationWall(boolean myInsulationWall) {
 		this.myInsulationWall = myInsulationWall;
 	}
 
+	/**
+	 * gets ceil insulation
+	 * @return
+	 */
 	public boolean isMyInsulationCeiling() {
 		return myInsulationCeiling;
 	}
 
+	/**
+	 * sets ceil insulation 
+	 * @param myInsulationCeiling
+	 */
 	public void setMyInsulationCeiling(boolean myInsulationCeiling) {
 		this.myInsulationCeiling = myInsulationCeiling;
 	}
 
+	/**
+	 * gets floor insulation
+	 * @return
+	 */
 	public boolean isMyInsulationFloor() {
 		return myInsulationFloor;
 	}
 
+	/**
+	 * sets floor insulation
+	 * @param myInsulationFloor
+	 */
 	public void setMyInsulationFloor(boolean myInsulationFloor) {
 		this.myInsulationFloor = myInsulationFloor;
 	}

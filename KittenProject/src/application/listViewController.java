@@ -1,3 +1,9 @@
+/**
+ * List View Controller
+ * Authors: Logan Jenny, Rich Williams, Jake Owens, Isaiah Miller
+ * version 1.0
+ * 12/2018
+ */
 package application;
 
 import java.io.File;
@@ -25,16 +31,43 @@ import javafx.stage.StageStyle;
 import javafx.util.Callback;
 
 public class listViewController extends Main implements Initializable {
+	/**
+	 * menuButton
+	 */
 	@FXML MenuButton menuButton;
+	/**
+	 * pane
+	 */
 	@FXML Pane pane;
+	/**
+	 * listView
+	 */
 	@FXML ListView<project> listView;
+	/**
+	 * xOffset
+	 */
 	private double xOffset = 0;
+    /**
+     * yOffset
+     */
     private double yOffset = 0;
+    /**
+     * mySettings
+     */
     Settings mySettings;
     
+    /**
+     * selected
+     */
     static project selected;
+    /**
+     * myProjects
+     */
     ProjectList myProjects;
     
+	/* (non-Javadoc)
+	 * @see javafx.fxml.Initializable#initialize(java.net.URL, java.util.ResourceBundle)
+	 */
 	@Override
     public void initialize(URL url, ResourceBundle rb) {
 		//populates list
@@ -46,11 +79,20 @@ public class listViewController extends Main implements Initializable {
 		//end populate
     }
 	
+	/**
+	 * returns selected
+	 * @return
+	 */
 	public static project getSelected() {
 	    return selected;
 	}
 	
 	//clicking list item
+	/**
+	 * opens project view
+	 * @param arg0
+	 * @throws IOException
+	 */
 	@FXML public void handleMouseClick(MouseEvent arg0) throws IOException {
 	    selected = listView.getSelectionModel().getSelectedItem();                      //remembers what was clicked, needs to be pass on to projectview
 	    //System.out.println("clicked on " + selected); //prints what you clicked on
@@ -60,44 +102,77 @@ public class listViewController extends Main implements Initializable {
 	}
 	
 	
+    /**
+     * closes program
+     * @param event
+     */
     @FXML
     void halt(MouseEvent event) {
         Platform.exit();
     }
     
+    /**
+     * sort by cost
+     * @param event
+     */
     @FXML
     void costSort(MouseEvent event) {
     	myProjects.sortCost();
        
     }
     
+    /**
+     * sort by diff
+     * @param event
+     */
     @FXML
     void difficultySort(MouseEvent event) {
     	myProjects.sortDifficulty();
     	
     }
     
+    /**
+     * sort by energy savings
+     * @param event
+     */
     @FXML
     void energySort(MouseEvent event) {
     	myProjects.sortEnergySavings();
        
     }
     
+    /**
+     * glow
+     * @param event
+     */
     @FXML
     void hoverGlow(MouseEvent event) {
         ((Node) event.getSource()).setEffect(new Glow(0.8));
     }
     
+    /**
+     * glow
+     * @param event
+     */
     @FXML
     void hoverShadow(MouseEvent event) {
         ((Node) event.getSource()).setEffect(new Shadow(0.8, null));
     }
     
+    /**
+     * unglow
+     * @param event
+     */
     @FXML
     void unglow(MouseEvent event) {
         ((Node) event.getSource()).setEffect(null);
     }
 
+    /**
+     * opens about page
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void about(MouseEvent event) throws IOException {
     	Stage stage = new Stage();
@@ -130,16 +205,30 @@ public class listViewController extends Main implements Initializable {
     });
     }
     
+    /**
+     * open menu
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void menu(MouseEvent event) throws IOException {
         pane.setVisible(true);
     }
     
+    /**
+     * hide menu
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void hideMenu(MouseEvent event) throws IOException {
         pane.setVisible(false);
     }
     
+    /**
+     * exports file
+     * @param event
+     */
     @FXML
     void exportFile(final MouseEvent event) {
         // call File chooser's export method pass the stage
@@ -153,6 +242,10 @@ public class listViewController extends Main implements Initializable {
         }
     }
 
+    /**
+     * import file
+     * @param event
+     */
     @FXML
     void importFile(MouseEvent event) {
         System.out.println("importButton");
@@ -165,10 +258,11 @@ public class listViewController extends Main implements Initializable {
         }
     }
     
+
     /**
-     * @author Isaiah Miller
-     * Opens the Settings view for modifying settings.
-     * @throws IOException 
+     * opens settings menu
+     * @param event
+     * @throws IOException
      */
     @FXML
     void openSettingsView(MouseEvent event) throws IOException {
@@ -196,6 +290,11 @@ public class listViewController extends Main implements Initializable {
         stage.show();
     }
     
+    /**
+     * changes to home updater scene
+     * @param arg0
+     * @throws IOException
+     */
     @FXML
     void openUpdaterView(MouseEvent arg0) throws IOException {
         //((Node)(arg0.getSource())).getScene().getWindow().hide();

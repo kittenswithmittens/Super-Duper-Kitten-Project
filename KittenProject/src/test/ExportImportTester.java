@@ -1,3 +1,9 @@
+/**
+ * Export and Import Tester
+ * Authors: Isaiah Miller
+ * version 1.0
+ * 12/2018
+ */
 package test;
 
 import static org.junit.Assert.assertEquals;
@@ -22,6 +28,7 @@ public class ExportImportTester {
 	Settings myActualSettings;
 
 	/**
+	 * init
 	 * @author Isaiah Miller
 	 */
 	@Before
@@ -30,6 +37,7 @@ public class ExportImportTester {
 	}
 
 	/**
+	 * typical importer test
 	 * @author Isaiah Miller
 	 */
 	@Test
@@ -41,6 +49,7 @@ public class ExportImportTester {
 	}
 
 	/**
+	 * settings test
 	 * @author Isaiah Miller
 	 * @return
 	 */
@@ -52,6 +61,7 @@ public class ExportImportTester {
 	}
 
 	/**
+	 * export test
 	 * @author Isaiah Miller
 	 * @throws FileNotFoundException
 	 */
@@ -80,6 +90,7 @@ public class ExportImportTester {
 	}
 
 	/**
+	 * export null test
 	 * @author Isaiah Miller
 	 * @throws FileNotFoundException
 	 */
@@ -90,6 +101,7 @@ public class ExportImportTester {
 	}
 
 	/**
+	 * export tester 2
 	 * @author Isaiah Miller
 	 * @param fileName
 	 * @throws FileNotFoundException
@@ -132,6 +144,7 @@ public class ExportImportTester {
 	}
 
 	/**
+	 * import tester 2
 	 * @author Isaiah Miller
 	 * @param fileName
 	 */
@@ -144,6 +157,7 @@ public class ExportImportTester {
 	}
 
 	/**
+	 * settings test
 	 * @author Isaiah Miller
 	 * @param fileName
 	 * @return
