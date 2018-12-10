@@ -1,11 +1,12 @@
+/**
+ * Appliance project
+ * Authors: Logan Jenny, Rich Williams, Jake Owens, Isaiah Miller
+ * version 1.0
+ * 12/2018
+ */
 package application;
 
 
-/**
- * Appliance project
- * @author richw253
- * @version Dec 6
- */
 public class AppliancesProject extends project {
 
 
@@ -33,14 +34,29 @@ public class AppliancesProject extends project {
 	/** Average Estar Clothes drier yearly savings. */
 	private static final int ESTAR_DRYER_SAVINGS = 20;
 	
+	/**
+	 * myEStarRefrig
+	 */
 	boolean myEStarRefrig;
+	/**
+	 * myEStarDishWash
+	 */
 	boolean myEStarDishWash; 
+	/**
+	 * myEStarClothWash
+	 */
 	boolean myEStarClothWash;
 
+	/**
+	 * myEStarDryer
+	 */
 	boolean myEStarDryer;
 
 
 
+	/**
+	 * constructs a project
+	 */
 	public AppliancesProject() {
 		super();
 		
@@ -60,6 +76,10 @@ public class AppliancesProject extends project {
 
 	}
 
+	/**
+	 * gets savings
+	 * @return
+	 */
 	private int calculateSavings() {
 
 		int savings = 0;
@@ -79,6 +99,10 @@ public class AppliancesProject extends project {
 		return savings;
 	}
 
+	/**
+	 * gets cost
+	 * @return
+	 */
 	private int calculateCost() {
 		int cost = 0;
 		if (!myEStarRefrig) {
@@ -96,34 +120,66 @@ public class AppliancesProject extends project {
 		return cost;
 	}
 
+	/**
+	 * gets fridge
+	 * @return
+	 */
 	public boolean isMyEStarRefrig() {
 		return myEStarRefrig;
 	}
 
+	/**
+	 * set fridge
+	 * @param myEStarRefrig
+	 */
 	public void setMyEStarRefrig(boolean myEStarRefrig) {
 		this.myEStarRefrig = myEStarRefrig;
 	}
 
+	/**
+	 * gets washer
+	 * @return
+	 */
 	public boolean isMyEStarDishWash() {
 		return myEStarDishWash;
 	}
 
+	/**
+	 * sets washer
+	 * @param myEStarDishWash
+	 */
 	public void setMyEStarDishWash(boolean myEStarDishWash) {
 		this.myEStarDishWash = myEStarDishWash;
 	}
 
+	/**
+	 * gets washer
+	 * @return
+	 */
 	public boolean isMyEStarClothWash() {
 		return myEStarClothWash;
 	}
 
+	/**
+	 * sets washer
+	 * @param myEStarClothWash
+	 */
 	public void setMyEStarClothWash(boolean myEStarClothWash) {
 		this.myEStarClothWash = myEStarClothWash;
 	}
 
+	/**
+	 * gets dryer
+	 * @return
+	 */
 	public boolean isMyEStarDryer() {
 		return myEStarDryer;
 	}
 
+	/**
+	 * sets dryer
+	 * @param myEStarDryer
+	 */
 	public void setMyEStarDryer(boolean myEStarDryer) {
 		this.myEStarDryer = myEStarDryer;
 	}

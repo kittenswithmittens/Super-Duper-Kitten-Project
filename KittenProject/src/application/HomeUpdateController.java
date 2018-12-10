@@ -1,3 +1,9 @@
+/**
+ * Home Update Controller
+ * Authors: Logan Jenny, Rich Williams, Jake Owens, Isaiah Miller
+ * version 1.0
+ * 12/2018
+ */
 package application;
 
 import java.io.IOException;
@@ -25,16 +31,31 @@ import javafx.util.Callback;
 
 
 public class HomeUpdateController extends Main implements Initializable {
+	/**
+	 * menuButton
+	 */
 	@FXML MenuButton menuButton;
+	/**
+	 * electricBill
+	 */
 	@FXML TextField electricBill;
 	
 	
+	/**
+	 * xOffset
+	 */
 	private double xOffset = 0;
+    /**
+     * yOffset
+     */
     private double yOffset = 0;
     
 
 
 	
+	/* (non-Javadoc)
+	 * @see javafx.fxml.Initializable#initialize(java.net.URL, java.util.ResourceBundle)
+	 */
 	@Override
     public void initialize(URL url, ResourceBundle rb) {
 		//init
@@ -48,6 +69,11 @@ public class HomeUpdateController extends Main implements Initializable {
 		
     }
 	
+    /**
+     * updates home
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void update(MouseEvent event) throws IOException {
     	changeScene("list.fxml", event);
@@ -55,32 +81,58 @@ public class HomeUpdateController extends Main implements Initializable {
     	//grunt work below
     }
 	
+	/**
+	 * back
+	 * @param arg0
+	 * @throws IOException
+	 */
 	@FXML
     void back(MouseEvent arg0) throws IOException {
 	    changeScene("list.fxml", arg0);
     }
 	
+    /**
+     * closes program
+     * @param event
+     */
     @FXML
     void halt(MouseEvent event) {
         Platform.exit();
     }
 
     
+    /**
+     * glow
+     * @param event
+     */
     @FXML
     void hoverGlow(MouseEvent event) {
         ((Node) event.getSource()).setEffect(new Glow(0.8));
     }
     
+    /**
+     * glow
+     * @param event
+     */
     @FXML
     void hoverShadow(MouseEvent event) {
         ((Node) event.getSource()).setEffect(new Shadow(0.8, null));
     }
     
+    /**
+     * unglow
+     * @param event
+     */
     @FXML
     void unglow(MouseEvent event) {
         ((Node) event.getSource()).setEffect(null);
     }
 
+    /**
+     * opens about page
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void about(MouseEvent event) throws IOException {
     	Stage stage = new Stage();
@@ -115,6 +167,11 @@ public class HomeUpdateController extends Main implements Initializable {
     
     
     
+    /**
+     * opens menu
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void menu(MouseEvent event) throws IOException {
     	double x = ((Node)(event.getSource())).getScene().getWindow().getX();
