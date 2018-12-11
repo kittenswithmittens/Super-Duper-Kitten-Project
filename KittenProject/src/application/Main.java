@@ -119,12 +119,12 @@ public class Main extends Application {
 //	    	System.out.println("Working Directory = " +
 //	                System.getProperty("user.dir"));
 
-			final Config template = new Config();
-			System.out.println("construction.");
-			final String confPath = template.retConfigPath();
-			System.out.println("made conf path: " + confPath);
-			template.exportJSON(new File(confPath));
-			System.out.println("finished exporting.");
-//	    	launch(args);
+//			final Config template = new Config();
+//			System.out.println("construction.");
+//			final String confPath = template.retConfigPath();
+//			System.out.println("made conf path: " + confPath);
+//			template.exportJSON(new File(confPath));
+//			System.out.println("finished exporting.");
+	    	launch(args);
 	    }
 }

@@ -7,7 +7,7 @@ import java.net.URL;
  * @author Isaiah Miller Date: 12/4/18 makes a config file with paths to
  *         persistent data.
  */
-public class Config implements Exportable {
+public class Config extends AbstractExportable {
 	/**
 	 * The path to the config file. This should not change. It is not an exportable property.
 	 */
@@ -16,15 +16,12 @@ public class Config implements Exportable {
 	private String myHomePath;
 	private String mySettingsPath;
 
-	private final Exporter myExporter;
-
 	/**
 	 * Date: 12/5/18
 	 * 
 	 * @author Isaiah Miller
 	 */
 	public Config() {
-		myExporter = new Exporter(this);
 		mySourcePath = retConfigPath();
 		System.out.println("My source path is: " + mySourcePath);
 //		final File sourceFile = new File(mySourcePath);
@@ -127,25 +124,7 @@ public class Config implements Exportable {
 		return getClass().getResource("save/config.json").getPath();
 	}
 
-	/*
-	 * Date 12/8/18
-	 * 
-	 * @author Isaiah Miller
-	 */
-	@Override
-	public void exportJSON(File destFile) {
-		myExporter.exportFile(destFile);
-	}
-
-	/*
-	 * Date: 12/8/18
-	 * 
-	 * @author Isaiah Miller
-	 */
-	@Override
-	public void importJSON(File srcFile) {
-		myExporter.importFile(srcFile);
-	}
+	
 
 	/*
 	 * Date: 12/8/18

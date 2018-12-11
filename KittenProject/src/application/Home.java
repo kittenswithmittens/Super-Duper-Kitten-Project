@@ -16,7 +16,7 @@ import java.util.Random;
  * Editor: Isaiah Miller
  *
  */
-public class Home implements Exportable {
+public class Home extends AbstractExportable {
 	/**
 	 * HOME_PATH
 	 */
@@ -172,10 +172,6 @@ public class Home implements Exportable {
 //	private final ObjectReader myReader;
 //	private final ObjectWriter myWriter;
 	
-	/**
-	 * myExporter
-	 */
-	private final Exporter myExporter;
 
 
 	/**
@@ -200,8 +196,6 @@ public class Home implements Exportable {
 	    myInsulationCeiling = true;
 	    myEStarRefrig = true;
 	    myIrrigation = true;
-		myExporter = new Exporter(this);
-		
 
 	}
 
@@ -214,7 +208,7 @@ public class Home implements Exportable {
 	 * @throws IllegalAccessException
 	 */
 	public Home(final boolean isDefault) throws IllegalArgumentException, IllegalAccessException {
-		myExporter = new Exporter(this);
+		
 		final Field[] fields = this.getClass().getDeclaredFields();
 		//final Class<Boolean> boolClass = Boolean.TYPE;     //dunno why this is here.. Isaiah...
 		final int spreadRandInt = 10000;
@@ -686,23 +680,23 @@ public class Home implements Exportable {
 		this.myEStarDryer = myEStarDryer;
 	}
 
-	/**
-	 * Imports home data from save file into to this instance.
-	 * @author Isaiah Miller
-	 */
-	public void importJSON(File srcFile) {
-		myExporter.importFile(srcFile);
-	}
+//	/**
+//	 * Imports home data from save file into to this instance.
+//	 * @author Isaiah Miller
+//	 */
+//	public void importJSON(File srcFile) {
+//		myExporter.importFile(srcFile);
+//	}
 	
-	/**
-	 * exports home data to a save file
-	 * @pre file has a valid path.
-	 * @post a file is written containing a json representation of this instance.
-	 * @author Isaiah Miller
-	 */
-	public void exportJSON(File destFile) {
-		myExporter.exportFile(destFile);
-	}
-	
+//	/**
+//	 * exports home data to a save file
+//	 * @pre file has a valid path.
+//	 * @post a file is written containing a json representation of this instance.
+//	 * @author Isaiah Miller
+//	 */
+//	public void exportJSON(File destFile) {
+//		myExporter.exportFile(destFile);
+//	}
+//	
 
 }
