@@ -20,7 +20,7 @@
     "myFlorLight" : false,
     "mySolarPanel" : false,
     "myWeatherProofedDoor" : false,
-    "myNumWindow" : 0,
+    "myNumWindow" : -2,
     "myNumWindowBad" : 0,
     "myNumWindowLowE" : 0,
     "myInsulationWall" : false,

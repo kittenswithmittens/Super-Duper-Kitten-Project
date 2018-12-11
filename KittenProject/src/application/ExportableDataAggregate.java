@@ -13,6 +13,37 @@ public class ExportableDataAggregate extends AbstractExportable {
 	private Settings mySettings;
 	private Config myConfig;
 
+	
+	/**
+	 * Date: 12/10/18
+	 * 
+	 * @author Isaiah Miller
+	 */
+	public ExportableDataAggregate() {
+	}
+	
+	
+	/**
+	 * Date 12/11/18
+	 * @author Isaiah Miller
+	 */
+	public void importJSON() {
+		final File src = new File(retPersistPath());
+		importJSON(src);
+	}
+	
+	/**
+	 * Date 12/11/18
+	 * 
+	 * @author Isaiah Miller
+	 * @return The path to source the project configuration from.
+	 */
+	public String retPersistPath() {
+		// path should be src/application/save/config.json
+//		new File(getClass().getResource("save").getPath());
+		return getClass().getResource("save/testDataAggregate.json").getPath();
+	}
+	
 	/**
 	 * Date: 12/10/18
 	 * 

@@ -1,5 +1,6 @@
 package application;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
@@ -102,14 +103,18 @@ public class Main extends Application {
 
 		public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException {
 		    if(myPersistentData == null) {
-		        myMainHome = new Home();
-		    	final Config overallConfig = new Config();
-		    	final Settings overallSettings = new Settings();
+//		        myMainHome = new Home();
+//		    	final Config overallConfig = new Config();
+//		    	final Settings overallSettings = new Settings();
 //		    	myPersistentData.setMySettings(overallSettings);
 //		    	myPersistentData.setMyConfig(overallConfig);
 //		    	myPersistentData.setMyHome(myMainHome);
-		    	myPersistentData = new ExportableDataAggregate(overallSettings, overallConfig, myMainHome);
-		    	overallConfig.initFromConfig(myPersistentData);//myMainHome, overallSettings);
+		    	myPersistentData = new ExportableDataAggregate();
+		    	myPersistentData.importJSON();
+		    	myMainHome = myPersistentData.getMyHome();
+//		    	overallConfig.initFromConfig(myPersistentData);//myMainHome, overallSettings);
+		    	System.out.println(myMainHome == myPersistentData.getMyHome());
+		    	System.out.println("my Main home is (after import): " + myMainHome);
 		    	System.out.println("Initialized config.");
 		    	
 		    }

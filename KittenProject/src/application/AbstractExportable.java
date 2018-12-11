@@ -27,10 +27,10 @@ public class AbstractExportable implements Exportable {
 	 * @author Isaiah Miller
 	 */
 	public void importJSON(File srcFile) {
-		if (this instanceof Home) {
-			System.out.println("importing home from: " + srcFile);
-		}
-		System.out.println("importing home from: " + srcFile);
+		
 		myExporter.importFile(srcFile);
+		if (this instanceof ExportableDataAggregate) {
+			System.out.println("imported home is: " + ((ExportableDataAggregate) this).getMyHome().toString());
+		}
 	}
 }
