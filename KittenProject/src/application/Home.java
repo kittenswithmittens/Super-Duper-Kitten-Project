@@ -680,23 +680,11 @@ public class Home extends AbstractExportable {
 		this.myEStarDryer = myEStarDryer;
 	}
 
-//	/**
-//	 * Imports home data from save file into to this instance.
-//	 * @author Isaiah Miller
-//	 */
-//	public void importJSON(File srcFile) {
-//		myExporter.importFile(srcFile);
-//	}
-	
-//	/**
-//	 * exports home data to a save file
-//	 * @pre file has a valid path.
-//	 * @post a file is written containing a json representation of this instance.
-//	 * @author Isaiah Miller
-//	 */
-//	public void exportJSON(File destFile) {
-//		myExporter.exportFile(destFile);
-//	}
-//	
+	@Override
+	public String toString() {
+		final StringBuilder res = new StringBuilder(100);
+		res.append("myNum Window is: " + myNumWindow);
+		return res.toString();
+	}
 
 }

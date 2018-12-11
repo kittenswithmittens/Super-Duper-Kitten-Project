@@ -2,6 +2,11 @@ package application;
 
 import java.io.File;
 
+/**
+ * 12/10/18
+ * @author Isaiah Miller
+ *
+ */
 public class AbstractExportable implements Exportable {
 	final Exporter myExporter;
 	

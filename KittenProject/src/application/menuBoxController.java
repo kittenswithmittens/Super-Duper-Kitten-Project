@@ -17,11 +17,20 @@ import javafx.util.Callback;
 
 //observe this with an export controller
 public class menuBoxController extends Main{
+	//needs a reference to  ExportableDataAggregate
 
-	final Settings mySettings;
+//	final Settings mySettings;
+	final ExportableDataAggregate myPersistentData;
 
-	public menuBoxController(final Settings theSettings) {
-		mySettings = theSettings;
+	/**
+	 * Date:11/30/18
+	 * @author Isaiah Miller 
+	 * @param theSettings
+	 * @param thePersistentData
+	 */
+	public menuBoxController(/*final Settings theSettings,*/ final ExportableDataAggregate thePersistentData) {
+//		mySettings = theSettings;
+		myPersistentData = thePersistentData;
 	}
 
 	@FXML
@@ -31,7 +40,7 @@ public class menuBoxController extends Main{
 		final Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		final File exportDest = FileChooserDIY.specSaveFile(stage);
 		if (exportDest != null) {
-			mySettings.exportJSON(exportDest);
+			myPersistentData.getMySettings().exportJSON(exportDest);
 		} 
 	}
 
@@ -41,7 +50,7 @@ public class menuBoxController extends Main{
 		final Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		final File importDest = FileChooserDIY.specOpenFile(stage);
 		if (importDest != null) {
-			mySettings.importJSON(importDest);
+			myPersistentData.getMySettings().importJSON(importDest);
 		} 
 	}
 	
@@ -59,7 +68,7 @@ public class menuBoxController extends Main{
         loader.setControllerFactory(new Callback<Class<?>, Object>() {
             @Override
             public Object call(Class<?> aClass) {
-                return new SettingsController(mySettings);
+                return new SettingsController(myPersistentData.getMySettings());
             }
         });
     	

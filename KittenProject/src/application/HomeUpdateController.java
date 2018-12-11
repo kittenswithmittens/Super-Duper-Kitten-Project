@@ -32,8 +32,20 @@ public class HomeUpdateController extends Main implements Initializable {
 	private double xOffset = 0;
     private double yOffset = 0;
     
+    final ExportableDataAggregate myModel;
+    
+    /**
+     * Date: 11/25/18
+     * @author Isaiah Miller
+     */
+    public HomeUpdateController() {
+    	final Config overallConfig = new Config();
+    	final Settings overallSettings = new Settings();
+    	overallConfig.initFromConfig(theHome, overallSettings);
+    	myModel = new ExportableDataAggregate(overallSettings, overallConfig, theHome);
+	}
 
-
+    
 	
 	@Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -41,11 +53,6 @@ public class HomeUpdateController extends Main implements Initializable {
 		//initialize all values to home values
 		//grunt work below
 		electricBill.setText("" + theHome.getMyElectricBill());
-		
-		
-		
-		
-		
     }
 	
     @FXML
@@ -119,13 +126,12 @@ public class HomeUpdateController extends Main implements Initializable {
     void menu(MouseEvent event) throws IOException {
     	double x = ((Node)(event.getSource())).getScene().getWindow().getX();
         double y = ((Node)(event.getSource())).getScene().getWindow().getY();
-    	final Settings model = new Settings();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("menuBox.fxml"));
         loader.setControllerFactory(new Callback<Class<?>, Object>() {
             @Override
             public Object call(Class<?> aClass) {
-                return new menuBoxController(model);
+                return new menuBoxController(myModel);
             }
         });
     	

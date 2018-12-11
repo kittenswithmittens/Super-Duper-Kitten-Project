@@ -1,6 +1,5 @@
 package application;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
@@ -103,21 +102,6 @@ public class Main extends Application {
 		    if(theHome == null) {
 		        theHome = new Home();
 		    }
-//			new Home(true);
-	    	//remove (this is a test. Build real Junit test)!!!!
-//	    	Home test = new Home();
-	    	
-//	    	test.exportJSON(new File(Home.HOME_PATH));
-//	    	test.importJSON(new File(Home.HOME_PATH));
-//	    	System.out.println(test.myElectricBill);
-	    	
-//	    	String testPath = "save" + File.separatorChar + "settings.json";
-//	    	Settings testSettings = new Settings();
-//	    	testSettings.exportSettings(new File(testPath));
-//	    	testSettings.importSettings(new File(testPath));
-//	    	System.out.println(testSettings.getMyEmailAddress());
-//	    	System.out.println("Working Directory = " +
-//	                System.getProperty("user.dir"));
 
 //			final Config template = new Config();
 //			System.out.println("construction.");

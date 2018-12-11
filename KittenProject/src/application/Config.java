@@ -39,6 +39,18 @@ public class Config extends AbstractExportable {
 //		System.out.println("mySource path is: " + mySourcePath);
 
 	}
+	
+	/**
+     * Date:12/10/18
+     * @author Isaiah Miller
+     * Pre: instance fields for home path and Settings path must be valid
+     * Initializes theSettings and theHome from the states specified by the Config instance.
+     */
+    public final void initFromConfig(final Home theHome, final Settings theSettings) {
+    	theHome.importJSON(new File(myHomePath));
+    	theSettings.importJSON(new File(mySettingsPath));
+    }
+
 
 //	/**
 //	 * @author Isaiah Miller
