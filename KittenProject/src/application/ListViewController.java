@@ -24,7 +24,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
 
-public class listViewController extends Main implements Initializable {
+public class ListViewController extends Main implements Initializable {
 	@FXML MenuButton menuButton;
 	@FXML Pane pane;
 	@FXML ListView<project> listView;
@@ -35,9 +35,18 @@ public class listViewController extends Main implements Initializable {
     static project selected;
     ProjectList myProjects;
     
+    final ExportableDataAggregate myPersistentData;
+    
+    public ListViewController() {
+    	final Config overallConfig = new Config();
+    	final Settings overallSettings = new Settings();
+    	overallConfig.initFromConfig(theHome, overallSettings);
+    	myPersistentData = new ExportableDataAggregate(overallSettings, overallConfig, theHome);
+    }
+    
 	@Override
     public void initialize(URL url, ResourceBundle rb) {
-		//populates list
+				//populates list
 		listView.setEditable(true);
 		myProjects = new ProjectList();
 		listView.setItems(myProjects.getPros());
@@ -146,7 +155,7 @@ public class listViewController extends Main implements Initializable {
         final Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         final File exportDest = FileChooserDIY.specSaveFile(stage);
         if (exportDest != null) {
-            mySettings.exportJSON(exportDest);
+            myPersistentData.exportJSON(exportDest);
         }
     }
 
@@ -155,7 +164,7 @@ public class listViewController extends Main implements Initializable {
         final Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         final File importDest = FileChooserDIY.specOpenFile(stage);
         if (importDest != null) {
-            mySettings.importJSON(importDest);
+            myPersistentData.importJSON(importDest);
         }
     }
     

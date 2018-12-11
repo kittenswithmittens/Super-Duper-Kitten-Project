@@ -1,5 +1,7 @@
 package application;
 
+import java.io.File;
+
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -80,6 +82,16 @@ public class Settings extends AbstractExportable {
 	@Override
 	public String toString() {
 		return "name" + myName + ", " + "email address: " + myEmailAddress;
+	}
+	
+	/**
+	 * Date: 12/10/18
+	 * @author Isaiah Miller
+	 */
+	public void exportJSON(File destFile) {
+		System.out.println("exporting settings");
+		throw new Error();
+		//myExporter.exportFile(destFile);
 	}
 	
 }

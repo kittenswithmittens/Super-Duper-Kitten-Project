@@ -37,7 +37,7 @@ public class projectViewController extends Main implements Initializable {
 	
 	@Override
     public void initialize(URL url, ResourceBundle rb) {
-		selected = listViewController.getSelected();
+		selected = ListViewController.getSelected();
 		projectName.setText(selected.toString());
 		projectCost.setText("Cost: $" + selected.getCost());
 		projectDifficulty.setText("Difficulty: " + selected.getDifficulty());
