@@ -1,7 +1,7 @@
 {
   "myElectricBill" : -74.5,
   "myGasBill" : 0.0,
-  "myWaterBill" : 0.0,
+  "myWaterBill" : 3.4,
   "myMainHeatGas" : false,
   "myMainHeatElect" : false,
   "myMainHeatRadiant" : false,
@@ -19,7 +19,7 @@
   "myFlorLight" : 0,
   "mySolarPanel" : false,
   "myWeatherProofedDoor" : 0,
-  "myNumWindow" : 0,
+  "myNumWindow" : 5,
   "myNumWindowBad" : 0,
   "myNumWindowLowE" : 0,
   "myInsulationWall" : false,

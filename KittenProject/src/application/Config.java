@@ -46,9 +46,15 @@ public class Config extends AbstractExportable {
      * Pre: instance fields for home path and Settings path must be valid
      * Initializes theSettings and theHome from the states specified by the Config instance.
      */
-    public final void initFromConfig(final Home theHome, final Settings theSettings) {
-    	theHome.importJSON(new File(myHomePath));
-    	theSettings.importJSON(new File(mySettingsPath));
+    public final void initFromConfig(final ExportableDataAggregate thePersistentData/*final Home theHome, final Settings theSettings*/) {
+    	thePersistentData.importJSON(new File(retPersistPath()));
+    	//    	System.out.println("init home from: " + myHomePath);
+//    	final File homeFile = new File(myHomePath);
+//    	System.out.println("Home file is: " + myHomePath);
+//    	theHome.importJSON(homeFile);
+//    	System.out.println("The Home is: " + theHome);
+//    	theSettings.importJSON(new File(mySettingsPath));
+//    	System.out.println("the Settings is: " + theSettings);
     }
 
 
@@ -136,7 +142,18 @@ public class Config extends AbstractExportable {
 		return getClass().getResource("save/config.json").getPath();
 	}
 
-	
+	/**
+	 * Date 12/11/18
+	 * 
+	 * @author Isaiah Miller
+	 * @return The path to source the project configuration from.
+	 */
+	public String retPersistPath() {
+		// path should be src/application/save/config.json
+//		new File(getClass().getResource("save").getPath());
+		return getClass().getResource("save/testDataAggregate.json").getPath();
+	}
+
 
 	/*
 	 * Date: 12/8/18

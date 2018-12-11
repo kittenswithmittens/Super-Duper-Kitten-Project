@@ -190,7 +190,7 @@ public class Home extends AbstractExportable {
 	    myProgThermostat = true;
 	    myOnDemand = true;
 	    myHalLight = true;
-	    myTotalLight = 12;
+	    myTotalLight = 13;
 	    myNumWindow = 8;
 	    myNumWindowBad = 8;
 	    myInsulationCeiling = true;

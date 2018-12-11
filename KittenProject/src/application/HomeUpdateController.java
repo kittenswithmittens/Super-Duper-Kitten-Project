@@ -32,18 +32,18 @@ public class HomeUpdateController extends Main implements Initializable {
 	private double xOffset = 0;
     private double yOffset = 0;
     
-    final ExportableDataAggregate myModel;
+//    final ExportableDataAggregate myModel;
     
-    /**
-     * Date: 11/25/18
-     * @author Isaiah Miller
-     */
-    public HomeUpdateController() {
-    	final Config overallConfig = new Config();
-    	final Settings overallSettings = new Settings();
-    	overallConfig.initFromConfig(theHome, overallSettings);
-    	myModel = new ExportableDataAggregate(overallSettings, overallConfig, theHome);
-	}
+//    /**
+//     * Date: 11/25/18
+//     * @author Isaiah Miller
+//     */
+//    public HomeUpdateController() {
+//    	final Config overallConfig = new Config();
+//    	final Settings overallSettings = new Settings();
+//    	overallConfig.initFromConfig(theHome, overallSettings);
+//    	myModel = new ExportableDataAggregate(overallSettings, overallConfig, theHome);
+//	}
 
     
 	
@@ -52,7 +52,7 @@ public class HomeUpdateController extends Main implements Initializable {
 		//init
 		//initialize all values to home values
 		//grunt work below
-		electricBill.setText("" + theHome.getMyElectricBill());
+		electricBill.setText("" + myMainHome.getMyElectricBill());
     }
 	
     @FXML
@@ -131,7 +131,7 @@ public class HomeUpdateController extends Main implements Initializable {
         loader.setControllerFactory(new Callback<Class<?>, Object>() {
             @Override
             public Object call(Class<?> aClass) {
-                return new menuBoxController(myModel);
+                return new menuBoxController();
             }
         });
     	

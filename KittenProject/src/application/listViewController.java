@@ -24,25 +24,25 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
 
-public class ListViewController extends Main implements Initializable {
+public class listViewController extends Main implements Initializable {
 	@FXML MenuButton menuButton;
 	@FXML Pane pane;
 	@FXML ListView<project> listView;
 	private double xOffset = 0;
     private double yOffset = 0;
-    Settings mySettings;
+//    Settings mySettings;
     
     static project selected;
     ProjectList myProjects;
     
-    final ExportableDataAggregate myPersistentData;
+//    final ExportableDataAggregate myPersistentData;
     
-    public ListViewController() {
-    	final Config overallConfig = new Config();
-    	final Settings overallSettings = new Settings();
-    	overallConfig.initFromConfig(theHome, overallSettings);
-    	myPersistentData = new ExportableDataAggregate(overallSettings, overallConfig, theHome);
-    }
+//    public listViewController() {
+//    	final Config overallConfig = new Config();
+//    	final Settings overallSettings = new Settings();
+//    	overallConfig.initFromConfig(myMainHome, overallSettings);
+//    	myPersistentData = new ExportableDataAggregate(overallSettings, overallConfig, myMainHome);
+//    }
     
 	@Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -51,7 +51,7 @@ public class ListViewController extends Main implements Initializable {
 		myProjects = new ProjectList();
 		listView.setItems(myProjects.getPros());
 		pane.setVisible(false);
-		mySettings = new Settings();
+//		mySettings = new Settings();
 		//end populate
     }
 	
@@ -182,7 +182,7 @@ public class ListViewController extends Main implements Initializable {
         loader.setControllerFactory(new Callback<Class<?>, Object>() {
             @Override
             public Object call(Class<?> aClass) {
-                return new SettingsController(mySettings);
+                return new SettingsController(myPersistentData.getMySettings());
             }
         });
         

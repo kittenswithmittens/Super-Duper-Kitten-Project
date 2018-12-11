@@ -19,10 +19,12 @@ public class Main extends Application {
 	/* Stage field. */
 	public Stage myStage;
 	
+	protected static ExportableDataAggregate myPersistentData;
+	
 		public String version = "0.1.9.0";
 	    private double xOffset = 0;
 	    private double yOffset = 0;
-	    public static Home theHome;
+	    public static Home myMainHome;
 
 	 @Override
 	    public void start(Stage stage) throws Exception {
@@ -99,8 +101,17 @@ public class Main extends Application {
 
 
 		public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException {
-		    if(theHome == null) {
-		        theHome = new Home();
+		    if(myPersistentData == null) {
+		        myMainHome = new Home();
+		    	final Config overallConfig = new Config();
+		    	final Settings overallSettings = new Settings();
+//		    	myPersistentData.setMySettings(overallSettings);
+//		    	myPersistentData.setMyConfig(overallConfig);
+//		    	myPersistentData.setMyHome(myMainHome);
+		    	myPersistentData = new ExportableDataAggregate(overallSettings, overallConfig, myMainHome);
+		    	overallConfig.initFromConfig(myPersistentData);//myMainHome, overallSettings);
+		    	System.out.println("Initialized config.");
+		    	
 		    }
 
 //			final Config template = new Config();

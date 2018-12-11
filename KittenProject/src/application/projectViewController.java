@@ -34,15 +34,18 @@ public class projectViewController extends Main implements Initializable {
     private double yOffset = 0;
     
     project selected;
+    
+    
 	
 	@Override
     public void initialize(URL url, ResourceBundle rb) {
-		selected = ListViewController.getSelected();
+		selected = listViewController.getSelected();
 		projectName.setText(selected.toString());
 		projectCost.setText("Cost: $" + selected.getCost());
 		projectDifficulty.setText("Difficulty: " + selected.getDifficulty());
 		projectSavings.setText("Energy Savings per year: $" + selected.getSavings());
 		projectDescription.setText(selected.getDescription());
+		
 		
     }
 	

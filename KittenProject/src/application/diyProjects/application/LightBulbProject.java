@@ -31,11 +31,11 @@ public class LightBulbProject extends project {
 		
 		name = "Lighting";
 		
-		numberOfBulbs = theHome.getMyTotalLight();
-		myIncandLight = theHome.getMyIncandLight();
-		myLEDLight = theHome.getMyLEDLight();
-		myHalLight = theHome.getMyHalLight();
-		myFlorLight = theHome.getMyFlorLight();
+		numberOfBulbs = myMainHome.getMyTotalLight();
+		myIncandLight = myMainHome.getMyIncandLight();
+		myLEDLight = myMainHome.getMyLEDLight();
+		myHalLight = myMainHome.getMyHalLight();
+		myFlorLight = myMainHome.getMyFlorLight();
 		description = "And on the 7th isle of Lowe's some kid in a red vest said \"LET THERE BE LIGHT\" Take some light bulbs out, put some new ones in, its darn simple";
 		difficulty = 1;
 		cost = calculateCost();
