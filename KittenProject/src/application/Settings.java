@@ -90,7 +90,6 @@ public class Settings extends AbstractExportable {
 	 */
 	public void exportJSON(File destFile) {
 		System.out.println("exporting settings");
-		throw new Error();
 		//myExporter.exportFile(destFile);
 	}
 	

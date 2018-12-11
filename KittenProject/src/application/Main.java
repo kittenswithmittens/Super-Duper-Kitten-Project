@@ -1,6 +1,5 @@
 package application;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
@@ -112,10 +111,11 @@ public class Main extends Application {
 		    	myPersistentData = new ExportableDataAggregate();
 		    	myPersistentData.importJSON();
 		    	myMainHome = myPersistentData.getMyHome();
+		    	System.out.println("in main");
 //		    	overallConfig.initFromConfig(myPersistentData);//myMainHome, overallSettings);
-		    	System.out.println(myMainHome == myPersistentData.getMyHome());
-		    	System.out.println("my Main home is (after import): " + myMainHome);
-		    	System.out.println("Initialized config.");
+//		    	System.out.println(myMainHome == myPersistentData.getMyHome());
+//		    	System.out.println("my Main home is (after import): " + myMainHome);
+//		    	System.out.println("Initialized config.");
 		    	
 		    }
 

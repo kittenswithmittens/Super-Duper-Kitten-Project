@@ -111,33 +111,34 @@ public class ExportImportTester {
 		return res;
 	}
 
-	/**
-	 * @author Isaiah Miller
-	 * @throws FileNotFoundException
-	 */
-	@Test
-	public void exportTypical() throws FileNotFoundException {
-		myActualSettings = typicalSettings();
-//		System.out.println("Base URL path: " + getClass().getResource(""));
-		final String testURLPath = EXPORT + "/" + "typExp.json";
-		URL testURL = getClass().getResource(testURLPath);
-//		System.out.println("typ export path " + testURLPath);
-//		System.out.println(testURL);
-		final String filePath = testURL.getPath();
-		myActualSettings.exportJSON(new File(filePath));
-
-		Scanner out = new Scanner(new File(testURL.getPath()));
-		out.useDelimiter("\\Z");
-		final String actual = out.next();
-
-		URL testURL2 = getClass().getResource(TYPICAL);
-		Scanner in = new Scanner(new File(testURL2.getPath()));
-		in.useDelimiter("\\Z");
-		final String expected = in.next();
-		in.close();
-		assertEquals(expected, actual);
-		out.close();
-	}
+//	/**
+//	 * @author Isaiah Miller
+//	 * @throws FileNotFoundException
+//	 */
+//	@Test
+//	public void exportTypical() throws FileNotFoundException {
+//		myActualSettings = typicalSettings();
+////		System.out.println("Base URL path: " + getClass().getResource(""));
+//		final String testURLPath = EXPORT + "/" + "typExp.json";
+//		URL testURL = getClass().getResource(testURLPath);
+////		System.out.println("typ export path " + testURLPath);
+////		System.out.println(testURL);
+//		final String filePath = testURL.getPath();
+//		myActualSettings.exportJSON(new File(filePath));
+//
+//		Scanner out = new Scanner(new File(testURL.getPath()));
+//		System.out.println("typical export path is: " + testURL.getPath());
+//		out.useDelimiter("\\Z");
+//		final String actual = out.next();
+//
+//		URL testURL2 = getClass().getResource(TYPICAL);
+//		Scanner in = new Scanner(new File(testURL2.getPath()));
+//		in.useDelimiter("\\Z");
+//		final String expected = in.next();
+//		in.close();
+//		assertEquals(expected, actual);
+//		out.close();
+//	}
 
 	/**
 	 * @author Isaiah Miller

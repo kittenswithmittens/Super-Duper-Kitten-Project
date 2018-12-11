@@ -30,6 +30,7 @@ public class AbstractExportable implements Exportable {
 		
 		myExporter.importFile(srcFile);
 		if (this instanceof ExportableDataAggregate) {
+			System.out.println("src path is: " + srcFile.getAbsolutePath());
 			System.out.println("imported home is: " + ((ExportableDataAggregate) this).getMyHome().toString());
 		}
 	}

@@ -4,6 +4,7 @@ import java.io.File;
 import java.net.URL;
 
 /**
+ * @deprecated
  * @author Isaiah Miller Date: 12/4/18 makes a config file with paths to
  *         persistent data.
  */
@@ -95,6 +96,7 @@ public class Config extends AbstractExportable {
 	}
 
 	/**
+	 * @deprecated
 	 * Date 12/8/18
 	 * @author Isaiah Miller
 	 * @return
@@ -106,6 +108,7 @@ public class Config extends AbstractExportable {
 	}
 	
 	/**
+	 * @deprecated
 	 * Date 12/8/18
 	 * @author Isaiah Miller
 	 * @return
@@ -119,6 +122,7 @@ public class Config extends AbstractExportable {
 
 	/**
 	 * Date 12/8/18
+	 * @deprecated
 	 * @author Isaiah Miller
 	 * @return
 	 */
@@ -132,7 +136,7 @@ public class Config extends AbstractExportable {
 	
 	/**
 	 * Date 12/5/18
-	 * 
+	 * @deprecated
 	 * @author Isaiah Miller
 	 * @return The path to source the project configuration from.
 	 */
