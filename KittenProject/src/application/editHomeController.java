@@ -148,6 +148,10 @@ public class editHomeController extends Main implements Initializable {
     
 //    private final Home Main.theHome;
     
+	private Home myHome;
+	public editHomeController(final Home theHome) {
+		myHome = theHome;
+	}
     
     /**
 	 * Initialize function, called at the start
