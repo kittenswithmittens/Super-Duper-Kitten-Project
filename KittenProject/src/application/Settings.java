@@ -121,13 +121,10 @@ public class Settings extends AbstractExportable {
 //	}
 	
 	/* 
-<<<<<<< HEAD
 	 * Date: 11/23/18
 	 * @author Isaiah Miller
-=======
 	 * equals method
 	 * @see java.lang.Object#equals(java.lang.Object)
->>>>>>> 4587b2571d3750deb6e7fd2e6e25c5f89ef366bb
 	 */
 	@Override
 	public boolean equals(Object other) {
@@ -145,13 +142,10 @@ public class Settings extends AbstractExportable {
 	}
 	
 	/* 
-<<<<<<< HEAD
 	 * Date: 11/23/18
 	 * @author Isaiah Miller
-=======
 	 * to String
 	 * @see java.lang.Object#toString()
->>>>>>> 4587b2571d3750deb6e7fd2e6e25c5f89ef366bb
 	 */
 	@Override
 	public String toString() {

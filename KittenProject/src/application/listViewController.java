@@ -296,6 +296,34 @@ public class listViewController extends Main implements Initializable {
         stage.show();
     }
     
+    
+    
+//    
+//    private void changeScene(final String theFXMLName, final Object theControllerParam) {
+//    	 FXMLLoader loader = new FXMLLoader();
+//         loader.setLocation(getClass().getResource(theFXMLName));
+//         loader.setControllerFactory(new Callback<Class<?>, Object>() {
+//             @Override
+//             public Object call(Class<?> aClass) {
+//                 return new SettingsController(myPersistentData.getMySettings());
+//             }
+//         });
+//         
+//         
+//         
+//         Stage stage = new Stage();
+//         stage.setTitle("Settings");
+//         stage.getIcons().add(new Image("application/resources/constructlogo.png"));
+//
+//         Parent root = (Parent) loader.load();
+//         Scene scene = new Scene(root);
+//         stage.setScene(scene);
+//         stage.setResizable(false);
+//         stage.show();
+//    }
+    
+    
+    
     /**
      * changes to home updater scene
      * @param arg0
@@ -304,7 +332,28 @@ public class listViewController extends Main implements Initializable {
     @FXML
     void openUpdaterView(MouseEvent arg0) throws IOException {
         //((Node)(arg0.getSource())).getScene().getWindow().hide();
-        changeScene("edithome.fxml", arg0);
+//        changeScene("edithome.fxml", arg0);
+    	
+    	FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("edithome.fxml"));
+        loader.setControllerFactory(new Callback<Class<?>, Object>() {
+            @Override
+            public Object call(Class<?> aClass) {
+                return new editHomeController(myPersistentData.getMyHome());
+            }
+        });
+        
+        
+        
+        Stage stage = new Stage();
+        stage.setTitle("Home");
+        stage.getIcons().add(new Image("application/resources/constructlogo.png"));
+
+        Parent root = (Parent) loader.load();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
     }
 }
    
