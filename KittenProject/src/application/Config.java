@@ -24,21 +24,12 @@ public class Config extends AbstractExportable {
 	 */
 	public Config() {
 		mySourcePath = retConfigPath();
-		System.out.println("My source path is: " + mySourcePath);
 //		final File sourceFile = new File(mySourcePath);
 //		myExporter.importFile(sourceFile);
 
-//		System.out.println(this);
 		mySavePath = retSavePath();
-//		System.out.println(this);
 		myHomePath = retHomePath();
-//		System.out.println(this);
 		mySettingsPath = retSettingsPath();
-		System.out.println("OHI" + this);
-		
-		
-//		System.out.println("mySource path is: " + mySourcePath);
-
 	}
 	
 //	/**
@@ -115,8 +106,6 @@ public class Config extends AbstractExportable {
 	 */
 	public String retHomePath() {
 		final URL homeURL = getClass().getResource("save/home.json");
-		System.out.println("home URL is: " + homeURL);
-//		System.out.println("my URL save path is: " + saveURL.getPath());
 		return homeURL.getPath();
 	}
 
@@ -127,10 +116,7 @@ public class Config extends AbstractExportable {
 	 * @return
 	 */
 	public String retSettingsPath() {
-		System.out.println("Start retSettings");
 		final URL saveURL = getClass().getResource("save/settings.json");
-		System.out.println("made URL: " + saveURL);
-//		System.out.println("my URL save path is: " + saveURL.getPath());
 		return saveURL.getPath();
 	}
 	

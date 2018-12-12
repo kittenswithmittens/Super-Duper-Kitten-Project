@@ -56,10 +56,8 @@ public class menuBoxController extends Main {
 	@FXML
 	void exportFile(final MouseEvent event) {
 		// call File chooser's export method pass the stage
-//		System.out.println("exportButton");
 		final Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		final File exportDest = FileChooserDIY.specSaveFile(stage);
-		System.out.println("exporting all persistent data");
 		if (exportDest != null) {
 
 //			myPersistentData.exportJSON(exportDest);
@@ -73,7 +71,6 @@ public class menuBoxController extends Main {
 	 */
 	@FXML
 	void importFile(MouseEvent event) {
-		System.out.println("importButton");
 		final Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		final File importDest = FileChooserDIY.specOpenFile(stage);
 		if (importDest != null) {
