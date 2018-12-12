@@ -35,8 +35,8 @@ public class IrrigationProject extends project {
 		
 		name = "Irrigation";
 		
-		myIrrigation = theHome.isMyIrrigation();
-		myIrrigationSensor = theHome.isMyIrrigationSensor();
+		myIrrigation = myMainHome.isMyIrrigation();
+		myIrrigationSensor = myMainHome.isMyIrrigationSensor();
 		
 		
 		description = "Sometimes water doesn't fall from the sky. So instead, make it come from the ground so you can keep your lawn green"
