@@ -3,9 +3,21 @@ package application;
 import java.io.File;
 
 /**
- * @author Isaiah Miller
-*/
-public interface Exportable {	
+ * Exportable interface
+ * Authors: Isaiah Miller
+ * version 1.0
+ * 12/2018
+ */
+public interface Exportable {
+	
+	/**
+	 * export json interface
+	 * @param destFile
+	 */
 	public void exportJSON(File destFile);
+	/**
+	 * import json interface
+	 * @param srcFile
+	 */
 	public void importJSON(File srcFile);
 }

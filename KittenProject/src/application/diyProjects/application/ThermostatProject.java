@@ -1,11 +1,11 @@
-package application;
-
-
 /**
  * Thermostat project
- * @author richw253
- * @version Dec 6
+ * Authors: Logan Jenny, Rich Williams, Jake Owens, Isaiah Miller
+ * version 1.0
+ * 12/2018
  */
+package application;
+
 public class ThermostatProject extends project{
 	
 	/** Cost of programmable thermostat. */
@@ -20,12 +20,15 @@ public class ThermostatProject extends project{
 	/** Thermostat field. */
 	boolean myProgThermostat;
 	
+	/**
+	 * project constructor
+	 */
 	public ThermostatProject () {
 		super();
 		
 		name = "Thermostat";
 		
-		myProgThermostat = theHome.isMyProgThermostat();
+		myProgThermostat = myMainHome.isMyProgThermostat();
 		
 		description = "Do you like it cold when you sleep, but warm and toastie when you wake?"
 				+ "\nWill you be gone from home for a bit and just need your pipes not to freeze. ";
@@ -36,10 +39,18 @@ public class ThermostatProject extends project{
 		
 	}
 	
+	/**
+	 * gets savings
+	 * @return
+	 */
 	private int calculateSavings() {
 		return (int) (ANNUAL_HEATING_COST * THERMOSTAT_PERCENT_SAVINGS);
 	}
 
+	/**
+	 * gets cost
+	 * @return
+	 */
 	private int calculateCost() {
 		return THERMOSTAT_COST;
 	}

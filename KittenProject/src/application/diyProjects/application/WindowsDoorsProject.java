@@ -1,7 +1,13 @@
+/**
+ * Window and Door project
+ * Authors: Logan Jenny, Rich Williams, Jake Owens, Isaiah Miller
+ * version 1.0
+ * 12/2018
+ */
 package application;
 
 
-public class WindowsDoorsProject extends project { //still needs calculation for savings and such
+public class WindowsDoorsProject extends project { 
 	
 	/** Cost of weather-proofing external door. */
 	private final static int DOOR_COST = 65;
@@ -17,22 +23,37 @@ public class WindowsDoorsProject extends project { //still needs calculation for
 	
 	
 	/** Windows and Door fields. */
+	/**
+	 * myWeatherProofedDoor
+	 */
 	boolean myWeatherProofedDoor;
+	/**
+	 * myNumWindow
+	 */
 	int myNumWindow;
+	/**
+	 * myNumWindowBad
+	 */
 	int myNumWindowBad;
+	/**
+	 * myNumWindowLowE
+	 */
 	int myNumWindowLowE;
 
 
 
+	/**
+	 * project constructor
+	 */
 	public WindowsDoorsProject() {
 		super();
 		
 		name = "Windows and Doors";
 		
-		myWeatherProofedDoor = theHome.getMyWeatherProofedDoor();
-		myNumWindow  = theHome.getMyNumWindow();
-		myNumWindowBad = theHome.getMyNumWindowBad();
-		myNumWindowLowE = theHome.getMyNumWindowLowE();
+		myWeatherProofedDoor = myMainHome.getMyWeatherProofedDoor();
+		myNumWindow  = myMainHome.getMyNumWindow();
+		myNumWindowBad = myMainHome.getMyNumWindowBad();
+		myNumWindowLowE = myMainHome.getMyNumWindowLowE();
 		
 		description = "Windows are nice to see out of, Doors are nice to close. Just imagine if your house didnt have doors. Where would FedEx leave your package?";
 		difficulty = 2;
@@ -41,10 +62,18 @@ public class WindowsDoorsProject extends project { //still needs calculation for
 
 	}
 
+	/**
+	 * gets savings
+	 * @return
+	 */
 	private int calculateSavings() {
 		return (int) (HEATING_COST * WEATHER_PROOFING_PERCENT_SAVINGS);
 	}
 
+	/**
+	 * gets cost
+	 * @return
+	 */
 	private int calculateCost() {
 		
 		int cost = 0;
@@ -57,30 +86,58 @@ public class WindowsDoorsProject extends project { //still needs calculation for
 		return cost;
 	}
 
+	/**
+	 * sets weather door
+	 * @param myWeatherProofedDoor
+	 */
 	public void setMyWeatherProofedDoor(boolean myWeatherProofedDoor) {
 		this.myWeatherProofedDoor = myWeatherProofedDoor;
 	}
 
+	/**
+	 * gets number of windows
+	 * @return
+	 */
 	public int getMyNumWindow() {
 		return myNumWindow;
 	}
 
+	/**
+	 * sets number of windows
+	 * @param myNumWindow
+	 */
 	public void setMyNumWindow(int myNumWindow) {
 		this.myNumWindow = myNumWindow;
 	}
 
+	/**
+	 * get bad windows
+	 * @return
+	 */
 	public int getMyNumWindowBad() {
 		return myNumWindowBad;
 	}
 
+	/**
+	 * set bad windows
+	 * @param myNumWindowBad
+	 */
 	public void setMyNumWindowBad(int myNumWindowBad) {
 		this.myNumWindowBad = myNumWindowBad;
 	}
 
+	/**
+	 * get low E windows
+	 * @return
+	 */
 	public int getMyNumWindowLowE() {
 		return myNumWindowLowE;
 	}
 
+	/**
+	 * set low E windows
+	 * @param myNumWindowLowE
+	 */
 	public void setMyNumWindowLowE(int myNumWindowLowE) {
 		this.myNumWindowLowE = myNumWindowLowE;
 	}
