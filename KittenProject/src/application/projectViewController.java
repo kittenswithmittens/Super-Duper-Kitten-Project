@@ -67,6 +67,8 @@ public class projectViewController extends Main implements Initializable {
      * selected
      */
     project selected;
+    
+    
 	
 	/* (non-Javadoc)
 	 * @see javafx.fxml.Initializable#initialize(java.net.URL, java.util.ResourceBundle)
@@ -79,6 +81,7 @@ public class projectViewController extends Main implements Initializable {
 		projectDifficulty.setText("Difficulty: " + selected.getDifficulty());
 		projectSavings.setText("Energy Savings per year: $" + selected.getSavings());
 		projectDescription.setText(selected.getDescription());
+		
 		
     }
 	

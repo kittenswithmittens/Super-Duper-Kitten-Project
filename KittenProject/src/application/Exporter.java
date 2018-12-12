@@ -36,7 +36,8 @@ public class Exporter {
 		
 		/**
 		 * must instantiate one of this for a class to use
-		 * @param destObject
+		 * @param destObject the instance that this exporter
+		 *  will write to for import and write from for export
 		 */
 		public Exporter(Exportable destObject) {
 			// sets up JSON object mapper

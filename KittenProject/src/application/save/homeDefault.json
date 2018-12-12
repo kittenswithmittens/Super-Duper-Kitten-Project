@@ -7,7 +7,7 @@
   "myMainHeatRadiant" : true,
   "myFurnanceMultStage" : false,
   "myHouseFan" : true,
-  "myProgThermostat" : true,
+  "myProgThermostat" : false,
   "myGasWaterHeater" : false,
   "myElectWaterHeat" : false,
   "myOnDemand" : false,

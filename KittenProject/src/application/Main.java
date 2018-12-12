@@ -28,6 +28,9 @@ public class Main extends Application {
 	 */
 	public Stage myStage;
 	
+
+	protected static ExportableDataAggregate myPersistentData;
+	
 		/**
 		 * version
 		 */
@@ -40,6 +43,9 @@ public class Main extends Application {
 	     * yOffset
 	     */
 	    private double yOffset = 0;
+
+	    public static Home myMainHome;
+
 	    /**
 	     * theHome
 	     */
@@ -139,25 +145,29 @@ public class Main extends Application {
 		 * @throws IllegalAccessException
 		 */
 		public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException {
-		    if(theHome == null) {
-		        theHome = new Home();
+		    if(myPersistentData == null) {
+//		        myMainHome = new Home();
+//		    	final Config overallConfig = new Config();
+//		    	final Settings overallSettings = new Settings();
+//		    	myPersistentData.setMySettings(overallSettings);
+//		    	myPersistentData.setMyConfig(overallConfig);
+//		    	myPersistentData.setMyHome(myMainHome);
+		    	myPersistentData = new ExportableDataAggregate();
+		    	myPersistentData.importJSON();
+		    	myMainHome = myPersistentData.getMyHome();
+//		    	overallConfig.initFromConfig(myPersistentData);//myMainHome, overallSettings);
+//		    	System.out.println(myMainHome == myPersistentData.getMyHome());
+//		    	System.out.println("my Main home is (after import): " + myMainHome);
+//		    	System.out.println("Initialized config.");
+		    	
 		    }
-//			new Home(true);
-	    	//remove (this is a test. Build real Junit test)!!!!
-//	    	Home test = new Home();
-	    	
-//	    	test.exportJSON(new File(Home.HOME_PATH));
-//	    	test.importJSON(new File(Home.HOME_PATH));
-//	    	System.out.println(test.myElectricBill);
-	    	
-//	    	String testPath = "save" + File.separatorChar + "settings.json";
-//	    	Settings testSettings = new Settings();
-//	    	testSettings.exportSettings(new File(testPath));
-//	    	testSettings.importSettings(new File(testPath));
-//	    	System.out.println(testSettings.getMyEmailAddress());
-//	    	System.out.println("Working Directory = " +
-//	                System.getProperty("user.dir"));
+
+//			final Config template = new Config();
+//			System.out.println("construction.");
+//			final String confPath = template.retConfigPath();
+//			System.out.println("made conf path: " + confPath);
+//			template.exportJSON(new File(confPath));
+//			System.out.println("finished exporting.");
 	    	launch(args);
-	    	
 	    }
 }

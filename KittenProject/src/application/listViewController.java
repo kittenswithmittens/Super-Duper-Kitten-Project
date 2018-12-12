@@ -51,6 +51,7 @@ public class listViewController extends Main implements Initializable {
      * yOffset
      */
     private double yOffset = 0;
+
     /**
      * mySettings
      */
@@ -65,17 +66,28 @@ public class listViewController extends Main implements Initializable {
      */
     ProjectList myProjects;
     
+
+//    final ExportableDataAggregate myPersistentData;
+    
+//    public listViewController() {
+//    	final Config overallConfig = new Config();
+//    	final Settings overallSettings = new Settings();
+//    	overallConfig.initFromConfig(myMainHome, overallSettings);
+//    	myPersistentData = new ExportableDataAggregate(overallSettings, overallConfig, myMainHome);
+//    }
+    
+
 	/* (non-Javadoc)
 	 * @see javafx.fxml.Initializable#initialize(java.net.URL, java.util.ResourceBundle)
 	 */
 	@Override
     public void initialize(URL url, ResourceBundle rb) {
-		//populates list
+				//populates list
 		listView.setEditable(true);
 		myProjects = new ProjectList();
 		listView.setItems(myProjects.getPros());
 		pane.setVisible(false);
-		mySettings = new Settings();
+//		mySettings = new Settings();
 		//end populate
     }
 	
@@ -232,13 +244,10 @@ public class listViewController extends Main implements Initializable {
     @FXML
     void exportFile(final MouseEvent event) {
         // call File chooser's export method pass the stage
-        System.out.println("exportButton");
         final Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         final File exportDest = FileChooserDIY.specSaveFile(stage);
         if (exportDest != null) {
-            mySettings.exportJSON(exportDest);
-        } else {
-            System.out.println("File chosen is null. No export performed.");
+            myPersistentData.exportJSON(exportDest);
         }
     }
 
@@ -248,13 +257,10 @@ public class listViewController extends Main implements Initializable {
      */
     @FXML
     void importFile(MouseEvent event) {
-        System.out.println("importButton");
         final Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         final File importDest = FileChooserDIY.specOpenFile(stage);
         if (importDest != null) {
-            mySettings.importJSON(importDest);
-        } else {
-            System.out.println("File chosen is null. No export performed.");
+            myPersistentData.importJSON(importDest);
         }
     }
     
@@ -273,7 +279,7 @@ public class listViewController extends Main implements Initializable {
         loader.setControllerFactory(new Callback<Class<?>, Object>() {
             @Override
             public Object call(Class<?> aClass) {
-                return new SettingsController(mySettings);
+                return new SettingsController(myPersistentData.getMySettings());
             }
         });
         

@@ -11,7 +11,12 @@ import java.lang.reflect.Field;
 import java.util.Random;
 
 
-public class Home implements Exportable {
+/**
+ * Date: 10/20/18
+ * Editor: Isaiah Miller
+ *
+ */
+public class Home extends AbstractExportable {
 	/**
 	 * HOME_PATH
 	 */
@@ -167,10 +172,6 @@ public class Home implements Exportable {
 //	private final ObjectReader myReader;
 //	private final ObjectWriter myWriter;
 	
-	/**
-	 * myExporter
-	 */
-	private final Exporter myExporter;
 
 
 	/**
@@ -189,14 +190,12 @@ public class Home implements Exportable {
 	    myProgThermostat = true;
 	    myOnDemand = true;
 	    myHalLight = true;
-	    myTotalLight = 12;
+	    myTotalLight = 13;
 	    myNumWindow = 8;
 	    myNumWindowBad = 8;
 	    myInsulationCeiling = true;
 	    myEStarRefrig = true;
 	    myIrrigation = true;
-		myExporter = new Exporter(this);
-		
 
 	}
 
@@ -209,7 +208,7 @@ public class Home implements Exportable {
 	 * @throws IllegalAccessException
 	 */
 	public Home(final boolean isDefault) throws IllegalArgumentException, IllegalAccessException {
-		myExporter = new Exporter(this);
+		
 		final Field[] fields = this.getClass().getDeclaredFields();
 		//final Class<Boolean> boolClass = Boolean.TYPE;     //dunno why this is here.. Isaiah...
 		final int spreadRandInt = 10000;
@@ -219,22 +218,15 @@ public class Home implements Exportable {
 			//System.out.println(field.getType());
 			if(field.getType().equals(Boolean.TYPE)) {
 				field.set(this, rand.nextBoolean());
-				System.out.println("is a boolean");
 			} else if (field.getType().equals(Integer.TYPE)) {
 				field.set(this, rand.nextInt(spreadRandInt));
-				System.out.println("is an int");
 			} else if(field.getType().equals(Float.TYPE)) {
 				field.set(this, rand.nextFloat() * spreadRandFloat);
-				System.out.println("is a float");
-			} else {
-				System.out.print("Not a match: " + field.getType());
-				System.out.println();
+			} 
 			}
-			System.out.println(field.get(this));
-			}
-		File test = new File("");
-		
-		System.out.println("path is: " + test.getAbsolutePath());
+//		File test = new File("");
+//		
+//		System.out.println("path is: " + test.getAbsolutePath());
 		exportJSON(new File("src" + File.separatorChar + "application" + File.separatorChar + "save" + File.separatorChar + "homeDefault.json"));
 		
 	}
@@ -688,40 +680,11 @@ public class Home implements Exportable {
 		this.myEStarDryer = myEStarDryer;
 	}
 
-	/**
-	 * Imports home data from save file into to this instance.
-	 * @author Isaiah Miller
-	 */
-	public void importJSON(File srcFile) {
-		myExporter.importFile(srcFile);
+	@Override
+	public String toString() {
+		final StringBuilder res = new StringBuilder(100);
+		res.append("myNum Window is: " + myNumWindow);
+		return res.toString();
 	}
-//		File srcFile = new File(Home.HOME_PATH);
-//		try {
-//			myReader.readValue(srcFile);
-//		} catch (IOException e) {
-//			System.out.println("Import failed... Making new Home save file.");
-//			exportHome();
-////			e.printStackTrace();
-//		}
-	
-	
-	
-	/**
-	 * exports home data to a save file
-	 * @author Isaiah Miller
-	 */
-	public void exportJSON(File destFile) {
-		myExporter.exportFile(destFile);
-	}
-		
-		
-		
-//		File destFile = new File(Home.HOME_PATH);
-//		try {
-//			myWriter.writeValue(destFile, this);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-	
 
 }

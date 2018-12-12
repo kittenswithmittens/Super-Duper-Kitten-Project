@@ -14,7 +14,7 @@ import javafx.beans.property.StringProperty;
 /**
  * @author Isaiah Miller
  */
-public class Settings implements Exportable {
+public class Settings extends AbstractExportable {
 
 	/**
 	 * myName
@@ -25,29 +25,21 @@ public class Settings implements Exportable {
 	 */
 	private StringProperty myEmailAddress;
 
+
 	// import/export fields
 //	private final ObjectMapper myMapper;
 //	private final ObjectReader myReader;
 //	private final ObjectWriter myWriter;
 
-	/**
-	 * myExporter
-	 */
-	private final Exporter myExporter;
+
 
 	/**
 	 * constructs settings
 	 * @author Isaiah Miller
 	 */
 	public Settings() {
-		// sets up JSON object mapper
-//		myMapper = new ObjectMapper();
-//		myReader = myMapper.readerForUpdating(this);
-//		myWriter = myMapper.writerWithDefaultPrettyPrinter();
-
 		myName = new SimpleStringProperty("");
 		myEmailAddress = new SimpleStringProperty("");
-		myExporter = new Exporter(this);
 	}
 
 	/**
@@ -80,12 +72,6 @@ public class Settings implements Exportable {
 		myExporter.exportFile(destFile);
 	}
 
-//		File destFile = new File(Home.HOME_PATH);
-//		try {
-//			myWriter.writeValue(destFile, this);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
 
 	// getters and setters
 
@@ -135,15 +121,18 @@ public class Settings implements Exportable {
 //	}
 	
 	/* 
+<<<<<<< HEAD
+	 * Date: 11/23/18
+	 * @author Isaiah Miller
+=======
 	 * equals method
 	 * @see java.lang.Object#equals(java.lang.Object)
+>>>>>>> 4587b2571d3750deb6e7fd2e6e25c5f89ef366bb
 	 */
 	@Override
 	public boolean equals(Object other) {
-		System.out.println("in equals");
 		boolean res;
 		if(other == null || other.getClass() != this.getClass()) {
-			System.out.println("res not same type");
 			res = false;
 		} else { //check all fields equal
 			Settings otherSettings = (Settings) other;
@@ -153,16 +142,21 @@ public class Settings implements Exportable {
 			res = emailAddressIsEqual && nameIsEqual;
 		}
 		return res;
-		
 	}
 	
 	/* 
+<<<<<<< HEAD
+	 * Date: 11/23/18
+	 * @author Isaiah Miller
+=======
 	 * to String
 	 * @see java.lang.Object#toString()
+>>>>>>> 4587b2571d3750deb6e7fd2e6e25c5f89ef366bb
 	 */
 	@Override
 	public String toString() {
 		return "name" + myName + ", " + "email address: " + myEmailAddress;
 	}
+	
 	
 }

@@ -16,18 +16,21 @@ import java.util.Scanner;
 import org.junit.Before;
 import org.junit.Test;
 
+import application.Config;
 import application.Settings;
 
 /**
+ * Date 11/30/18
  * @author Isaiah Miller
- *
  */
 public class ExportImportTester {
 	public static final String EXPORT = "export";
 	public static final String TYPICAL = "typical.json";
+	private static final String TYPICAL_CONFIG = "typicalConfig.json";
 	Settings myActualSettings;
 
 	/**
+	 * Date 11/30/18
 	 * init
 	 * @author Isaiah Miller
 	 */
@@ -43,11 +46,50 @@ public class ExportImportTester {
 	@Test
 	public void importTypical() {
 		final Settings expectedSettings = typicalSettings();
-		URL testURL = getClass().getResource(TYPICAL);
+		final URL testURL = getClass().getResource(TYPICAL);
 		myActualSettings.importJSON(new File(testURL.getPath()));
 		assertEquals(expectedSettings, myActualSettings);
 	}
+	
+	
+	/**
+	 * Date:12/8/18
+	 * @author Isaiah Miller
+	 */
+	@Test
+	public void importConfig() {
+		final Config expected = typicalConfig();
+		final URL testURL = getClass().getResource(TYPICAL_CONFIG);
+		final Config actual = new Config();
+		actual.importJSON(new File(testURL.getPath()));
+		assertEquals(expected, actual);
+	}
 
+	
+	
+	
+	
+	
+	/**
+	 * Date: 12/8/18
+	 * @author Isaiah Miller
+	 */
+	@Test
+	public void exportConfig() {
+		//export typical file
+		final Config expected = typicalConfig();
+		final Config origConfig = typicalConfig();
+		final String destPathEnding  = EXPORT + "/" + TYPICAL_CONFIG;
+//		System.out.println("destPathEnding is: " + destPathEnding);
+		final URL testURL = getClass().getResource(destPathEnding);
+		origConfig.exportJSON(new File(testURL.getPath()));
+		
+		//import file to new object and test against expected
+		final Config actual = new Config();
+		actual.importJSON(new File(testURL.getPath()));
+		assertEquals(expected, actual);
+	}
+	
 	/**
 	 * settings test
 	 * @author Isaiah Miller
@@ -59,24 +101,46 @@ public class ExportImportTester {
 		res.setMyName("Bob");
 		return res;
 	}
+	
+	/**
+<<<<<<< HEAD
+	 * Date: 12/8/18
+=======
+	 * export test
+>>>>>>> 4587b2571d3750deb6e7fd2e6e25c5f89ef366bb
+	 * @author Isaiah Miller
+	 * @return
+	 */
+	private static Config typicalConfig() {
+		final Config res = new Config();
+//		private String mySourcePath;
+//		private String mySavePath;
+//		private String myHomePath;
+//		private String mySettingsPath
+		res.setMyHomePath("/Home");
+		res.setMySavePath("/Save");
+		res.setMySettingsPath("/Settings");
+//		res.setMySourcePath("/source");
+		return res;
+	}
 
 	/**
-	 * export test
 	 * @author Isaiah Miller
 	 * @throws FileNotFoundException
 	 */
 	@Test
 	public void exportTypical() throws FileNotFoundException {
 		myActualSettings = typicalSettings();
-		System.out.println("Base URL path: " + getClass().getResource(""));
+//		System.out.println("Base URL path: " + getClass().getResource(""));
 		final String testURLPath = EXPORT + "/" + "typExp.json";
 		URL testURL = getClass().getResource(testURLPath);
-		System.out.println("typ export path " + testURLPath);
-		System.out.println(testURL);
+//		System.out.println("typ export path " + testURLPath);
+//		System.out.println(testURL);
 		final String filePath = testURL.getPath();
 		myActualSettings.exportJSON(new File(filePath));
 
 		Scanner out = new Scanner(new File(testURL.getPath()));
+		System.out.println("typical export path is: " + testURL.getPath());
 		out.useDelimiter("\\Z");
 		final String actual = out.next();
 
@@ -121,11 +185,11 @@ public class ExportImportTester {
 		out.useDelimiter("\\Z");
 		final String actual = out.next();
 
-		System.out.println(getClass().getResource(""));
-		System.out.println(fileName.length());
+//		System.out.println(getClass().getResource(""));
+//		System.out.println(fileName.length());
 		URL testURL2 = getClass().getResource(fileName + ".json");
-		System.out.println(testURL2);
-		System.out.println(testURL2.getPath());
+//		System.out.println(testURL2);
+//		System.out.println(testURL2.getPath());
 		String expected;
 		if (fileName != "null") {
 			Scanner in = new Scanner(new File(testURL2.getPath()));

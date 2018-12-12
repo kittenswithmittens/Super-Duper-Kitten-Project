@@ -47,9 +47,9 @@ public class InsulationProject extends project {
 		
 		name = "Insulation";
 		
-		myInsulationWall = theHome.isMyInsulationWall();
-		myInsulationCeiling = theHome.isMyInsulationCeiling();
-		myInsulationFloor = theHome.isMyInsulationFloor();
+		myInsulationWall = myMainHome.isMyInsulationWall();
+		myInsulationCeiling = myMainHome.isMyInsulationCeiling();
+		myInsulationFloor = myMainHome.isMyInsulationFloor();
 		
 		description = "Brrrr.... could be even warmer in here, right? Lets put a bunch of fluffy glass in the walls eh?";
 		difficulty = 3;
