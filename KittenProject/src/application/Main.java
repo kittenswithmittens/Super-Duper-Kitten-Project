@@ -1,3 +1,9 @@
+/**
+ * Main class
+ * Authors: Logan Jenny, Rich Williams, Jake Owens, Isaiah Miller
+ * version 1.0
+ * 12/2018
+ */
 package application;
 
 import java.io.IOException;
@@ -17,16 +23,38 @@ import javafx.stage.StageStyle;
 public class Main extends Application {
 
 	/* Stage field. */
+	/**
+	 * myStage
+	 */
 	public Stage myStage;
 	
+
 	protected static ExportableDataAggregate myPersistentData;
 	
+		/**
+		 * version
+		 */
 		public String version = "0.1.9.0";
+	    /**
+	     * xOffset
+	     */
 	    private double xOffset = 0;
+	    /**
+	     * yOffset
+	     */
 	    private double yOffset = 0;
+
 	    public static Home myMainHome;
 
-	 @Override
+	    /**
+	     * theHome
+	     */
+	    public static Home theHome;
+
+	 /* (non-Javadoc)
+	 * @see javafx.application.Application#start(javafx.stage.Stage)
+	 */
+	@Override
 	    public void start(Stage stage) throws Exception {
 	     myStage = stage;
 		 final URL rootURL = getClass().getResource("/application/kittenproject.fxml");
@@ -66,6 +94,12 @@ public class Main extends Application {
            
 	    }
 	    
+	 	/**
+	 	 * changes the scene on the stage
+	 	 * @param A
+	 	 * @param event
+	 	 * @throws IOException
+	 	 */
 	 	public void changeScene(String A, MouseEvent event) throws IOException {
 	 	    Parent newb = FXMLLoader.load(getClass().getResource(A));
 	        Scene newbScene = new Scene(newb);
@@ -94,12 +128,22 @@ public class Main extends Application {
 	       });
 	 	}
 
+	 	/**
+	 	 * gets version
+	 	 * @return
+	 	 */
 	 	public String getVersion() {
 	 		return version;
 	 	}
 	 	
 
 
+		/**
+		 * Main method that runs the program
+		 * @param args
+		 * @throws IllegalArgumentException
+		 * @throws IllegalAccessException
+		 */
 		public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException {
 		    if(myPersistentData == null) {
 //		        myMainHome = new Home();

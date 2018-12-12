@@ -1,23 +1,33 @@
+/**
+ * Solar Project
+ * Authors: Logan Jenny, Rich Williams, Jake Owens, Isaiah Miller
+ * version 1.0
+ * 12/2018
+ */
 package application;
 
 import application.project;
 
-/**
- * Solar Panel System project
- * @author richw253
- * @version Dec 6
- */
 public class SolarProject extends project {
 
 	/** Electricity usage field. */
 	boolean mySolarPanel;
 
 	/** Average cost of installing 5kW solar panel system. */
+	/**
+	 * mySolarPanelCost
+	 */
 	int mySolarPanelCost = 12000;
 	
 	/** Average yearly use of electricity in kWHr. */
+	/**
+	 * myYearlyUse
+	 */
 	int myYearlyUse = 10766;
 
+	/**
+	 * project constructor
+	 */
 	public SolarProject() {
 		super();
 		
@@ -35,6 +45,10 @@ public class SolarProject extends project {
 
 	}
 
+	/**
+	 * gets savings
+	 * @return
+	 */
 	private int calculateSavings() {
 		/** Average kWHr a 5kW Solar Panel System generates per week. */
 		int solarGeneratedPower = 20;
@@ -45,15 +59,27 @@ public class SolarProject extends project {
 		return (int) ((solarGeneratedPower * 52) * energyCost) ;
 	}
 
+	/**
+	 * gets cost
+	 * @return
+	 */
 	private int calculateCost() {
 		
 		return mySolarPanelCost;
 	}
 
+	/**
+	 * gets solar panel
+	 * @return
+	 */
 	public boolean isMySolarPanel() {
 		return mySolarPanel;
 	}
 
+	/**
+	 * sets solar panel
+	 * @param mySolarPanel
+	 */
 	public void setMySolarPanel(boolean mySolarPanel) {
 		this.mySolarPanel = mySolarPanel;
 	}

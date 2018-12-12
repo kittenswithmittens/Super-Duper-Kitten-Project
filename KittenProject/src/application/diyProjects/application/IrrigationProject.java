@@ -1,11 +1,11 @@
+/**
+ * irrigation project
+ * Authors: Logan Jenny, Rich Williams, Jake Owens, Isaiah Miller
+ * version 1.0
+ * 12/2018
+ */
 package application;
 
-
-/**
- * Irrigation Project Class
- * @author richw253
- * @version 6 Dec 2018
- */
 public class IrrigationProject extends project {
 
 	/** Cost of rain sensor. */
@@ -18,7 +18,13 @@ public class IrrigationProject extends project {
 	private final static double PERCENT_SAVINGS = .45;
 	
 	/** Irrigation fields. */
+	/**
+	 * myIrrigation
+	 */
 	boolean myIrrigation;
+	/**
+	 * myIrrigationSensor
+	 */
 	boolean myIrrigationSensor;
 
 	/**
@@ -41,6 +47,10 @@ public class IrrigationProject extends project {
 
 	}
 
+	/**
+	 * gets savings
+	 * @return
+	 */
 	private int calculateSavings() {
 		int savings = 0;
 		if (myIrrigation) {
@@ -49,6 +59,10 @@ public class IrrigationProject extends project {
 		return savings;
 	}
 
+	/**
+	 * gets cost
+	 * @return
+	 */
 	private int calculateCost() {
 		int cost = 0;
 		if (myIrrigation) {
@@ -57,18 +71,34 @@ public class IrrigationProject extends project {
 		return cost;
 	}
 
+	/**
+	 * gets irrigation
+	 * @return
+	 */
 	public boolean isMyIrrigation() {
 		return myIrrigation;
 	}
 
+	/**
+	 * sets irrigation
+	 * @param myIrrigation
+	 */
 	public void setMyIrrigation(boolean myIrrigation) {
 		this.myIrrigation = myIrrigation;
 	}
 
+	/**
+	 * gets irrigation sensor
+	 * @return
+	 */
 	public boolean isMyIrrigationSensor() {
 		return myIrrigationSensor;
 	}
 
+	/**
+	 * sets irrigation sensor
+	 * @param myIrrigationSensor
+	 */
 	public void setMyIrrigationSensor(boolean myIrrigationSensor) {
 		this.myIrrigationSensor = myIrrigationSensor;
 	}

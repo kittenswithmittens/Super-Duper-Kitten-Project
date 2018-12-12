@@ -1,3 +1,9 @@
+/**
+ * JSON mapper
+ * Authors: Logan Jenny, Rich Williams, Jake Owens, Isaiah Miller
+ * version 1.0
+ * 12/2018
+ */
 package application;
 
 import java.io.File;
@@ -13,14 +19,23 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  *         Converts Java objects to and from saveable JSON representations.
  */
 public class JSONMapper {
+	/**
+	 * mapper
+	 */
 	private final ObjectMapper mapper;
 
+	/**
+	 * constructor
+	 */
 	public JSONMapper() {
 		this.mapper = new ObjectMapper();
 	}
 
+	
 	/**
-	 * @author Isaiah Miller
+	 * imports home
+	 * @param oldHome
+	 * @return
 	 */
 	public Home importHome(Home oldHome) {
 		File srcFile = new File(Home.HOME_PATH);
@@ -36,8 +51,12 @@ public class JSONMapper {
 	
 
 	/**
+	 * exports
 	 * @author Isaiah Miller
 	 * Writes home to a file in JSON format.
+	 */
+	/**
+	 * 
 	 */
 	public void export() {
 		File destFile = new File(Home.HOME_PATH);

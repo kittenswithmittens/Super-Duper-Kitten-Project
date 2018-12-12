@@ -1,3 +1,9 @@
+/**
+ * Main Page Controller
+ * Authors: Logan Jenny, Rich Williams, Jake Owens, Isaiah Miller
+ * version 1.0
+ * 12/2018
+ */
 package application;
 
 import java.io.IOException;
@@ -17,34 +23,65 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class mainPageController extends Main {
+	/**
+	 * menuButton
+	 */
 	@FXML MenuButton menuButton;
+    /**
+     * xOffset
+     */
     private double xOffset = 0;
+    /**
+     * yOffset
+     */
     private double yOffset = 0;
 
 
+	/**
+	 * changes scene to the project list view
+	 * @param event
+	 * @throws IOException
+	 */
 	@FXML
     public void moveOn(MouseEvent event) throws IOException {
 		
-		Sound.sounds[0].play();   // LET UR INNER CAT OUT
+		//Sound.sounds[0].play();   // LET UR INNER CAT OUT
 		changeScene("list.fxml", event);
 
     }
   
+    /**
+     * closes the program
+     * @param event
+     */
     @FXML
     void halt(MouseEvent event) {
         Platform.exit();
     }
     
+    /**
+     * glow
+     * @param event
+     */
     @FXML
     void hoverShadow(MouseEvent event) {
         ((Node) event.getSource()).setEffect(new Shadow(0.8, null));
     }
     
+    /**
+     * unglow
+     * @param event
+     */
     @FXML
     void unglow(MouseEvent event) {
         ((Node) event.getSource()).setEffect(null);
     }
 
+    /**
+     * opens about page
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void about(MouseEvent event) throws IOException {
     	Stage stage = new Stage();

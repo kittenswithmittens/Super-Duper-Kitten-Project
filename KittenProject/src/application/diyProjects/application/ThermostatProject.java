@@ -1,12 +1,10 @@
-package application;
-
-
-
 /**
  * Thermostat project
- * @author richw253
- * @version Dec 6
+ * Authors: Logan Jenny, Rich Williams, Jake Owens, Isaiah Miller
+ * version 1.0
+ * 12/2018
  */
+package application;
 
 public class ThermostatProject extends project{
 	
@@ -22,6 +20,9 @@ public class ThermostatProject extends project{
 	/** Thermostat field. */
 	boolean myProgThermostat;
 	
+	/**
+	 * project constructor
+	 */
 	public ThermostatProject () {
 		super();
 		
@@ -38,10 +39,18 @@ public class ThermostatProject extends project{
 		
 	}
 	
+	/**
+	 * gets savings
+	 * @return
+	 */
 	private int calculateSavings() {
 		return (int) (ANNUAL_HEATING_COST * THERMOSTAT_PERCENT_SAVINGS);
 	}
 
+	/**
+	 * gets cost
+	 * @return
+	 */
 	private int calculateCost() {
 		return THERMOSTAT_COST;
 	}

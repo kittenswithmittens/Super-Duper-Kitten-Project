@@ -1,3 +1,9 @@
+/**
+ * Export and Import Tester
+ * Authors: Isaiah Miller
+ * version 1.0
+ * 12/2018
+ */
 package test;
 
 import static org.junit.Assert.assertEquals;
@@ -25,6 +31,7 @@ public class ExportImportTester {
 
 	/**
 	 * Date 11/30/18
+	 * init
 	 * @author Isaiah Miller
 	 */
 	@Before
@@ -33,6 +40,7 @@ public class ExportImportTester {
 	}
 
 	/**
+	 * typical importer test
 	 * @author Isaiah Miller
 	 */
 	@Test
@@ -83,6 +91,7 @@ public class ExportImportTester {
 	}
 	
 	/**
+	 * settings test
 	 * @author Isaiah Miller
 	 * @return
 	 */
@@ -94,7 +103,11 @@ public class ExportImportTester {
 	}
 	
 	/**
+<<<<<<< HEAD
 	 * Date: 12/8/18
+=======
+	 * export test
+>>>>>>> 4587b2571d3750deb6e7fd2e6e25c5f89ef366bb
 	 * @author Isaiah Miller
 	 * @return
 	 */
@@ -111,36 +124,37 @@ public class ExportImportTester {
 		return res;
 	}
 
-//	/**
-//	 * @author Isaiah Miller
-//	 * @throws FileNotFoundException
-//	 */
-//	@Test
-//	public void exportTypical() throws FileNotFoundException {
-//		myActualSettings = typicalSettings();
-////		System.out.println("Base URL path: " + getClass().getResource(""));
-//		final String testURLPath = EXPORT + "/" + "typExp.json";
-//		URL testURL = getClass().getResource(testURLPath);
-////		System.out.println("typ export path " + testURLPath);
-////		System.out.println(testURL);
-//		final String filePath = testURL.getPath();
-//		myActualSettings.exportJSON(new File(filePath));
-//
-//		Scanner out = new Scanner(new File(testURL.getPath()));
-//		System.out.println("typical export path is: " + testURL.getPath());
-//		out.useDelimiter("\\Z");
-//		final String actual = out.next();
-//
-//		URL testURL2 = getClass().getResource(TYPICAL);
-//		Scanner in = new Scanner(new File(testURL2.getPath()));
-//		in.useDelimiter("\\Z");
-//		final String expected = in.next();
-//		in.close();
-//		assertEquals(expected, actual);
-//		out.close();
-//	}
+	/**
+	 * @author Isaiah Miller
+	 * @throws FileNotFoundException
+	 */
+	@Test
+	public void exportTypical() throws FileNotFoundException {
+		myActualSettings = typicalSettings();
+//		System.out.println("Base URL path: " + getClass().getResource(""));
+		final String testURLPath = EXPORT + "/" + "typExp.json";
+		URL testURL = getClass().getResource(testURLPath);
+//		System.out.println("typ export path " + testURLPath);
+//		System.out.println(testURL);
+		final String filePath = testURL.getPath();
+		myActualSettings.exportJSON(new File(filePath));
+
+		Scanner out = new Scanner(new File(testURL.getPath()));
+		System.out.println("typical export path is: " + testURL.getPath());
+		out.useDelimiter("\\Z");
+		final String actual = out.next();
+
+		URL testURL2 = getClass().getResource(TYPICAL);
+		Scanner in = new Scanner(new File(testURL2.getPath()));
+		in.useDelimiter("\\Z");
+		final String expected = in.next();
+		in.close();
+		assertEquals(expected, actual);
+		out.close();
+	}
 
 	/**
+	 * export null test
 	 * @author Isaiah Miller
 	 * @throws FileNotFoundException
 	 */
@@ -151,6 +165,7 @@ public class ExportImportTester {
 	}
 
 	/**
+	 * export tester 2
 	 * @author Isaiah Miller
 	 * @param fileName
 	 * @throws FileNotFoundException
@@ -193,6 +208,7 @@ public class ExportImportTester {
 	}
 
 	/**
+	 * import tester 2
 	 * @author Isaiah Miller
 	 * @param fileName
 	 */
@@ -205,6 +221,7 @@ public class ExportImportTester {
 	}
 
 	/**
+	 * settings test
 	 * @author Isaiah Miller
 	 * @param fileName
 	 * @return
