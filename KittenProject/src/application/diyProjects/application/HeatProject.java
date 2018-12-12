@@ -87,6 +87,18 @@ public class HeatProject extends project {
 		
 		name = "Heat";
 		
+		myMainHeatGas = theHome.isMyMainHeatGas();
+		myMainHeatElect = theHome.isMyMainHeatElect();
+		myMainHeatRadiant = theHome.isMyMainHeatRadiant();
+		myFurnanceMultStage = theHome.isMyFurnanceMultStage();
+		myHouseFan = theHome.isMyHouseFan();
+		myProgThermostat = theHome.isMyProgThermostat();
+
+		/** Water Heater fields. * */
+		myGasWaterHeater = theHome.isMyGasWaterHeater();
+		myElectWaterHeat = theHome.isMyElectWaterHeat();
+		myOnDemand = theHome.isMyOnDemand();
+		myWaterHeaterAge = theHome.getMyWaterHeaterAge();
 		myMainHeatGas = myMainHome.isMyMainHeatGas();
 		myMainHeatElect = myMainHome.isMyMainHeatElect();
 		myMainHeatRadiant = myMainHome.isMyMainHeatRadiant();

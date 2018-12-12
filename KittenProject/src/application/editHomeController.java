@@ -146,7 +146,12 @@ public class editHomeController extends Main implements Initializable {
      */
     private double yOffset = 0;
     
-    private final Home myHome;
+//    private final Home Main.theHome;
+    
+    public editHomeController(final Home theHome) {
+//    	Main.theHome = Main.theHome;
+    	System.out.println(theHome == Main.theHome);
+    private Home myHome;
     
     public editHomeController(final Home theHome) {
     	myHome = theHome;
@@ -159,6 +164,40 @@ public class editHomeController extends Main implements Initializable {
 	 */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        System.out.println("initialize the following home: " + Main.theHome);
+        gasHeater.setSelected(Main.theHome.isMyMainHeatGas());
+        electricHeater.setSelected(Main.theHome.isMyMainHeatElect());
+        radiantHeater.setSelected(Main.theHome.isMyMainHeatRadiant());
+        msFurnace.setSelected(Main.theHome.isMyFurnanceMultStage());
+        houseFan.setSelected(Main.theHome.isMyHouseFan());
+        pThermostat.setSelected(Main.theHome.isMyProgThermostat());
+        //
+        gasWater.setSelected(Main.theHome.isMyGasWaterHeater());
+        electricWater.setSelected(Main.theHome.isMyElectWaterHeat());
+        onDemandWater.setSelected(Main.theHome.isMyOnDemand());
+        //
+        incandLights.setSelected(Main.theHome.getMyIncandLight());
+        ledLights.setSelected(Main.theHome.getMyLEDLight());
+        halogenLights.setSelected(Main.theHome.getMyHalLight());
+        numLights.setText("" + Main.theHome.getMyTotalLight());
+        //
+        wpDoors.setSelected(Main.theHome.getMyWeatherProofedDoor());
+        numWindows.setText("" + Main.theHome.getMyNumWindow());
+        numBadWindows.setText("" + Main.theHome.getMyNumWindowBad());
+        //
+        iWalls.setSelected(Main.theHome.isMyInsulationWall());
+        iCeiling.setSelected(Main.theHome.isMyInsulationCeiling());
+        
+        //
+        irrigationSensor.setSelected(Main.theHome.isMyIrrigationSensor());
+        //
+        eStarFridge.setSelected(Main.theHome.isMyEStarRefrig());
+        eStarWasher.setSelected(Main.theHome.isMyEStarClothWash());
+        eStarDryer.setSelected(Main.theHome.isMyEStarDryer());
+        eStarDish.setSelected(Main.theHome.isMyEStarDishWash());
+=======
+    	
+    	
         System.out.println("initialize the following home: " + myHome);
         gasHeater.setSelected(myHome.isMyMainHeatGas());
         electricHeater.setSelected(myHome.isMyMainHeatElect());
@@ -190,6 +229,7 @@ public class editHomeController extends Main implements Initializable {
         eStarWasher.setSelected(myHome.isMyEStarClothWash());
         eStarDryer.setSelected(myHome.isMyEStarDryer());
         eStarDish.setSelected(myHome.isMyEStarDishWash());
+>>>>>>> 89904733f0f196e4aba5bfd17df9a3373c83eafb
     }
     
     
@@ -201,6 +241,38 @@ public class editHomeController extends Main implements Initializable {
     @FXML
     void saveClose(MouseEvent arg0) throws IOException {
         
+<<<<<<< HEAD
+        Main.theHome.setMyMainHeatGas(gasHeater.isSelected());
+        Main.theHome.setMyMainHeatElect(electricHeater.isSelected());
+        Main.theHome.setMyMainHeatRadiant(radiantHeater.isSelected());
+        Main.theHome.setMyFurnanceMultStage(msFurnace.isSelected());
+        Main.theHome.setMyHouseFan(houseFan.isSelected());
+        Main.theHome.setMyProgThermostat(pThermostat.isSelected());
+        //
+        Main.theHome.setMyGasWaterHeater(gasWater.isSelected());
+        Main.theHome.setMyElectWaterHeat(electricWater.isSelected());
+        Main.theHome.setMyOnDemand(onDemandWater.isSelected());
+        //
+        Main.theHome.setMyIncandLight(incandLights.isSelected());
+        Main.theHome.setMyLEDLight(ledLights.isSelected());
+        Main.theHome.setMyHalLight(halogenLights.isSelected());
+        Main.theHome.setMyTotalLight(Integer.parseInt(numLights.getText()));
+        //
+        Main.theHome.setMyWeatherProofedDoor(wpDoors.isSelected());
+        Main.theHome.setMyNumWindow(Integer.parseInt(numWindows.getText()));
+        Main.theHome.setMyNumWindowBad(Integer.parseInt(numBadWindows.getText()));
+        //
+        Main.theHome.setMyInsulationWall(iWalls.isSelected());
+        Main.theHome.setMyInsulationCeiling(iCeiling.isSelected());
+        
+        //
+        Main.theHome.setMyIrrigationSensor(irrigationSensor.isSelected());
+        //
+        Main.theHome.setMyEStarRefrig(eStarFridge.isSelected());
+        Main.theHome.setMyEStarClothWash(eStarWasher.isSelected());
+        Main.theHome.setMyEStarDryer(eStarDryer.isSelected());
+        Main.theHome.setMyEStarDishWash(eStarDish.isSelected());
+=======
         myHome.setMyMainHeatGas(gasHeater.isSelected());
         myHome.setMyMainHeatElect(electricHeater.isSelected());
         myHome.setMyMainHeatRadiant(radiantHeater.isSelected());
@@ -231,6 +303,7 @@ public class editHomeController extends Main implements Initializable {
         myHome.setMyEStarClothWash(eStarWasher.isSelected());
         myHome.setMyEStarDryer(eStarDryer.isSelected());
         myHome.setMyEStarDishWash(eStarDish.isSelected());
+>>>>>>> 89904733f0f196e4aba5bfd17df9a3373c83eafb
         changeScene("list.fxml", arg0);
     }
 

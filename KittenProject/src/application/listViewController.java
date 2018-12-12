@@ -332,6 +332,7 @@ public class listViewController extends Main implements Initializable {
     @FXML
     void openUpdaterView(MouseEvent arg0) throws IOException {
         //((Node)(arg0.getSource())).getScene().getWindow().hide();
+
 //        changeScene("edithome.fxml", arg0);
     	
     	FXMLLoader loader = new FXMLLoader();
@@ -354,6 +355,8 @@ public class listViewController extends Main implements Initializable {
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
+       changeHomeScene("edithome.fxml", arg0);
+    	
     }
 }
    

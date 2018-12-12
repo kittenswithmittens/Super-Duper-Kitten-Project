@@ -36,6 +36,7 @@ public abstract class project extends Main {
 	 * constructs a project
 	 */
 	public project(){
+	    myHome = theHome;
 	    myHome = myMainHome;
 		cost = 0;
 		difficulty = 0;

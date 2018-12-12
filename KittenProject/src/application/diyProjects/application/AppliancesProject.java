@@ -63,6 +63,10 @@ public class AppliancesProject extends project {
 		name = "Appliances";
 				
 		
+		myEStarRefrig = theHome.isMyEStarRefrig();
+		myEStarDishWash = theHome.isMyEStarDishWash(); 
+		myEStarClothWash = theHome.isMyEStarClothWash();
+		myEStarDryer = theHome.isMyEStarDryer();
 		myEStarRefrig = myMainHome.isMyEStarRefrig();
 		myEStarDishWash = myMainHome.isMyEStarDishWash(); 
 		myEStarClothWash = myMainHome.isMyEStarClothWash();
