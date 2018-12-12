@@ -161,7 +161,6 @@ public class editHomeController extends Main implements Initializable {
 	 */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        System.out.println("initialize the following home: " + Main.theHome);
         gasHeater.setSelected(Main.theHome.isMyMainHeatGas());
         electricHeater.setSelected(Main.theHome.isMyMainHeatElect());
         radiantHeater.setSelected(Main.theHome.isMyMainHeatRadiant());
