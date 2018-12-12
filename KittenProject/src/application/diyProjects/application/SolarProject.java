@@ -31,7 +31,7 @@ public class SolarProject extends project {
 	public SolarProject() {
 		super();
 		
-		mySolarPanel = myMainHome.isMySolarPanel();
+		mySolarPanel = theHome.isMySolarPanel();
 		
 		name ="Solar Panels";
 		

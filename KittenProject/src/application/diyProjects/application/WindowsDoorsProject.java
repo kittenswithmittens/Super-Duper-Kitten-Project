@@ -50,10 +50,10 @@ public class WindowsDoorsProject extends project {
 		
 		name = "Windows and Doors";
 		
-		myWeatherProofedDoor = myMainHome.getMyWeatherProofedDoor();
-		myNumWindow  = myMainHome.getMyNumWindow();
-		myNumWindowBad = myMainHome.getMyNumWindowBad();
-		myNumWindowLowE = myMainHome.getMyNumWindowLowE();
+		myWeatherProofedDoor = theHome.getMyWeatherProofedDoor();
+		myNumWindow  = theHome.getMyNumWindow();
+		myNumWindowBad = theHome.getMyNumWindowBad();
+		myNumWindowLowE = theHome.getMyNumWindowLowE();
 		
 		description = "Windows are nice to see out of, Doors are nice to close. Just imagine if your house didnt have doors. Where would FedEx leave your package?";
 		difficulty = 2;

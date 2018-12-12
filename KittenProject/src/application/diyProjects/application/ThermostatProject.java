@@ -28,7 +28,7 @@ public class ThermostatProject extends project{
 		
 		name = "Thermostat";
 		
-		myProgThermostat = myMainHome.isMyProgThermostat();
+		myProgThermostat = theHome.isMyProgThermostat();
 		
 		description = "Do you like it cold when you sleep, but warm and toastie when you wake?"
 				+ "\nWill you be gone from home for a bit and just need your pipes not to freeze. ";

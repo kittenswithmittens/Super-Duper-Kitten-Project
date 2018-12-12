@@ -87,18 +87,18 @@ public class HeatProject extends project {
 		
 		name = "Heat";
 		
-		myMainHeatGas = myMainHome.isMyMainHeatGas();
-		myMainHeatElect = myMainHome.isMyMainHeatElect();
-		myMainHeatRadiant = myMainHome.isMyMainHeatRadiant();
-		myFurnanceMultStage = myMainHome.isMyFurnanceMultStage();
-		myHouseFan = myMainHome.isMyHouseFan();
-		myProgThermostat = myMainHome.isMyProgThermostat();
+		myMainHeatGas = theHome.isMyMainHeatGas();
+		myMainHeatElect = theHome.isMyMainHeatElect();
+		myMainHeatRadiant = theHome.isMyMainHeatRadiant();
+		myFurnanceMultStage = theHome.isMyFurnanceMultStage();
+		myHouseFan = theHome.isMyHouseFan();
+		myProgThermostat = theHome.isMyProgThermostat();
 
 		/** Water Heater fields. * */
-		myGasWaterHeater = myMainHome.isMyGasWaterHeater();
-		myElectWaterHeat = myMainHome.isMyElectWaterHeat();
-		myOnDemand = myMainHome.isMyOnDemand();
-		myWaterHeaterAge = myMainHome.getMyWaterHeaterAge();
+		myGasWaterHeater = theHome.isMyGasWaterHeater();
+		myElectWaterHeat = theHome.isMyElectWaterHeat();
+		myOnDemand = theHome.isMyOnDemand();
+		myWaterHeaterAge = theHome.getMyWaterHeaterAge();
 		
 		description = "Maybe its time to upgrade the ol' costly bundle of sticks you've been using for heat "
 				+ "\nUpgrade your water heater from electric to EStar gas, or better yet install an on-demand "

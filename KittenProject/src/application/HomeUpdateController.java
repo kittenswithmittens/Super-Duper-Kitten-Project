@@ -73,7 +73,7 @@ public class HomeUpdateController extends Main implements Initializable {
 		//init
 		//initialize all values to home values
 		//grunt work below
-		electricBill.setText("" + myMainHome.getMyElectricBill());
+		electricBill.setText("" + theHome.getMyElectricBill());
     }
 	
     /**

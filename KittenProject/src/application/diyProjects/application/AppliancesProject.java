@@ -63,10 +63,10 @@ public class AppliancesProject extends project {
 		name = "Appliances";
 				
 		
-		myEStarRefrig = myMainHome.isMyEStarRefrig();
-		myEStarDishWash = myMainHome.isMyEStarDishWash(); 
-		myEStarClothWash = myMainHome.isMyEStarClothWash();
-		myEStarDryer = myMainHome.isMyEStarDryer();
+		myEStarRefrig = theHome.isMyEStarRefrig();
+		myEStarDishWash = theHome.isMyEStarDishWash(); 
+		myEStarClothWash = theHome.isMyEStarClothWash();
+		myEStarDryer = theHome.isMyEStarDryer();
 		
 		description = "Does the Fidge leak water? Does the Dryer catch fire? Does your Stove still have last year's pumpkin pie baked into the burners? "
 				+ "maybe it's time to get some new fancy appliances";

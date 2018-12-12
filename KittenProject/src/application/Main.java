@@ -44,7 +44,7 @@ public class Main extends Application {
 	     */
 	    private double yOffset = 0;
 
-	    public static Home myMainHome;
+//	    public static Home myMainHome;
 
 	    /**
 	     * theHome
@@ -154,7 +154,7 @@ public class Main extends Application {
 //		    	myPersistentData.setMyHome(myMainHome);
 		    	myPersistentData = new ExportableDataAggregate();
 		    	myPersistentData.importJSON();
-		    	myMainHome = myPersistentData.getMyHome();
+		    	theHome = myPersistentData.getMyHome();
 //		    	overallConfig.initFromConfig(myPersistentData);//myMainHome, overallSettings);
 //		    	System.out.println(myMainHome == myPersistentData.getMyHome());
 //		    	System.out.println("my Main home is (after import): " + myMainHome);
